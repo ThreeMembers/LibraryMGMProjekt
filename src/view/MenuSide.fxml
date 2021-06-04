@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="667.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <ImageView fitHeight="258.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../sample/imageView/imgbook.png" />
+         </image></ImageView>
+      <JFXButton id="home" accessibleText="home" prefHeight="77.0" prefWidth="200.0" stylesheets="@../css/menuSide.css" text="HOME">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+      <JFXButton id="borrow" accessibleText="borrow" prefHeight="77.0" prefWidth="200.0" stylesheets="@../css/menuSide.css" text="BORROW TASKS">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+      <JFXButton id="input" accessibleText="inputdel" prefHeight="77.0" prefWidth="200.0" stylesheets="@../css/menuSide.css" text="INPUT AND REMOVE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+      <JFXButton id="acc" accessibleText="account" prefHeight="77.0" prefWidth="200.0" stylesheets="@../css/menuSide.css" text="ACCOUNTS MGM">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+      <JFXButton id="log" accessibleText="log" prefHeight="77.0" prefWidth="200.0" stylesheets="@../css/menuSide.css" text="ACTIVITIES LOG">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+      <JFXButton id="about" accessibleText="about" prefHeight="77.0" prefWidth="200.0" stylesheets="@../css/menuSide.css" text="ABOUT">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></JFXButton>
+   </children>
+</VBox>
