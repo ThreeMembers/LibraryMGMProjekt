@@ -1,0 +1,21 @@
+#home:hover{
+    -fx-background-color:#ff3838
+}
+#borrow:hover{
+    -fx-background-color:#ff9f1a
+}
+#input:hover{
+    -fx-background-color:#fff200
+}
+#acc:hover{
+    -fx-background-color:#c56cf0
+}
+#log:hover{
+    -fx-background-color:#7d5fff
+}
+#help:hover{
+    -fx-background-color:#ffb8b8
+}
+#about:hover{
+    -fx-background-color:#d1d8e0
+}
