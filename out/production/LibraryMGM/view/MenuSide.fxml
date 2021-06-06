@@ -7,9 +7,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="735.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="667.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="227.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="258.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../sample/imageView/imgbook.png" />
          </image></ImageView>
@@ -42,13 +42,6 @@
             <Font name="System Bold" size="12.0" />
          </font></JFXButton>
       <JFXButton id="log" accessibleText="log" prefHeight="77.0" prefWidth="200.0" stylesheets="@../css/menuSide.css" text="ACTIVITIES LOG">
-         <cursor>
-            <Cursor fx:constant="HAND" />
-         </cursor>
-         <font>
-            <Font name="System Bold" size="12.0" />
-         </font></JFXButton>
-      <JFXButton id="help" accessibleText="help" prefHeight="77.0" prefWidth="200.0" stylesheets="@../css/menuSide.css" text="HELP">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
