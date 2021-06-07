@@ -5,6 +5,8 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
@@ -22,7 +24,7 @@
             <JFXComboBox layoutX="184.0" layoutY="10.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white;" unFocusColor="#4d4d4d00" />
          </children>
       </AnchorPane>
-      <TabPane prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+      <TabPane layoutY="50.0" prefHeight="200.0" prefWidth="200.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
         <tabs>
           <Tab text="Untitled Tab 1">
             <content>
@@ -42,6 +44,38 @@
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
             </content>
           </Tab>
+            <Tab text="categories">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="table" prefHeight="722.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn fx:id="IDColumn" prefWidth="50.0" text="ID" />
+                            <TableColumn fx:id="NameColumn" prefWidth="310.0" text="Name " />
+                              <TableColumn fx:id="DescriptionColumn" prefWidth="840.0" text="Descriptions" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Authors">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView prefHeight="722.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn prefWidth="50.0" text="ID" />
+                            <TableColumn prefWidth="300.0" text="Name Authors " />
+                              <TableColumn prefWidth="150.0" text="Age Authors" />
+                              <TableColumn prefWidth="150.0" text="NumberBook" />
+                              <TableColumn prefWidth="548.0" text="gender" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
         </tabs>
       </TabPane>
    </children>

@@ -36,6 +36,7 @@ public class Author extends Model {
 		this.numberBook = numberBook;
 		this.gender = gender;
 	}
+
 	public Author(int id) {
 		super(id);
 	}
