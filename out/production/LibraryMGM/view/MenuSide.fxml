@@ -9,9 +9,9 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="667.0" prefWidth="200.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <ImageView fitHeight="258.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+      <ImageView fitHeight="265.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../sample/imageView/imgbook.png" />
+            <Image url="@../sample/imageView/137233079_814214102492558_5001456453528017579_n.jpg" />
          </image></ImageView>
       <JFXButton id="home" accessibleText="home" prefHeight="77.0" prefWidth="200.0" stylesheets="@../css/menuSide.css" text="HOME">
          <cursor>

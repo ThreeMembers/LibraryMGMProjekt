@@ -3,10 +3,14 @@ package controller;
 import Model.Author;
 import Model.Book;
 import Model.Category;
+import com.jfoenix.controls.JFXComboBox;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.ComboBox;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 
@@ -18,8 +22,16 @@ import java.util.ResourceBundle;
 public class HomeView implements Initializable {
     @FXML
     VBox bookContent = new VBox();
+    @FXML
+    private JFXComboBox<String> catechoices;
+    ObservableList<String> cateListchoices = FXCollections.observableArrayList("New", "New", "New", "New");
+    @FXML
+    private JFXComboBox<String> authorchoices;
+    ObservableList<String> authorListchoices = FXCollections.observableArrayList("New", "New", "New", "New");
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+        catechoices.setItems(cateListchoices);
+        authorchoices.setItems(authorListchoices);
         Book temp = new Book(
                 1,
                 "UI Design",
