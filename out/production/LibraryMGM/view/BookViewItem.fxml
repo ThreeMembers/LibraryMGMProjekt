@@ -9,13 +9,13 @@
    <children>
       <HBox prefHeight="40.0" prefWidth="1190.0">
          <children>
-            <Label fx:id="lbID" prefHeight="40.0" prefWidth="90.0" text="ID" />
-            <Label fx:id="lbName" prefHeight="40.0" prefWidth="500.0" text="Book's Name" />
-            <Label fx:id="lbAuthor" prefHeight="40.0" prefWidth="250.0" text="Written by" />
-            <Label fx:id="lbCategory" prefHeight="40.0" prefWidth="250.0" text="Category" />
-            <Label fx:id="lbStocks" prefHeight="40.0" prefWidth="100.0" text="Stocks" />
+            <Label fx:id="lbID" alignment="CENTER" prefHeight="40.0" prefWidth="90.0" text="ID" />
+            <Label fx:id="lbName" alignment="CENTER" prefHeight="40.0" prefWidth="500.0" text="Book's Name" />
+            <Label fx:id="lbAuthor" alignment="CENTER" prefHeight="40.0" prefWidth="250.0" text="Written by" />
+            <Label fx:id="lbCategory" alignment="CENTER" prefHeight="40.0" prefWidth="250.0" text="Category" />
+            <Label fx:id="lbStocks" alignment="CENTER" prefHeight="40.0" prefWidth="100.0" text="Stocks" />
          </children>
       </HBox>
-      <Button blendMode="MULTIPLY" mnemonicParsing="false" onAction="#openDetail" onMouseExited="#resetClick" prefHeight="40.0" prefWidth="1190.0" />
+      <Button blendMode="MULTIPLY" mnemonicParsing="false" onAction="#openDetail" onMouseExited="#resetClick" prefHeight="40.0" prefWidth="1190.0" style="-fx-background-color: #f5cd79;" />
    </children>
 </StackPane>
