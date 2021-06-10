@@ -1,5 +1,7 @@
 package Model;
 
+import org.json.simple.JSONObject;
+
 public class DelBookHistory extends Model{
     private Account employee;
     private Date delDate;
@@ -48,4 +50,14 @@ public class DelBookHistory extends Model{
     public void setMessage(String message) {
         this.message = message;
     }
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public JSONObject toJSON() {
+		JSONObject element = super.toJSON();
+		element.put("employee", this.employee.toJSON(Account.id_name));
+		element.put("deldate", this.delDate.toJSON());
+		return element;
+	}
+    
 }

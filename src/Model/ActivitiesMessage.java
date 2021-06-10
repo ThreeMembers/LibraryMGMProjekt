@@ -1,7 +1,17 @@
 package Model;
 
+import org.json.simple.JSONObject;
+
 public class ActivitiesMessage extends Model{
-    private String message;
+    @SuppressWarnings("unchecked")
+	@Override
+	public JSONObject toJSON() {
+		JSONObject element = super.toJSON();
+		element.put("message", this.message);
+		return element;
+	}
+
+	private String message;
 
     public ActivitiesMessage(int id, String message) {
         super(id);

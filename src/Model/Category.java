@@ -1,5 +1,7 @@
 package Model;
 
+import org.json.simple.JSONObject;
+
 public class Category extends Model{
 	private String name;
 	private String description;
@@ -26,9 +28,21 @@ public class Category extends Model{
 		this.name = name;
 		this.description = description;
 	}
+	public Category(String name, String description) {
+		this.name = name;
+		this.description = description;
+	}
 	@Override
 	public String toString() {
 		return "Category [name=" + name + ", description=" + description + ", id=" + id + "]";
+	}
+	@SuppressWarnings("unchecked")
+	@Override
+	public JSONObject toJSON() {
+		JSONObject element = super.toJSON();
+		element.put("name", this.name);
+		element.put("description", this.description);
+		return element;
 	}
 	
 

@@ -1,5 +1,7 @@
 package Model;
 
+import org.json.simple.JSONObject;
+
 public class DetailDelBook{
     private DelBookHistory record;
     private StockBook stockBook;
@@ -25,4 +27,12 @@ public class DetailDelBook{
     public void setStockBook(StockBook stockBook) {
         this.stockBook = stockBook;
     }
+    
+    @SuppressWarnings("unchecked")
+   	public JSONObject toJSON() {
+       	JSONObject element = new JSONObject();
+       	element.put("record", this.record.toJSON());
+       	element.put("stockbook", this.stockBook.toJSON());
+       	return element;
+       }
 }
