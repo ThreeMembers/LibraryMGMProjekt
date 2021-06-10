@@ -48,10 +48,10 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView fx:id="table" prefHeight="722.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="tb" prefHeight="722.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
-                            <TableColumn fx:id="IDColumn" prefWidth="50.0" text="ID" />
-                            <TableColumn fx:id="NameColumn" prefWidth="310.0" text="Name " />
+                            <TableColumn fx:id="IdColumn" prefWidth="50.0" text="ID" />
+                            <TableColumn fx:id="nameColumn" prefWidth="310.0" text="Name " />
                               <TableColumn fx:id="DescriptionColumn" prefWidth="840.0" text="Descriptions" />
                           </columns>
                         </TableView>
@@ -63,13 +63,13 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView prefHeight="722.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="table" prefHeight="722.0" prefWidth="1200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
-                            <TableColumn prefWidth="50.0" text="ID" />
-                            <TableColumn prefWidth="300.0" text="Name Authors " />
-                              <TableColumn prefWidth="150.0" text="Age Authors" />
-                              <TableColumn prefWidth="150.0" text="NumberBook" />
-                              <TableColumn prefWidth="548.0" text="gender" />
+                            <TableColumn fx:id="IDColumn" prefWidth="50.0" text="ID" />
+                            <TableColumn fx:id="NameColumn" prefWidth="300.0" text="Name Authors " />
+                              <TableColumn fx:id="AgeColumn" prefWidth="150.0" text="Age Authors" />
+                              <TableColumn fx:id="NumColumn" prefWidth="150.0" text="NumberBook" />
+                              <TableColumn fx:id="GenderColumn" prefWidth="548.0" text="gender" />
                           </columns>
                         </TableView>
                      </children>
