@@ -10,6 +10,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.net.URL;
@@ -26,6 +28,13 @@ public class HomeView implements Initializable {
     @FXML
     private JFXComboBox<String> authorchoices;
     ObservableList<String> authorListchoices = FXCollections.observableArrayList("New", "New", "New", "New");
+
+    @FXML
+    HBox title;
+
+    @FXML
+    Label lbID, lbName, lbAuthor, lbCategory;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         catechoices.setItems(cateListchoices);
@@ -63,5 +72,10 @@ public class HomeView implements Initializable {
             }
         }
         this.bookContent.getChildren().addAll(bookItems);
+
+        this.lbID.prefWidthProperty().bind(this.title.widthProperty().divide(11));
+        this.lbName.prefWidthProperty().bind(this.title.widthProperty().divide(2.2));
+        this.lbAuthor.prefWidthProperty().bind(this.title.widthProperty().divide(5));
+        this.lbCategory.prefWidthProperty().bind(this.title.widthProperty().divide(5));
     }
 }

@@ -7,15 +7,15 @@
 
 <StackPane fx:id="container" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BookViewItemController">
    <children>
-      <HBox prefHeight="40.0" prefWidth="1190.0">
+      <HBox>
          <children>
-            <Label fx:id="lbID" alignment="CENTER" prefHeight="40.0" prefWidth="90.0" text="ID" />
-            <Label fx:id="lbName" alignment="CENTER" prefHeight="40.0" prefWidth="500.0" text="Book's Name" />
-            <Label fx:id="lbAuthor" alignment="CENTER" prefHeight="40.0" prefWidth="250.0" text="Written by" />
-            <Label fx:id="lbCategory" alignment="CENTER" prefHeight="40.0" prefWidth="250.0" text="Category" />
-            <Label fx:id="lbStocks" alignment="CENTER" prefHeight="40.0" prefWidth="100.0" text="Stocks" />
+            <Label fx:id="lbID" alignment="CENTER" prefHeight="40.0" prefWidth="80.0" text="ID" />
+            <Label fx:id="lbName" alignment="CENTER" prefHeight="40.0" prefWidth="400.0" text="Book's Name" />
+            <Label fx:id="lbAuthor" alignment="CENTER" prefHeight="40.0" prefWidth="176.0" text="Written by" />
+            <Label fx:id="lbCategory" alignment="CENTER" prefHeight="40.0" prefWidth="176.0" text="Category" />
+            <Label fx:id="lbStocks" alignment="CENTER" prefHeight="40.0" prefWidth="48.0" text="Stocks" />
          </children>
       </HBox>
-      <Button blendMode="MULTIPLY" mnemonicParsing="false" onAction="#openDetail" onMouseExited="#resetClick" prefHeight="40.0" prefWidth="1190.0" style="-fx-background-color: #f5cd79;" />
+      <Button fx:id="detailButton" blendMode="MULTIPLY" mnemonicParsing="false" onAction="#openDetail" onMouseExited="#resetClick" prefHeight="40.0" prefWidth="880.0" style="-fx-background-color: #f5cd79;" />
    </children>
 </StackPane>

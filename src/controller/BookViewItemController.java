@@ -63,12 +63,13 @@ public class BookViewItemController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-            this.container.setMinHeight(40);
+        this.container.setMinHeight(40);
 //        //this.container.prefHeightProperty().bind(this.container.widthProperty().divide());
-//        this.lbName.prefWidthProperty().bind(this.container.widthProperty().divide(2.38));
-//        this.lbAuthor.prefWidthProperty().bind(this.container.widthProperty().divide(4.76));
-//        this.lbCategory.prefWidthProperty().bind(this.container.widthProperty().divide(4.76));
-//        this.lbStocks.prefWidthProperty().bind(this.container.widthProperty().divide(11.9));
-//        detailButton.prefWidthProperty().bind(this.container.widthProperty());
+        this.lbID.prefWidthProperty().bind(this.container.widthProperty().divide(11));
+        this.lbName.prefWidthProperty().bind(this.container.widthProperty().divide(2.2));
+        this.lbAuthor.prefWidthProperty().bind(this.container.widthProperty().divide(5));
+        this.lbCategory.prefWidthProperty().bind(this.container.widthProperty().divide(5));
+        //this.lbStocks.prefWidthProperty().bind(this.container.widthProperty().subtract());
+        detailButton.prefWidthProperty().bind(this.container.widthProperty());
     }
 }

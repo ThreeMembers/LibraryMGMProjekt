@@ -4,47 +4,50 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane accessibleText="borrowpage" prefHeight="800.0" prefWidth="1190.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BorrowTaskController">
+<AnchorPane accessibleText="borrowpage" prefHeight="620.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BorrowTaskController">
    <children>
-      <TextField editable="false" prefHeight="50.0" prefWidth="1190.0" style="-fx-background-color: #c44569;" text="Borrow Tasks" AnchorPane.bottomAnchor="749.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-         <font>
-            <Font name="Impact" size="24.0" />
-         </font>
-      </TextField>
-      <TabPane layoutX="10.0" layoutY="49.0" prefHeight="750.0" prefWidth="1190.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+      <AnchorPane prefHeight="49.0" prefWidth="880.0" style="-fx-background-color: #c44569;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="Borrow Task" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font name="Impact" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <TabPane layoutX="10.0" layoutY="51.0" prefHeight="570.0" prefWidth="880.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="51.0">
          <tabs>
             <Tab text="Borrow Request">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="1190.0">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="880.0">
                      <children>
-                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1190.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        <HBox fx:id="title" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="880.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                            <children>
-                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="90.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="ID">
+                              <Label fx:id="lbID" alignment="CENTER" prefHeight="50.0" prefWidth="80.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="ID">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="550.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Reader">
+                              <Label fx:id="lbReader" alignment="CENTER" prefHeight="50.0" prefWidth="400.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Reader">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="550.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Date">
+                              <Label fx:id="lbDate" alignment="CENTER" prefHeight="50.0" prefWidth="400.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Date">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
                            </children>
                         </HBox>
-                        <ScrollPane fitToHeight="true" fitToWidth="true" layoutY="49.0" prefHeight="673.0" prefWidth="1190.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                        <ScrollPane fitToHeight="true" fitToWidth="true" layoutY="49.0" prefHeight="494.0" prefWidth="880.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
                            <content>
-                              <VBox fx:id="borrowRequestContent" prefHeight="622.0" prefWidth="1190.0" />
+                              <VBox fx:id="borrowRequestContent" prefHeight="492.0" prefWidth="880.0" />
                            </content>
                         </ScrollPane>
                      </children>
@@ -55,38 +58,38 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1190.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        <HBox fx:id="title" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="880.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                            <children>
-                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="90.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="ID">
+                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="80.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="ID">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="400.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Reader">
+                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Reader">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="400.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Employee">
+                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Employee">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="150.0" style="-fx-background-color: #3498db; -fx-border-color: white;" text="DateCheck">
+                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #3498db; -fx-border-color: white;" text="DateCheck">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="150.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="DateReturn">
+                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="DateReturn">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
                            </children>
                         </HBox>
-                        <ScrollPane fitToHeight="true" fitToWidth="true" layoutY="49.0" prefHeight="672.0" prefWidth="1190.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                        <ScrollPane fitToHeight="true" fitToWidth="true" layoutY="49.0" prefHeight="494.0" prefWidth="880.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
                            <content>
-                              <VBox fx:id="borrowRecordContent" prefHeight="622.0" prefWidth="1190.0" />
+                              <VBox fx:id="borrowRecordContent" prefHeight="492.0" prefWidth="880.0" />
                            </content>
                         </ScrollPane>
                      </children>

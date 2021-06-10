@@ -63,10 +63,6 @@ public class MainHolderController implements Initializable {
             }
     }
 
-    @FXML
-    private ComboBox<String> choices;
-    ObservableList<String> Listchoice = FXCollections.observableArrayList("Book", "Author", "Category", "Account");
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try{
@@ -120,8 +116,6 @@ public class MainHolderController implements Initializable {
         }catch (Exception ex){
             System.out.println(ex.getMessage());
         }
-        choices.setItems(Listchoice);
-        choices.setValue("Name");
 
 
         try{
