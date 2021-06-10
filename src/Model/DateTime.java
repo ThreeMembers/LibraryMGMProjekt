@@ -1,5 +1,7 @@
 package Model;
 
+import org.json.simple.JSONObject;
+
 public class DateTime extends Date{
     private int hour;
     private int minute;
@@ -55,6 +57,23 @@ public class DateTime extends Date{
         dateTime.setSecond(Integer.parseInt(time[2]));
         return dateTime;
     }
+    
+    public boolean isEqual(DateTime target) {
+    	if(this.year == target.getYear()) {
+    		if(this.month == target.getMonth()) {
+    			if(this.day == target.getDay()) {
+    				if(this.hour == target.getHour()) {
+    					if(this.minute == target.getMinute()) {
+    						if(this.second == target.getSecond()) {
+    							return true;
+    						}
+    					}
+    				}
+    			}
+    		}
+    	}
+    	return false;
+    }
 
     public int getHour() {
         return hour;
@@ -79,4 +98,20 @@ public class DateTime extends Date{
     public void setSecond(int second) {
         this.second = second;
     }
+
+	@Override
+	public String toString() {
+		return super.toString() + " " + this.hour + "-" + this.minute + "-" + this.second;
+	}
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public JSONObject toJSON() {
+		JSONObject element = super.toJSON();
+		element.put("hour", this.hour);
+		element.put("minute", this.minute);
+		element.put("second", this.second);
+		return element;
+	}
+	
 }

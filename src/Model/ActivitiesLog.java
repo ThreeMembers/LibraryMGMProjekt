@@ -1,5 +1,7 @@
 package Model;
 
+import org.json.simple.JSONObject;
+
 public class ActivitiesLog extends Model{
     private Account account;
     private ActivitiesMessage activitiesMessage;
@@ -48,4 +50,15 @@ public class ActivitiesLog extends Model{
     public void setInput(DateTime input) {
         this.input = input;
     }
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public JSONObject toJSON() {
+		JSONObject element = super.toJSON();
+		element.put("username", this.account.toJSON(Account.id_name));
+		element.put("messeger", this.activitiesMessage.getMessage());
+		element.put("datetime", this.input.toJSON());
+		return element;
+	}
+    
 }

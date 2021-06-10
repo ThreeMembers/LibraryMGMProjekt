@@ -1,5 +1,7 @@
 package Model;
 
+import org.json.simple.JSONObject;
+
 public class Input extends Model{
     private Account employee;
     private Date inputDate;
@@ -38,4 +40,14 @@ public class Input extends Model{
         this.employee = employee;
         this.inputDate = inputDate;
     }
+    @SuppressWarnings("unchecked")
+	@Override
+	public JSONObject toJSON() {
+		JSONObject element = super.toJSON();
+		element.put("employee", this.employee.toJSON(Account.id_name));
+		element.put("inputDate", this.inputDate.toJSON());
+		return element;
+	}
+
+    
 }

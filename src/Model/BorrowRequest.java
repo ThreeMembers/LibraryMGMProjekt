@@ -1,5 +1,7 @@
 package Model;
 
+import org.json.simple.JSONObject;
+
 public class BorrowRequest extends Model{
     private Account reader;
     private Date sendRequestDate;
@@ -37,4 +39,15 @@ public class BorrowRequest extends Model{
     public void setSendRequestDate(Date sendRequestDate) {
         this.sendRequestDate = sendRequestDate;
     }
+
+	@SuppressWarnings("unchecked")
+	@Override
+	public JSONObject toJSON() {
+		JSONObject element = super.toJSON();
+		element.put("reader", this.reader.toJSON(Account.id_name_dateleft));
+		element.put("senddate", this.sendRequestDate.toJSON());
+		return element;
+	}
+    
+    
 }
