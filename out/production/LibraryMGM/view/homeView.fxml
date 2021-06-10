@@ -6,14 +6,16 @@
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane accessibleText="HomePage" prefHeight="800.0" prefWidth="1190.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeView">
+<AnchorPane accessibleText="HomePage" prefHeight="620.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.HomeView">
    <children>
-      <AnchorPane prefHeight="50.0" prefWidth="1190.0" style="-fx-background-color: #ffeaa7;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane prefHeight="50.0" prefWidth="880.0" style="-fx-background-color: #ffeaa7;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <JFXButton layoutX="14.0" layoutY="10.0" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #74b9ff;" text="NEW" textFill="WHITE">
                <font>
@@ -24,35 +26,35 @@
             <JFXComboBox fx:id="authorchoices" layoutX="234.0" layoutY="10.0" prefHeight="30.0" prefWidth="150.0" promptText="Author" style="-fx-background-color: white;" unFocusColor="#4d4d4d00" />
          </children>
       </AnchorPane>
-      <TabPane prefHeight="200.0" prefWidth="1190.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+      <TabPane prefHeight="200.0" prefWidth="880.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
         <tabs>
-          <Tab text="Untitled Tab 1">
+          <Tab text="Book View">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="1190.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0">
                      <children>
-                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="1190.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        <HBox fx:id="title" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="870.0" style="-fx-background-color: green;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                            <children>
-                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="90.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="ID">
+                              <Label fx:id="lbID" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="80.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="ID">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="500.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Book's Name">
+                              <Label fx:id="lbName" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="400.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Book's Name">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="250.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Written by">
+                              <Label fx:id="lbAuthor" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="176.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Written by">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="250.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Category">
+                              <Label fx:id="lbCategory" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="176.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Category">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="100.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Stocks">
+                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="48.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Stocks">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
@@ -61,18 +63,50 @@
                         </HBox>
                         <ScrollPane fitToHeight="true" fitToWidth="true" layoutY="49.0" prefHeight="673.0" prefWidth="1190.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
                            <content>
-                              <VBox fx:id="bookContent" prefHeight="670.0" prefWidth="1190.0" />
+                              <VBox fx:id="bookContent" prefHeight="491.0" prefWidth="880.0" />
                            </content>
                         </ScrollPane>
                      </children>
                   </AnchorPane>
             </content>
           </Tab>
-          <Tab text="Untitled Tab 2">
+          <Tab text="Stock Book">
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
             </content>
           </Tab>
+            <Tab text="Category">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn text="ID" />
+                            <TableColumn prefWidth="200.0" text="Category" />
+                              <TableColumn prefWidth="600.0" text="Description" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
+            <Tab text="Author">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn text="ID" />
+                              <TableColumn prefWidth="550.0" text="Author" />
+                            <TableColumn prefWidth="75.0" text="Age" />
+                              <TableColumn prefWidth="75.0" text="Gender" />
+                              <TableColumn prefWidth="100.0" text="Number Books" />
+                          </columns>
+                        </TableView>
+                     </children>
+                  </AnchorPane>
+              </content>
+            </Tab>
         </tabs>
       </TabPane>
    </children>

@@ -1,14 +1,215 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="view.About"
-            prefHeight="400.0" prefWidth="600.0">
 
+<AnchorPane accessibleText="aboutpage" prefHeight="620.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="49.0" prefWidth="200.0" style="-fx-background-color: #d1d8e0;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label text="About us" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+               <font>
+                  <Font name="Impact" size="24.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <VBox alignment="TOP_CENTER" layoutY="49.0" prefHeight="571.0" prefWidth="880.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="48.799999999999955">
+         <children>
+            <HBox prefHeight="40.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="40.0" prefWidth="30.0" />
+                  <Label prefHeight="40.0" prefWidth="150.0" text="Project's name">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="40.0" prefWidth="700.0" text="Develop a program to manage books in the library">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="40.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="40.0" prefWidth="30.0" />
+                  <Label prefHeight="40.0" prefWidth="150.0" text="Software's name">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="40.0" prefWidth="700.0" text="LibraryMGM Desktop Application">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="40.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="40.0" prefWidth="30.0" />
+                  <Label prefHeight="40.0" prefWidth="150.0" text="Version">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="40.0" prefWidth="700.0" text="Closebeta - v.0.1">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="40.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="40.0" prefWidth="30.0" />
+                  <Label prefHeight="40.0" prefWidth="150.0" text="Frameworks">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="40.0" prefWidth="700.0" text="JavaFX v16 - for GUI">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="40.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="40.0" prefWidth="30.0" />
+                  <Label prefHeight="40.0" prefWidth="150.0" text="Database">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <Label prefHeight="40.0" prefWidth="700.0" text="The software's API using MySQL">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox prefHeight="160.0" prefWidth="200.0">
+               <children>
+                  <Label prefHeight="40.0" prefWidth="30.0" />
+                  <Label prefHeight="40.0" prefWidth="150.0" text="Developers">
+                     <font>
+                        <Font name="Arial Bold" size="14.0" />
+                     </font>
+                  </Label>
+                  <VBox prefHeight="160.0" prefWidth="650.0" style="-fx-border-color: #bdc3c7;">
+                     <children>
+                        <HBox prefHeight="40.0" prefWidth="200.0" style="-fx-background-color: #bdc3c7;">
+                           <children>
+                              <Label prefHeight="40.0" prefWidth="10.0" />
+                              <Label prefHeight="40.0" prefWidth="150.0" text="Full name">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="40.0" prefWidth="100.0" text="HUTECH ID">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="40.0" prefWidth="100.0" text="Class">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="40.0" text="Email contact">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="40.0" prefWidth="200.0">
+                           <children>
+                              <Label prefHeight="40.0" prefWidth="10.0" />
+                              <Label prefHeight="40.0" prefWidth="150.0" text="Phung Quoc Hung">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="40.0" prefWidth="100.0" text="1811062962">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="40.0" prefWidth="100.0" text="18DTHQA2">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="40.0" text="phunghung29@gmail.com">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="40.0" prefWidth="650.0" style="-fx-background-color: #ecf0f1;">
+                           <children>
+                              <Label prefHeight="40.0" prefWidth="10.0" />
+                              <Label prefHeight="40.0" prefWidth="150.0" text="Pham Anh Tuan">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="40.0" prefWidth="100.0" text="1811063309">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="40.0" prefWidth="100.0" text="18DTHQA2">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="40.0" text="phamanhtuan23032000hiie@gmail.com">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                        <HBox prefHeight="40.0" prefWidth="200.0">
+                           <children>
+                              <Label prefHeight="40.0" prefWidth="10.0" />
+                              <Label prefHeight="40.0" prefWidth="150.0" text="Vu Duc Long">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="40.0" prefWidth="100.0" text="1811062483">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="40.0" prefWidth="100.0" text="18DTHQA2">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                              <Label prefHeight="40.0" text="vuduclong1710@gmail.com">
+                                 <font>
+                                    <Font size="14.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </HBox>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
 </AnchorPane>

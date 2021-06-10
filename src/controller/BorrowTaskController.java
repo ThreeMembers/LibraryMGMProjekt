@@ -4,6 +4,8 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Label;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
 import java.net.URL;
@@ -16,6 +18,12 @@ public class BorrowTaskController implements Initializable {
     VBox borrowRequestContent = new VBox();
     @FXML
     VBox borrowRecordContent = new VBox();
+
+    @FXML
+    HBox title;
+
+    @FXML
+    Label lbID, lbReader, lbDate;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -53,5 +61,10 @@ public class BorrowTaskController implements Initializable {
             }
         }
         this.borrowRecordContent.getChildren().addAll(recordItems);
+
+        this.lbID.prefWidthProperty().bind(this.title.widthProperty().divide(11));
+        this.lbReader.prefWidthProperty().bind(this.title.widthProperty().divide(2.2));
+        this.lbDate.prefWidthProperty().bind(this.title.widthProperty().divide(2.2));
+        //this.lbColumn.prefWidthProperty().bind(this.title.widthProperty().divide(4.4));
     }
 }

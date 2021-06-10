@@ -7,15 +7,15 @@
 
 <StackPane fx:id="container" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.borrowRecordItemController">
    <children>
-      <HBox prefHeight="40.0" prefWidth="1190.0">
+      <HBox prefHeight="40.0" prefWidth="880.0">
          <children>
-            <Label fx:id="lbID" alignment="CENTER" prefHeight="40.0" prefWidth="90.0" text="ID" />
-            <Label fx:id="lbReader" alignment="CENTER" prefHeight="40.0" prefWidth="400.0" text="Reader" />
-            <Label fx:id="lbBook" alignment="CENTER" prefHeight="40.0" prefWidth="400.0" text="Employee" />
-            <Label alignment="CENTER" prefHeight="50.0" prefWidth="150.0" text="DateCheck" />
-            <Label alignment="CENTER" prefHeight="50.0" prefWidth="150.0" text="DateReturn" />
+            <Label fx:id="lbID" alignment="CENTER" prefHeight="40.0" prefWidth="80.0" text="ID" />
+            <Label fx:id="lbReader" alignment="CENTER" prefHeight="40.0" prefWidth="200.0" text="Reader" />
+            <Label fx:id="lbBook" alignment="CENTER" prefHeight="40.0" prefWidth="200.0" text="Employee" />
+            <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="DateCheck" />
+            <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="DateReturn" />
          </children>
       </HBox>
-      <Button blendMode="MULTIPLY" mnemonicParsing="false" prefHeight="40.0" prefWidth="1190.0" style="-fx-background-color: #f5cd79;" />
+      <Button blendMode="MULTIPLY" mnemonicParsing="false" prefHeight="40.0" prefWidth="880.0" style="-fx-background-color: #f5cd79;" />
    </children>
 </StackPane>

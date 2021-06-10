@@ -7,13 +7,13 @@
 
 <StackPane fx:id="container" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.borrowRequestItemController">
    <children>
-      <HBox prefHeight="40.0" prefWidth="1190.0">
+      <HBox prefHeight="40.0" prefWidth="880.0">
          <children>
-            <Label fx:id="lbID" alignment="CENTER" prefHeight="40.0" prefWidth="90.0" text="ID" />
-            <Label fx:id="lbReader" alignment="CENTER" prefHeight="40.0" prefWidth="550.0" text="Reader" />
-            <Label fx:id="lbDate" alignment="CENTER" prefHeight="40.0" prefWidth="550.0" text="Date" />
+            <Label fx:id="lbID" alignment="CENTER" prefHeight="40.0" prefWidth="80.0" text="ID" />
+            <Label fx:id="lbReader" alignment="CENTER" prefHeight="40.0" prefWidth="400.0" text="Reader" />
+            <Label fx:id="lbDate" alignment="CENTER" prefHeight="40.0" prefWidth="400.0" text="Date" />
          </children>
       </HBox>
-      <Button blendMode="MULTIPLY" mnemonicParsing="false" prefHeight="40.0" prefWidth="1190.0" style="-fx-background-color: #f5cd79;" />
+      <Button blendMode="MULTIPLY" mnemonicParsing="false" prefHeight="40.0" prefWidth="880.0" style="-fx-background-color: #f5cd79;" />
    </children>
 </StackPane>
