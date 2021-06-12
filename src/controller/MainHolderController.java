@@ -104,6 +104,12 @@ public class MainHolderController implements Initializable {
                                     break;
                                 default:
                                     //about
+                                    loader = new FXMLLoader();
+                                    loader.setLocation(getClass().getResource("/view/about.fxml"));
+                                    Node aboutpage = loader.load();
+                                    System.out.println("add about page");
+                                    this.frameHolder.setCenter(aboutpage);
+                                    openMenu();
                                     break;
                             }
                         }catch (Exception ex){

@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
@@ -13,11 +17,23 @@
    <children>
       <AnchorPane prefHeight="49.0" prefWidth="880.0" style="-fx-background-color: #c44569;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label text="Borrow Task" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="10.0">
+            <Label alignment="CENTER_RIGHT" layoutX="730.0" layoutY="10.0" text="Borrow Task" AnchorPane.rightAnchor="28.400000000000006" AnchorPane.topAnchor="10.0">
                <font>
                   <Font name="Impact" size="24.0" />
                </font>
             </Label>
+            <Button id="add" fx:id="btnadd" layoutX="22.0" layoutY="5.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" stylesheets="@../css/menuSide.css" AnchorPane.leftAnchor="22.0" AnchorPane.topAnchor="5.0">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../sample/imageView/button.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
          </children>
       </AnchorPane>
       <TabPane layoutX="10.0" layoutY="51.0" prefHeight="570.0" prefWidth="880.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="51.0">

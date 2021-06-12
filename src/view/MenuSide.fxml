@@ -48,7 +48,7 @@
          <font>
             <Font name="System Bold" size="12.0" />
          </font></JFXButton>
-      <JFXButton id="about" accessibleText="about" prefHeight="77.0" prefWidth="200.0" stylesheets="@../css/menuSide.css" text="ABOUT">
+      <JFXButton id="about" accessibleText="aboutpage" prefHeight="77.0" prefWidth="200.0" stylesheets="@../css/menuSide.css" text="ABOUT">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

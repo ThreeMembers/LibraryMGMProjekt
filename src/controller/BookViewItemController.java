@@ -1,7 +1,7 @@
 package controller;
 
 import Model.Book;
-import com.jfoenix.controls.JFXRadioButton;
+//import com.jfoenix.controls.JFXRadioButton;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -17,8 +17,8 @@ import java.util.ResourceBundle;
 public class BookViewItemController implements Initializable {
     @FXML
     Label lbID, lbName, lbAuthor, lbCategory, lbStocks;
-    @FXML
-    JFXRadioButton circleAvailable;
+//    @FXML
+//    JFXRadioButton circleAvailable;
     @FXML
     Button detailButton;
 

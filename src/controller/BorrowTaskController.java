@@ -4,7 +4,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.Tooltip;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 
@@ -24,7 +26,8 @@ public class BorrowTaskController implements Initializable {
 
     @FXML
     Label lbID, lbReader, lbDate;
-
+    @FXML
+    private Button btnadd;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //Add borrow request items
@@ -66,5 +69,13 @@ public class BorrowTaskController implements Initializable {
         this.lbReader.prefWidthProperty().bind(this.title.widthProperty().divide(2.2));
         this.lbDate.prefWidthProperty().bind(this.title.widthProperty().divide(2.2));
         //this.lbColumn.prefWidthProperty().bind(this.title.widthProperty().divide(4.4));
+
+        tooltip();
+        }
+    //Tooltip btnadd
+    public void tooltip(){
+        Tooltip btnaddToolTip = new Tooltip("Add");
+        btnadd.setTooltip(btnaddToolTip);
+        btnaddToolTip.setStyle("-fx-background-color:white; -fx-text-fill:black");
     }
 }

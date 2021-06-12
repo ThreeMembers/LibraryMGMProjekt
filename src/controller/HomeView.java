@@ -24,10 +24,10 @@ public class HomeView implements Initializable {
     VBox bookContent = new VBox();
     @FXML
     private JFXComboBox<String> catechoices;
-    ObservableList<String> cateListchoices = FXCollections.observableArrayList("New", "New", "New", "New");
+    ObservableList<String> cateListchoices = FXCollections.observableArrayList("Single", "Multi");
     @FXML
     private JFXComboBox<String> authorchoices;
-    ObservableList<String> authorListchoices = FXCollections.observableArrayList("New", "New", "New", "New");
+    ObservableList<String> authorListchoices = FXCollections.observableArrayList("Book", "Author", "Category", "Stock");
 
     @FXML
     HBox title;
@@ -38,7 +38,9 @@ public class HomeView implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         catechoices.setItems(cateListchoices);
+        catechoices.setValue("Single");
         authorchoices.setItems(authorListchoices);
+        authorchoices.setValue("Book");
         Book temp = new Book(
                 1,
                 "UI Design",

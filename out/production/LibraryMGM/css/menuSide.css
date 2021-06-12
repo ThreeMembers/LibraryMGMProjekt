@@ -19,3 +19,7 @@
 #about:hover{
     -fx-background-color:#d1d8e0
 }
+
+#add{
+    -fx-background-color: transparent;
+}

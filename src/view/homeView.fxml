@@ -22,8 +22,8 @@
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXComboBox fx:id="catechoices" layoutX="84.0" layoutY="10.0" prefHeight="30.0" prefWidth="150.0" promptText="Category" style="-fx-background-color: white;" unFocusColor="#f7f7f700" />
-            <JFXComboBox fx:id="authorchoices" layoutX="234.0" layoutY="10.0" prefHeight="30.0" prefWidth="150.0" promptText="Author" style="-fx-background-color: white;" unFocusColor="#4d4d4d00" />
+            <JFXComboBox fx:id="catechoices" layoutX="84.0" layoutY="10.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white;" unFocusColor="#f7f7f700" />
+            <JFXComboBox fx:id="authorchoices" layoutX="234.0" layoutY="10.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white;" unFocusColor="#4d4d4d00" />
          </children>
       </AnchorPane>
       <TabPane prefHeight="200.0" prefWidth="880.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
