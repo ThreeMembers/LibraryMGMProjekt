@@ -19,7 +19,7 @@ public class Main extends Application {
         primaryStage.setMinWidth(800);
         primaryStage.setTitle("Login");
         primaryStage.setScene(new Scene(root));
-        primaryStage.initStyle(StageStyle.TRANSPARENT);
+        //primaryStage.initStyle(StageStyle.TRANSPARENT);
         primaryStage.show();
     }
 
