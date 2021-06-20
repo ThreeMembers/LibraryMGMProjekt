@@ -26,7 +26,7 @@
             <JFXComboBox fx:id="authorchoices" layoutX="234.0" layoutY="10.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white;" unFocusColor="#4d4d4d00" />
          </children>
       </AnchorPane>
-      <TabPane prefHeight="200.0" prefWidth="880.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
+      <TabPane layoutY="176.0" prefHeight="444.0" prefWidth="880.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
         <tabs>
           <Tab text="Book View">
             <content>
@@ -72,7 +72,17 @@
           </Tab>
           <Tab text="Stock Book">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView prefHeight="434.0" prefWidth="880.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                          <columns>
+                            <TableColumn prefWidth="478.4000244140625" text="Book Name" />
+                            <TableColumn minWidth="0.0" prefWidth="149.5999755859375" text="Quality" />
+                              <TableColumn minWidth="0.0" prefWidth="147.199951171875" text="Release Year" />
+                              <TableColumn prefWidth="111.2000732421875" text="Is Borrow" />
+                          </columns>
+                        </TableView>
+                     </children></AnchorPane>
             </content>
           </Tab>
             <Tab text="Category">

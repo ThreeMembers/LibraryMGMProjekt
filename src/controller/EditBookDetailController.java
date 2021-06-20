@@ -22,7 +22,7 @@ import java.util.ResourceBundle;
 
 public class EditBookDetailController implements Initializable {
     @FXML
-    private ImageView image;
+    private ImageView imageEditBookDetail;
     @FXML
     private Button btnOpenImage;
     // Create a FileChooser
@@ -59,7 +59,7 @@ public class EditBookDetailController implements Initializable {
         File file = fc.showOpenDialog(null);
 
         if(file != null){
-           image.setImage(new Image(String.valueOf(file.toURI())));
+            imageEditBookDetail.setImage(new Image(String.valueOf(file.toURI())));
         }else{
             System.out.println("A file is invalid");
         }

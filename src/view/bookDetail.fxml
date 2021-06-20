@@ -13,11 +13,23 @@
 
 <AnchorPane prefHeight="700.0" prefWidth="1000.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.bookDetailController">
    <children>
-      <Label layoutX="444.0" layoutY="24.0" text="Book Detail" AnchorPane.rightAnchor="444.0" AnchorPane.topAnchor="24.0">
-         <font>
-            <Font name="Impact" size="24.0" />
-         </font>
-      </Label>
+      <AnchorPane layoutX="444.0" layoutY="24.0" prefHeight="60.0" prefWidth="1000.0" style="-fx-background-color: #badc58;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="444.0" layoutY="15.0" text="Book Detail">
+               <font>
+                  <Font name="Impact" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="971.0" layoutY="-1.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <image>
+                  <Image url="@../sample/imageView/close-icon.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
       <VBox id="bookframe" alignment="CENTER" layoutX="90.0" layoutY="68.0" prefHeight="258.0" prefWidth="190.0" style="-fx-border-width: 5;" stylesheets="@../css/BackgroundImg.css" AnchorPane.rightAnchor="686.8" AnchorPane.topAnchor="68.0">
          <children>
             <ImageView fitHeight="250.0" fitWidth="213.0" pickOnBounds="true" preserveRatio="true">

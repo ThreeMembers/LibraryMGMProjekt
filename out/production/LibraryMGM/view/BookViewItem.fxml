@@ -16,6 +16,6 @@
             <Label fx:id="lbStocks" alignment="CENTER" prefHeight="40.0" prefWidth="48.0" text="Stocks" />
          </children>
       </HBox>
-      <Button fx:id="detailButton" blendMode="MULTIPLY" mnemonicParsing="false" onAction="#openDetail" onMouseExited="#resetClick" prefHeight="40.0" prefWidth="880.0" style="-fx-background-color: #f5cd79;" />
+      <Button fx:id="detailButton" blendMode="MULTIPLY" mnemonicParsing="false" onAction="#openDetail" onMouseExited="#resetClick" prefHeight="40.0" prefWidth="880.0" style="-fx-background-color: white;" />
    </children>
 </StackPane>
