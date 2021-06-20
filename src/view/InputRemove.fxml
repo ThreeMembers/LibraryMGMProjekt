@@ -13,11 +13,11 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane accessibleText="borrowpage" prefHeight="620.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BorrowTaskController">
+<AnchorPane accessibleText="inputremovepage" prefHeight="620.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InputRemoveController">
    <children>
       <AnchorPane prefHeight="49.0" prefWidth="880.0" style="-fx-background-color: #c44569;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label alignment="CENTER_RIGHT" layoutX="730.0" layoutY="10.0" text="Borrow Task" AnchorPane.rightAnchor="28.400000000000006" AnchorPane.topAnchor="10.0">
+            <Label alignment="CENTER_RIGHT" layoutX="730.0" layoutY="10.0" text="Input Remove Record" AnchorPane.rightAnchor="28.400000000000006" AnchorPane.topAnchor="10.0">
                <font>
                   <Font name="Impact" size="24.0" />
                </font>
@@ -27,7 +27,7 @@
                   <Cursor fx:constant="HAND" />
                </cursor>
                <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fx:id="btnadda" fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../sample/imageView/button.png" />
                      </image>
@@ -38,9 +38,9 @@
       </AnchorPane>
       <TabPane layoutX="10.0" layoutY="51.0" prefHeight="570.0" prefWidth="880.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="51.0">
          <tabs>
-            <Tab text="Borrow Request">
+            <Tab text="Input Record">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="880.0">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="542.0" prefWidth="880.0">
                      <children>
                         <HBox fx:id="title" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="880.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                            <children>
@@ -49,7 +49,7 @@
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="lbReader" alignment="CENTER" prefHeight="50.0" prefWidth="400.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Reader">
+                              <Label fx:id="lbEmployee" alignment="CENTER" prefHeight="50.0" prefWidth="400.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Employee">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
@@ -61,56 +61,46 @@
                               </Label>
                            </children>
                         </HBox>
-                        <ScrollPane fitToHeight="true" fitToWidth="true" layoutY="49.0" prefHeight="494.0" prefWidth="880.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                        <ScrollPane fitToHeight="true" fitToWidth="true" layoutY="49.0" prefHeight="492.0" prefWidth="880.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
                            <content>
-                              <VBox fx:id="borrowRequestContent" prefHeight="492.0" prefWidth="880.0" />
+                              <VBox fx:id="InputContainer" prefHeight="492.0" prefWidth="880.0" />
                            </content>
                         </ScrollPane>
                      </children>
                   </AnchorPane>
                </content>
             </Tab>
-            <Tab text="Borrow Record">
-               <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+            <Tab text="Remove">
+              <content>
+                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <HBox fx:id="title" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="880.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        <HBox fx:id="title1" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="880.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                            <children>
-                              <Label fx:id="lbID1" alignment="CENTER" prefHeight="50.0" prefWidth="80.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="ID">
+                              <Label fx:id="lbEmployee2" alignment="CENTER" prefHeight="50.0" prefWidth="440.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Employee">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="lbReader1" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Reader">
+                              <Label fx:id="lbDate2" alignment="CENTER" prefHeight="50.0" prefWidth="220.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Date">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="lbEmployee" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Employee">
-                                 <font>
-                                    <Font name="Impact" size="14.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lbDateCheck" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #3498db; -fx-border-color: white;" text="DateCheck">
-                                 <font>
-                                    <Font name="Impact" size="14.0" />
-                                 </font>
-                              </Label>
-                              <Label fx:id="lbDateReturn" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="DateReturn">
+                              <Label fx:id="lbMessager" alignment="CENTER" prefHeight="50.0" prefWidth="220.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Messanger">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
                            </children>
                         </HBox>
-                        <ScrollPane fitToHeight="true" fitToWidth="true" layoutY="49.0" prefHeight="494.0" prefWidth="880.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                        <ScrollPane fitToHeight="true" fitToWidth="true" prefHeight="492.0" prefWidth="880.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
                            <content>
-                              <VBox fx:id="borrowRecordContent" prefHeight="492.0" prefWidth="880.0" />
+                              <VBox fx:id="RemoveContainer" prefHeight="492.0" prefWidth="880.0" />
                            </content>
                         </ScrollPane>
                      </children>
                   </AnchorPane>
-               </content>
+              </content>
             </Tab>
          </tabs>
       </TabPane>

@@ -9,22 +9,22 @@ import javafx.scene.layout.StackPane;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class borrowRequestItemController implements Initializable {
+public class DetailDeItemController implements Initializable {
     @FXML
     StackPane container;
     @FXML
-    Label lbID,lbReader,lbDate;
+    Label lbRecord,lbStock;
 
     @FXML
     Button detailButton;
-
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        this.container.setMinHeight(40);
-        this.lbID.prefWidthProperty().bind(this.container.widthProperty().divide(11));
-        this.lbReader.prefWidthProperty().bind(this.container.widthProperty().divide(2.2));
-        this.lbDate.prefWidthProperty().bind(this.container.widthProperty().divide(2.2));
+        container.setMinHeight(40);
+        this.lbStock.prefWidthProperty().bind(this.container.widthProperty().divide(2));
+        this.lbRecord.prefWidthProperty().bind(this.container.widthProperty().divide(2));
+
         this.detailButton.prefWidthProperty().bind(this.container.widthProperty());
+
     }
 }

@@ -11,11 +11,11 @@
          <children>
             <Label fx:id="lbID" alignment="CENTER" prefHeight="40.0" prefWidth="80.0" text="ID" />
             <Label fx:id="lbReader" alignment="CENTER" prefHeight="40.0" prefWidth="200.0" text="Reader" />
-            <Label fx:id="lbBook" alignment="CENTER" prefHeight="40.0" prefWidth="200.0" text="Employee" />
-            <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="DateCheck" />
-            <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="DateReturn" />
+            <Label fx:id="lbEmployee" alignment="CENTER" prefHeight="40.0" prefWidth="200.0" text="Employee" />
+            <Label fx:id="lbDateCheck" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="DateCheck" />
+            <Label fx:id="lbReturn" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" text="DateReturn" />
          </children>
       </HBox>
-      <Button blendMode="MULTIPLY" mnemonicParsing="false" prefHeight="40.0" prefWidth="880.0" style="-fx-background-color: #f5cd79;" />
+      <Button fx:id="detailButton" blendMode="MULTIPLY" mnemonicParsing="false" prefHeight="40.0" prefWidth="880.0" style="-fx-background-color: #f5cd79;" />
    </children>
 </StackPane>
