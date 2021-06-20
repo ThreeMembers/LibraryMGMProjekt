@@ -4,4 +4,12 @@
 }
 #loginGradient{
     -fx-background-color: linear-gradient(to right top, #d16ba5, #c777b9, #ba83ca, #aa8fd8, #9a9ae1, #8aa7ec, #79b3f4, #69bff8, #52cffe, #41dfff, #46eefa, #5ffbf1);
+    -fx-background-radius: 10;
 }
+#search{
+    -fx-background-color: linear-gradient(to right top, #f05fe2, #d35ee7, #b25eea, #8c5feb, #5d5fea);
+}
+#bookframe{
+    -fx-border-color: linear-gradient(to right top, #d17b6b, #dc777b, #e37490, #e375a9, #dc7ac3, #b68ee8, #7ba3fd, #00b4ff, #00ceff, #00e3e7, #00f3ac, #6ffb5f);
+}
+

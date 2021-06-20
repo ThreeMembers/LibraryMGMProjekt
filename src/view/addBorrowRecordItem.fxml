@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="400.0" style="-fx-background-radius: 10;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddBorrowRecordItemController">
+   <children>
+      <Label alignment="CENTER" layoutY="30.0" prefHeight="50.0" prefWidth="400.0" style="-fx-background-color: #ff9f43;" text="Add Borrow Record">
+         <font>
+            <Font name="Impact" size="24.0" />
+         </font>
+      </Label>
+      <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="371.0" layoutY="8.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../sample/imageView/close-icon.png" />
+         </image>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </ImageView>
+      <Label layoutX="85.0" layoutY="148.0" text="ID">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="72.0" layoutY="211.0" text="Reader">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="65.0" layoutY="283.0" text="Employee">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="60.0" layoutY="354.0" text="Date Check">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label layoutX="58.0" layoutY="427.0" text="Date Return">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <TextField layoutX="149.0" layoutY="144.0" prefHeight="26.0" prefWidth="38.0" />
+      <TextField layoutX="149.0" layoutY="207.0" />
+      <TextField layoutX="149.0" layoutY="279.0" />
+      <TextField layoutX="149.0" layoutY="350.0" />
+      <TextField layoutX="149.0" layoutY="423.0" />
+      <Button layoutX="138.0" layoutY="522.0" mnemonicParsing="false" prefHeight="43.0" prefWidth="124.0" text="Add" />
+      <Label alignment="CENTER" layoutX="79.0" layoutY="476.0" prefHeight="26.0" prefWidth="242.0" text="Please fill out completely" textFill="RED">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

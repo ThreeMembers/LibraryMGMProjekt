@@ -16,6 +16,7 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.PopupWindow;
 import javafx.stage.Stage;
@@ -53,16 +54,31 @@ public class MainHolderController implements Initializable {
             try {
                 Parent root = FXMLLoader.load(getClass().getResource("/view/accountDetail.fxml"));
                 Stage stage = new Stage();
+
                 Scene scene = new Scene(root);
+                scene.setFill(Color.TRANSPARENT);
                 stage.setTitle("Profile");
                 stage.setScene(scene);
+
+                stage.initModality(Modality.APPLICATION_MODAL);
+                //stage.initStyle(StageStyle.UNDECORATED);
                 stage.initStyle(StageStyle.TRANSPARENT);
                 stage.show();
             } catch (Exception e) {
                 e.printStackTrace();
             }
     }
-
+    public void openSearch(ActionEvent event){
+        try {
+            FXMLLoader loader;
+            loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/view/search.fxml"));
+            Node search = loader.load();
+            this.frameHolder.setCenter(search);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try{
@@ -133,6 +149,5 @@ public class MainHolderController implements Initializable {
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 }

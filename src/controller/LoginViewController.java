@@ -23,6 +23,7 @@ public class LoginViewController implements Initializable {
             Parent root = loader.load();
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             stage.close();
+            stage = new Stage();
             stage.setScene(new Scene(root));
             stage.setMaximized(true);
             stage.show();

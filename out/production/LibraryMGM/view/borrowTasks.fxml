@@ -15,21 +15,21 @@
 
 <AnchorPane accessibleText="borrowpage" prefHeight="620.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BorrowTaskController">
    <children>
-      <AnchorPane prefHeight="49.0" prefWidth="880.0" style="-fx-background-color: #c44569;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <AnchorPane prefHeight="50.0" prefWidth="880.0" style="-fx-background-color: #c44569;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label alignment="CENTER_RIGHT" layoutX="730.0" layoutY="10.0" text="Borrow Task" AnchorPane.rightAnchor="28.400000000000006" AnchorPane.topAnchor="10.0">
                <font>
                   <Font name="Impact" size="24.0" />
                </font>
             </Label>
-            <Button id="add" fx:id="btnadd" layoutX="22.0" layoutY="5.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" stylesheets="@../css/menuSide.css" AnchorPane.leftAnchor="22.0" AnchorPane.topAnchor="5.0">
+            <Button id="add" fx:id="btnadd" layoutX="22.0" layoutY="5.0" mnemonicParsing="false" onAction="#openAdd" prefHeight="45.0" prefWidth="45.0" stylesheets="@../css/menuSide.css" AnchorPane.leftAnchor="22.0" AnchorPane.topAnchor="5.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                <graphic>
-                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../sample/imageView/button.png" />
+                        <Image url="@../sample/imageView/add-file.png" />
                      </image>
                   </ImageView>
                </graphic>
@@ -42,7 +42,7 @@
                <content>
                   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="880.0">
                      <children>
-                        <HBox fx:id="title" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="880.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        <HBox alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="880.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                            <children>
                               <Label fx:id="lbID" alignment="CENTER" prefHeight="50.0" prefWidth="80.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="ID">
                                  <font>
@@ -72,9 +72,9 @@
             </Tab>
             <Tab text="Borrow Record">
                <content>
-                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="880.0">
                      <children>
-                        <HBox fx:id="title" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="880.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        <HBox fx:id="title" alignment="CENTER_LEFT" minHeight="50.0" minWidth="880.0" prefHeight="50.0" prefWidth="880.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                            <children>
                               <Label alignment="CENTER" prefHeight="50.0" prefWidth="80.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="ID">
                                  <font>

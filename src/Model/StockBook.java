@@ -2,9 +2,9 @@ package Model;
 
 import org.json.simple.JSONObject;
 
-public class StockBook {
-    private String id;
-    private Book collection;
+public class StockBook extends Model{
+
+    private Book collection;//book name
     private Quality quality;
     private int releaseYear;
     private boolean isBorrow;
@@ -16,28 +16,23 @@ public class StockBook {
         this.isBorrow = isBorrow;
     }
 
-    public StockBook(String id) {
+    public StockBook(int id) {
         this.id = id;
     }
 
     public StockBook() {
     }
 
-    public StockBook(String id, Book book, Quality quality, int releaseYear, boolean isBorrow) {
-        this.id = id;
+    public StockBook(int id, Book book, Quality quality, int releaseYear, boolean isBorrow) {
+        super(id);
         this.collection = book;
         this.quality = quality;
         this.releaseYear = releaseYear;
         this.isBorrow = isBorrow;
     }
 
-	public String getId() {
-		return id;
-	}
 
-	public void setId(String id) {
-		this.id = id;
-	}
+
 
 	public Book getBook() {
 		return collection;
@@ -72,9 +67,8 @@ public class StockBook {
 	}
 
 	@SuppressWarnings("unchecked")
-	public Object toJSON() {
-		JSONObject element = new JSONObject();
-		element.put("id", this.id);
+	public JSONObject toJSON() {
+		JSONObject element = super.toJSON();
 		element.put("collection", this.collection.toJSON());
 		element.put("quality", this.quality.toJSON());
 		element.put("releaseyear", this.releaseYear);

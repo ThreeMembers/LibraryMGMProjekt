@@ -13,7 +13,7 @@ public class accountDetailController {
     private double x, y;
     @FXML
     void dragged(MouseEvent event) {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage stage =  (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setX(event.getScreenX() - 0);
         stage.setY(event.getScreenY() - 0);
     }
