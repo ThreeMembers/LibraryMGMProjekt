@@ -13,7 +13,7 @@ import org.intellij.lang.annotations.Flow;
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
-        Parent root = FXMLLoader.load(getClass().getResource("/view/addMulti.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/view/addAuthor/addMultiAuthor.fxml"));
         primaryStage.setMinHeight(600);
         primaryStage.setMinWidth(800);
         primaryStage.setTitle("Login");
@@ -24,7 +24,6 @@ public class Main extends Application {
         //primaryStage.initStyle(StageStyle.UNDECORATED);
         primaryStage.show();
     }
-
 
     public static void main(String[] args) {
         launch(args);

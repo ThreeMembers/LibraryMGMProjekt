@@ -1,24 +1,31 @@
-package controller;
+package controller.addAuthor;
 
 import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import sample.others.JFXAutoCompleteComboBoxListener;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class SearchController implements Initializable {
+public class AddMultiAuthorController implements Initializable {
     @FXML
     private JFXComboBox<String> choice;
-    ObservableList<String> choices = FXCollections.observableArrayList("Book", "Author", "Category");
+    ObservableList<String> choices = FXCollections.observableArrayList("Male", "Female", "Gay-lee");
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         choice.setItems(choices);
-        choice.setValue("Book");
         new JFXAutoCompleteComboBoxListener<>(choice);
+    }
+    @FXML
+    void close(MouseEvent event) {
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.close();
     }
 }

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="360.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.addBook.AddSingleBookController">
+   <children>
+      <AnchorPane prefHeight="60.0" prefWidth="880.0" style="-fx-background-color: #f8a5c2;">
+         <children>
+            <Label layoutX="361.0" layoutY="15.0" text="Add Single Book">
+               <font>
+                  <Font name="Impact" size="24.0" />
+               </font>
+            </Label>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="851.0" layoutY="7.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <image>
+                  <Image url="@../../sample/imageView/close-icon.png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <VBox layoutX="14.0" layoutY="69.0" style="-fx-border-color: red;">
+         <children>
+            <ImageView fx:id="imageAdd" fitHeight="248.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+      </VBox>
+      <TextArea layoutX="236.0" layoutY="89.0" prefHeight="75.0" prefWidth="632.0" />
+      <Label layoutX="236.0" layoutY="69.0" text="Book Name">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="catechoices" layoutX="238.0" layoutY="221.0" prefHeight="26.0" prefWidth="190.0" />
+      <JFXComboBox fx:id="authorchoices" layoutX="524.0" layoutY="221.0" prefHeight="26.0" prefWidth="190.0" />
+      <Label layoutX="236.0" layoutY="193.0" text="Category">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Label layoutX="529.0" layoutY="193.0" text="Author">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="54.0" layoutY="322.0" mnemonicParsing="false" onAction="#openFileChooser" prefHeight="26.0" prefWidth="122.0" text="Choose image">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button layoutX="261.0" layoutY="305.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Add" />
+      <Button layoutX="368.0" layoutY="305.0" mnemonicParsing="false" onMouseClicked="#close" prefHeight="30.0" prefWidth="78.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Cancel" />
+   </children>
+</AnchorPane>

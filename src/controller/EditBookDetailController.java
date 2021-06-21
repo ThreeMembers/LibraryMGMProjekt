@@ -13,6 +13,7 @@ import javafx.stage.FileChooser;
 import javafx.stage.Stage;
 import javafx.scene.image.ImageView;
 import javafx.event.ActionEvent;
+import sample.others.JFXAutoCompleteComboBoxListener;
 
 import java.awt.*;
 import java.io.File;
@@ -30,10 +31,10 @@ public class EditBookDetailController implements Initializable {
     final FileChooser fc = new FileChooser();
     @FXML
     private JFXComboBox<String> choice;
-    ObservableList<String> Listchoices = FXCollections.observableArrayList("New", "New");
+    ObservableList<String> Listchoices = FXCollections.observableArrayList("New", "News", "Newss");
     @FXML
     private JFXComboBox<String> choice1;
-    ObservableList<String> Listchoices1 = FXCollections.observableArrayList("New", "New");
+    ObservableList<String> Listchoices1 = FXCollections.observableArrayList("New", "News", "Newss");
     @FXML
     void close(MouseEvent event) {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -69,5 +70,7 @@ public class EditBookDetailController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
         choice.setItems(Listchoices);
         choice1.setItems(Listchoices1);
+        new JFXAutoCompleteComboBoxListener<>(choice);
+        new JFXAutoCompleteComboBoxListener<>(choice1);
     }
 }

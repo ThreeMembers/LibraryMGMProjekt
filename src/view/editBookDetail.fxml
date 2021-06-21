@@ -14,7 +14,7 @@
 
 <AnchorPane prefHeight="450.0" prefWidth="800.0" style="-fx-background-radius: 10; -fx-border-color: black; -fx-border-width: 3; -fx-background-radius: 10;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.EditBookDetailController">
    <children>
-      <VBox id="bookframe" alignment="CENTER" layoutX="27.0" layoutY="79.0" prefHeight="258.0" prefWidth="190.0" style="-fx-border-width: 5;" stylesheets="@../css/BackgroundImg.css">
+      <VBox layoutX="25.0" layoutY="77.0" style="-fx-border-color: red;">
          <children>
             <ImageView fx:id="imageEditBookDetail" fitHeight="250.0" fitWidth="213.0" pickOnBounds="true" preserveRatio="true">
                <image>
