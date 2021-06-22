@@ -37,6 +37,8 @@ public class BorrowTaskController implements Initializable {
     @FXML
     Label lbID, lbReader, lbDate;
     @FXML
+    Label lbID1, lbReader1, lbEmployee, lbDateCheck, lbDateReturn;
+    @FXML
     private Button btnadd;
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -57,6 +59,9 @@ public class BorrowTaskController implements Initializable {
             }
         }
         this.borrowRequestContent.getChildren().addAll(requestItems);
+        this.lbID.prefWidthProperty().bind(this.title.widthProperty().divide(11));
+        this.lbReader.prefWidthProperty().bind(this.title.widthProperty().divide(2.2));
+        this.lbDate.prefWidthProperty().bind(this.title.widthProperty().divide(2.2));
         //Add borrow record items
         List<Node> recordItems = new ArrayList<>();
         for (int i = 0; i < 50; i++) {
@@ -73,12 +78,15 @@ public class BorrowTaskController implements Initializable {
                 ex.printStackTrace();
             }
         }
-        this.borrowRecordContent.getChildren().addAll(recordItems);
 
-        this.lbID.prefWidthProperty().bind(this.title.widthProperty().divide(11));
-        this.lbReader.prefWidthProperty().bind(this.title.widthProperty().divide(2.2));
-        this.lbDate.prefWidthProperty().bind(this.title.widthProperty().divide(2.2));
         //this.lbColumn.prefWidthProperty().bind(this.title.widthProperty().divide(4.4));
+
+        this.borrowRecordContent.getChildren().addAll(recordItems);
+        this.lbID1.prefWidthProperty().bind(this.title.widthProperty().divide(11));
+        this.lbReader1.prefWidthProperty().bind(this.title.widthProperty().divide(4.4));
+        this.lbEmployee.prefWidthProperty().bind(this.title.widthProperty().divide(4.4));
+        this.lbDateCheck.prefWidthProperty().bind(this.title.widthProperty().divide(4.4));
+        this.lbDateReturn.prefWidthProperty().bind(this.title.widthProperty().divide(4.4));
 
         tooltip();
         }

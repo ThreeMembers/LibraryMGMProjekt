@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane fx:id="container" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InputandRemove.DetailinputItemController">
+    <children>
+        <HBox prefHeight="40.0" prefWidth="880.0">
+            <children>
+                <Label fx:id="lbStock" alignment="CENTER" prefHeight="40.0" prefWidth="440.0" text="Stock" />
+                <Label fx:id="lbQuantity" alignment="CENTER" prefHeight="40.0" prefWidth="220.0" text="Quantity" />
+                <Label fx:id="lbReleaseYear" alignment="CENTER" prefHeight="40.0" prefWidth="220.0" text="Release Year" />
+            </children>
+        </HBox>
+        <Button fx:id="detailButton" blendMode="MULTIPLY" mnemonicParsing="false" prefHeight="40.0" prefWidth="880.0" style="-fx-background-color: #f5cd79;" />
+    </children>
+</StackPane>

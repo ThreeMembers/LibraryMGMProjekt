@@ -32,7 +32,7 @@
             <content>
               <AnchorPane minHeight="0.0" minWidth="0.0">
                      <children>
-                        <HBox fx:id="title" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="870.0" style="-fx-background-color: green;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+                        <HBox fx:id="title" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="880.0" style="-fx-background-color: green;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                            <children>
                               <Label fx:id="lbID" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="80.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="ID">
                                  <font>
@@ -54,7 +54,7 @@
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="48.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Stocks">
+                              <Label fx:id="lbstocks" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="48.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Stocks">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
@@ -104,35 +104,35 @@
             </Tab>
           <Tab text="Stock Book View">
             <content>
-              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="880.0">
                      <children>
                         <HBox fx:id="title1" alignment="CENTER_LEFT" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="880.0" style="-fx-background-color: green;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                            <children>
-                              <Label fx:id="lbID1" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="460.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Book Name">
+                              <Label fx:id="lbBook" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="460.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Book Name">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="lbName1" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="140.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Quality">
+                              <Label fx:id="lbQuality" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="140.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Quality">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="lbAuthor1" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="140.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Release Year">
+                              <Label fx:id="lbRelease" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="140.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Release Year">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
-                              <Label fx:id="lbCategory1" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="140.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Is Borrow">
+                              <Label fx:id="lbIsBorrow" alignment="CENTER" maxWidth="1.7976931348623157E308" prefHeight="50.0" prefWidth="140.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Is Borrow">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
                            </children>
                         </HBox>
-                        <ScrollPane layoutY="50.0">
+                        <ScrollPane layoutY="50.0" prefHeight="673.0" prefWidth="1190.0">
                            <content>
-                              <VBox prefHeight="490.0" prefWidth="880.0" />
+                              <VBox fx:id="stockBookContent" prefHeight="490.0" prefWidth="880.0" />
                            </content>
                         </ScrollPane>
                      </children></AnchorPane>
