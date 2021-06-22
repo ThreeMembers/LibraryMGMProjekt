@@ -50,13 +50,13 @@
             <Font name="System Bold" size="12.0" />
          </font>
       </Label>
-      <TextField editable="false" layoutX="200.0" layoutY="103.0" prefHeight="26.0" prefWidth="209.0" />
-      <TextField editable="false" layoutX="200.0" layoutY="157.0" prefHeight="26.0" prefWidth="210.0" />
-      <TextField editable="false" layoutX="199.0" layoutY="208.0" prefHeight="26.0" prefWidth="210.0" />
-      <TextField editable="false" layoutX="200.0" layoutY="266.0" prefHeight="26.0" prefWidth="60.0" />
-      <TextField editable="false" layoutX="200.0" layoutY="316.0" prefHeight="26.0" prefWidth="60.0" />
-      <TextField editable="false" layoutX="200.0" layoutY="361.0" />
-      <TextField editable="false" layoutX="200.0" layoutY="418.0" />
+      <TextField fx:id="tfuser" editable="false" layoutX="200.0" layoutY="103.0" prefHeight="26.0" prefWidth="209.0" />
+      <TextField fx:id="tfpwd" editable="false" layoutX="200.0" layoutY="157.0" prefHeight="26.0" prefWidth="210.0" />
+      <TextField fx:id="tfreal" editable="false" layoutX="199.0" layoutY="208.0" prefHeight="26.0" prefWidth="210.0" />
+      <TextField fx:id="tfage" editable="false" layoutX="200.0" layoutY="266.0" prefHeight="26.0" prefWidth="60.0" />
+      <TextField fx:id="tfgender" editable="false" layoutX="200.0" layoutY="316.0" prefHeight="26.0" prefWidth="60.0" />
+      <TextField fx:id="tfcode" editable="false" layoutX="200.0" layoutY="361.0" />
+      <TextField fx:id="tfregister" editable="false" layoutX="200.0" layoutY="418.0" />
       <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="671.0" layoutY="-1.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0">
          <image>
             <Image url="@../sample/imageView/close-icon.png" />

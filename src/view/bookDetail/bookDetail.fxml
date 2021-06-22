@@ -7,6 +7,7 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
@@ -29,63 +30,37 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <VBox id="bookframe" alignment="CENTER" layoutX="90.0" layoutY="68.0" prefHeight="258.0" prefWidth="190.0" style="-fx-border-width: 5;" stylesheets="@../../css/BackgroundImg.css" AnchorPane.rightAnchor="686.8" AnchorPane.topAnchor="68.0">
+      <VBox id="bookframe" alignment="CENTER" layoutX="50.0" layoutY="70.0" prefHeight="258.0" prefWidth="190.0" style="-fx-border-width: 5;" stylesheets="@../../css/BackgroundImg.css" AnchorPane.rightAnchor="726.8" AnchorPane.topAnchor="70.0">
          <children>
-            <ImageView fitHeight="250.0" fitWidth="213.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fx:id="imgBook" fitHeight="250.0" fitWidth="213.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@../../sample/imageView/harry.jpg" />
                </image>
             </ImageView>
          </children>
       </VBox>
-      <Label layoutX="341.0" layoutY="93.0" text="Name " AnchorPane.rightAnchor="615.8" AnchorPane.topAnchor="93.0">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="340.0" layoutY="227.0" text="Author" AnchorPane.rightAnchor="613.6" AnchorPane.topAnchor="227.0">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="340.0" layoutY="163.0" text="Category" AnchorPane.rightAnchor="600.0" AnchorPane.topAnchor="163.0">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="479.0" layoutY="284.0" prefHeight="26.0" prefWidth="48.0" text="Stocks" AnchorPane.rightAnchor="473.0" AnchorPane.topAnchor="284.0">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="418.0" layoutY="83.0" prefHeight="40.0" prefWidth="451.0" style="-fx-border-color: black;" text="Suka Blyat " AnchorPane.rightAnchor="130.79999999999995" AnchorPane.topAnchor="83.0">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="417.0" layoutY="159.0" prefHeight="30.0" prefWidth="282.0" style="-fx-border-color: black;" text="Unknown" AnchorPane.rightAnchor="300.6" AnchorPane.topAnchor="159.0">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label alignment="CENTER" layoutX="418.0" layoutY="223.0" prefHeight="30.0" prefWidth="282.0" style="-fx-border-color: black;" text="Unknown" AnchorPane.rightAnchor="299.6" AnchorPane.topAnchor="223.0">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="340.0" layoutY="287.0" prefHeight="20.0" prefWidth="66.0" text="Available" AnchorPane.rightAnchor="593.6" AnchorPane.topAnchor="287.0">
-         <font>
-            <Font name="System Bold" size="14.0" />
-         </font>
-      </Label>
-      <Label layoutX="543.0" layoutY="282.0" prefHeight="30.0" prefWidth="35.0" style="-fx-border-color: black;" />
-      <Button layoutX="420.0" layoutY="282.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="35.0" style="-fx-background-color: #32ff7e;" AnchorPane.rightAnchor="544.8" AnchorPane.topAnchor="282.0" />
+      <Pane layoutX="289.0" layoutY="282.0">
+         <children>
+            <Label alignment="CENTER" contentDisplay="CENTER" layoutX="139.0" layoutY="2.0" prefHeight="26.0" prefWidth="48.0" text="Stocks">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label layoutY="5.0" prefHeight="20.0" prefWidth="66.0" text="Available">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbStock" layoutX="203.0" prefHeight="30.0" prefWidth="35.0" style="-fx-border-color: black;" />
+            <Button fx:id="btnAvai" layoutX="80.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="35.0" style="-fx-background-color: #32ff7e;" />
+         </children>
+      </Pane>
       <ScrollPane layoutY="368.0" prefHeight="332.0" prefWidth="1000.0">
          <content>
             <VBox prefHeight="330.0" prefWidth="998.0" />
          </content>
       </ScrollPane>
-      <Button layoutX="630.0" layoutY="277.0" mnemonicParsing="false" onAction="#openEditBookDetail" prefHeight="40.0" prefWidth="84.0" style="-fx-background-color: transparent; -fx-background-radius: 25; -fx-background-color: #0984e3;" text="Edit">
+      <Button layoutX="820.0" layoutY="308.0" mnemonicParsing="false" onAction="#openEditBookDetail" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: transparent; -fx-background-radius: 10; -fx-background-color: #1dd1a1;" text="Edit">
          <graphic>
             <ImageView fitHeight="23.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -100,5 +75,24 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
+      <Pane layoutX="289.0" layoutY="70.0" prefHeight="200.0" prefWidth="698.0">
+         <children>
+            <Label fx:id="lbName" alignment="TOP_LEFT" prefHeight="100.0" prefWidth="698.0" text="Name" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbCate" layoutY="100.0" text="Category">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <Label fx:id="lbAuthor" layoutY="120.0" text="Label">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </Pane>
    </children>
 </AnchorPane>

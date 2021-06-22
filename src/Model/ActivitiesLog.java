@@ -55,9 +55,11 @@ public class ActivitiesLog extends Model{
 	@Override
 	public JSONObject toJSON() {
 		JSONObject element = super.toJSON();
-		element.put("username", this.account.toJSON(Account.id_name));
+		if(this.account != null)
+			element.put("username", this.account.toJSON(Account.id_name));
 		element.put("messeger", this.activitiesMessage.getMessage());
-		element.put("datetime", this.input.toJSON());
+		if(this.input != null)
+			element.put("datetime", this.input.toJSON());
 		return element;
 	}
     

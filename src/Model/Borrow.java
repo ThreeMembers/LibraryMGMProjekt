@@ -48,6 +48,9 @@ public class Borrow extends Model{
 			this.returnDate = Date.addStatic(checkDate, borrow_time);
 		}
     }
+    public void setReturnDate(Date returnDate) {
+    	this.returnDate = returnDate;
+    }
 
     public Borrow(int id) {
         super(id);
@@ -93,11 +96,61 @@ public class Borrow extends Model{
 	@Override
 	public JSONObject toJSON() {
 		JSONObject element = super.toJSON();
-		element.put("reader", this.reader.toJSON(Account.with_per_dateleft));
-		element.put("employee", this.employee.toJSON(Account.id_name));
-		element.put("checkdate", this.checkDate.toJSON());
-		element.put("returndate", this.returnDate.toJSON());
+		if(this.reader != null)
+			element.put("reader", this.reader.toJSON(Account.with_per_dateleft));
+		if(this.employee != null)
+			element.put("employee", this.employee.toJSON(Account.id_name));
+		if(this.checkDate != null)
+			element.put("checkdate", this.checkDate.toJSON());
+		if(this.returnDate != null)
+			element.put("returndate", this.returnDate.toJSON());
 		element.put("inprocess", this.inProcess);
 		return element;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((checkDate == null) ? 0 : checkDate.hashCode());
+		result = prime * result + ((employee == null) ? 0 : employee.hashCode());
+		result = prime * result + (inProcess ? 1231 : 1237);
+		result = prime * result + ((reader == null) ? 0 : reader.hashCode());
+		result = prime * result + ((returnDate == null) ? 0 : returnDate.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Borrow other = (Borrow) obj;
+		if (checkDate == null) {
+			if (other.checkDate != null)
+				return false;
+		} else if (!checkDate.equals(other.checkDate))
+			return false;
+		if (employee == null) {
+			if (other.employee != null)
+				return false;
+		} else if (!employee.equals(other.employee))
+			return false;
+		if (inProcess != other.inProcess)
+			return false;
+		if (reader == null) {
+			if (other.reader != null)
+				return false;
+		} else if (!reader.equals(other.reader))
+			return false;
+		if (returnDate == null) {
+			if (other.returnDate != null)
+				return false;
+		} else if (!returnDate.equals(other.returnDate))
+			return false;
+		return true;
 	}
 }

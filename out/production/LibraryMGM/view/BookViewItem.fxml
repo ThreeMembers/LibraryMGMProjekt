@@ -10,7 +10,7 @@
       <HBox>
          <children>
             <Label fx:id="lbID" alignment="CENTER" prefHeight="40.0" prefWidth="80.0" text="ID" />
-            <Label fx:id="lbName" alignment="CENTER" prefHeight="40.0" prefWidth="400.0" text="Book's Name" />
+            <Label fx:id="lbName" prefHeight="40.0" prefWidth="400.0" text="Book's Name" />
             <Label fx:id="lbAuthor" alignment="CENTER" prefHeight="40.0" prefWidth="176.0" text="Written by" />
             <Label fx:id="lbCategory" alignment="CENTER" prefHeight="40.0" prefWidth="176.0" text="Category" />
             <Label fx:id="lbStocks" alignment="CENTER" prefHeight="40.0" prefWidth="48.0" text="Stocks" />

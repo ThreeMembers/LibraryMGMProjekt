@@ -44,9 +44,42 @@ public class Input extends Model{
 	@Override
 	public JSONObject toJSON() {
 		JSONObject element = super.toJSON();
-		element.put("employee", this.employee.toJSON(Account.id_name));
-		element.put("inputDate", this.inputDate.toJSON());
+		if(this.employee != null)
+			element.put("employee", this.employee.toJSON(Account.id_name));
+		if(this.inputDate != null)
+			element.put("inputdate", this.inputDate.toJSON());
 		return element;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((employee == null) ? 0 : employee.hashCode());
+		result = prime * result + ((inputDate == null) ? 0 : inputDate.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		Input other = (Input) obj;
+		if (employee == null) {
+			if (other.employee != null)
+				return false;
+		} else if (!employee.equals(other.employee))
+			return false;
+		if (inputDate == null) {
+			if (other.inputDate != null)
+				return false;
+		} else if (!inputDate.equals(other.inputDate))
+			return false;
+		return true;
 	}
 
     

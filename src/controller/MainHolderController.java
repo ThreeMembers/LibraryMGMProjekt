@@ -11,12 +11,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import sample.others.FileWorking;
 
 import java.io.IOException;
 import java.net.URL;
@@ -31,10 +33,9 @@ public class MainHolderController implements Initializable {
     JFXButton btnOpenMenu;
     @FXML
     Button btnOpenAccount;
-    @FXML
+
     private Stage stage;
-    @FXML
-    private Scene scene;
+
     private boolean isOpen = false;
 
     public void openMenu(){
@@ -54,6 +55,7 @@ public class MainHolderController implements Initializable {
                 Scene scene = new Scene(root);
                 scene.setFill(Color.TRANSPARENT);
                 stage.setTitle("Profile");
+                stage.setAlwaysOnTop(true);
                 stage.setScene(scene);
 
                 stage.initModality(Modality.APPLICATION_MODAL);
@@ -75,6 +77,15 @@ public class MainHolderController implements Initializable {
             e.printStackTrace();
         }
     }
+
+    private void clearSaveData(){
+        FileWorking.writeToFile("{}");
+    }
+    public void setRoot(Scene scene){
+        stage = (Stage) scene.getWindow();
+        stage.setOnCloseRequest(windowEvent -> clearSaveData());
+    }
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         try{

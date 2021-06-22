@@ -8,6 +8,7 @@
 }
 #search{
     -fx-background-color: linear-gradient(to right top, #f05fe2, #d35ee7, #b25eea, #8c5feb, #5d5fea);
+    -fx-background-radius: 10px;
 }
 #bookframe{
     -fx-border-color: linear-gradient(to right top, #d17b6b, #dc777b, #e37490, #e375a9, #dc7ac3, #b68ee8, #7ba3fd, #00b4ff, #00ceff, #00e3e7, #00f3ac, #6ffb5f);

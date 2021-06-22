@@ -6,7 +6,8 @@ import java.util.Base64;
 import org.json.simple.JSONObject;
 
 public class Account extends Model {
-	public static final int avaible_date = 100; 
+	public static final int avaible_date = 100;
+
 	protected Permission idPermission;
 	protected String username;
 	protected String userpassword;
@@ -107,6 +108,8 @@ public class Account extends Model {
 	public static final int id_name_dateleft = 2;
 	public static final int id_name_token = 3;
 	public static final int with_per_dateleft = 4;
+	public static final int name_token_per = 5;
+	public static final int except_password = 6;
 	
 	public JSONObject toJSON(int mode) {
 		switch (mode) {
@@ -118,6 +121,10 @@ public class Account extends Model {
 			return toJSON3();
 		case 4:
 			return toJSON4();
+		case 5:
+			return toJSON5();
+		case 6:
+			return toJSON6();
 		default:
 			return toJSONFull();
 		}
@@ -129,22 +136,30 @@ public class Account extends Model {
 		element.put("id", this.id);
 		element.put("age", this.age);
 		element.put("dateleft", this.getDateLeft());
-		element.put("expiration", this.expirationDate.toJSON());
+		if(this.expirationDate != null)
+			element.put("expiration", this.expirationDate.toJSON());
 		element.put("gender", this.gender);
-		element.put("idpermission", this.idPermission.toJSONPositionOnly());		
-		element.put("register", this.registerDate.toJSON());
-		element.put("realname", this.realname);
+		if(this.idPermission != null)
+			element.put("idpermission", this.idPermission.toJSONPositionOnly());
+		if(this.registerDate != null)
+			element.put("register", this.registerDate.toJSON());
+		if(this.realname != null)
+			element.put("realname", this.realname);
 		element.put("token", this.getToken());
-		element.put("secretcode", this.secretCode);
-		element.put("username", this.username);
-		element.put("userpassword", this.userpassword);
+		if(this.secretCode != null)
+			element.put("secretcode", this.secretCode);
+		if(this.username != null)
+			element.put("username", this.username);
+		if(this.userpassword != null)
+			element.put("userpassword", this.userpassword);
 		return element;
 	}
 	@SuppressWarnings("unchecked")
 	public JSONObject toJSON1() {
 		JSONObject element = new JSONObject();
 		element.put("id", this.id);
-		element.put("username", this.username);
+		if(this.username != null)
+			element.put("username", this.username);
 		return element;
 	}
 	@SuppressWarnings("unchecked")
@@ -152,7 +167,8 @@ public class Account extends Model {
 		JSONObject element = new JSONObject();
 		element.put("id", this.id);
 		element.put("dateleft", this.getDateLeft());
-		element.put("username", this.username);
+		if(this.username != null)
+			element.put("username", this.username);
 		return element;
 	}
 	@SuppressWarnings("unchecked")
@@ -160,7 +176,8 @@ public class Account extends Model {
 		JSONObject element = new JSONObject();
 		element.put("id", this.id);
 		element.put("token", this.getToken());
-		element.put("username", this.username);
+		if(this.username != null)
+			element.put("username", this.username);
 		return element;
 	}
 	@SuppressWarnings("unchecked")
@@ -168,11 +185,46 @@ public class Account extends Model {
 		JSONObject element = new JSONObject();
 		element.put("id", this.id);
 		element.put("dateleft", this.getDateLeft());
-		element.put("idpermission", this.idPermission.toJSONPositionOnly());
-		element.put("username", this.username);
+		if(this.idPermission != null)
+			element.put("idpermission", this.idPermission.toJSONPositionOnly());
+		if(this.username != null)
+			element.put("username", this.username);
 		return element;
 	}
-	
+	@SuppressWarnings("unchecked")
+	public JSONObject toJSON5() {
+		JSONObject element = new JSONObject();
+		element.put("id", this.id);
+		element.put("dateleft", this.getDateLeft());
+		if(this.idPermission != null)
+			element.put("idpermission", this.idPermission.toJSONPositionOnly());
+		element.put("token", this.getToken());
+		if(this.username != null)
+			element.put("username", this.username);
+		return element;
+	}
+	@SuppressWarnings("unchecked")
+	public JSONObject toJSON6() {
+		JSONObject element = new JSONObject();
+		element.put("id", this.id);
+		element.put("age", this.age);
+		element.put("dateleft", this.getDateLeft());
+		if(this.expirationDate != null)
+			element.put("expiration", this.expirationDate.toJSON());
+		element.put("gender", this.gender);
+		if(this.idPermission != null)
+			element.put("idpermission", this.idPermission.toJSONPositionOnly());
+		if(this.registerDate != null)
+			element.put("register", this.registerDate.toJSON());
+		if(this.realname != null)
+			element.put("realname", this.realname);
+		element.put("token", this.getToken());
+		if(this.secretCode != null)
+			element.put("secretcode", this.secretCode);
+		if(this.username != null)
+			element.put("username", this.username);
+		return element;
+	}
 	
 	public Account(int id, Permission idPermission, String username, String userpassword, String realname, int age,
 			boolean gender, String secretCode, Date registerDate, Date expirationDate) {
@@ -213,6 +265,33 @@ public class Account extends Model {
 		setExpirationDate(registerDate.add(Account.avaible_date));
 		setToken();
 		//getDateLeft();
+	}
+	
+	public Account(
+			int id, 
+			Permission idPermission, 
+			String username, 
+			String userpassword, 
+			String realname, 
+			int age, 
+			boolean gender, 
+			String secretCode) 
+	{
+		super(id);
+		this.idPermission = idPermission;
+		this.username = username;
+		this.userpassword = userpassword;
+		this.realname = realname == null ? "NO INFO" : realname;
+		this.age = age;
+		this.gender = gender;
+		this.secretCode = secretCode == null ? "NO INFO" : secretCode;
+		setToken();
+		//getDateLeft();
+	}
+	
+	public Account(int id, String username){
+		super(id);
+		this.username = username;
 	}
 
 	public Account(int id) {

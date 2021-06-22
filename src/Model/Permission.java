@@ -137,7 +137,8 @@ public class Permission extends Model {
 	public JSONObject toJSONPositionOnly() {
 		JSONObject element = new JSONObject();
 		element.put("id", this.id);
-		element.put("position", this.position);
+		if(this.position != null)
+			element.put("position", this.position);
 		return element;
 	}
 

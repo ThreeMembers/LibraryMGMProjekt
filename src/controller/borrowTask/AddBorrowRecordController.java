@@ -28,6 +28,7 @@ public class AddBorrowRecordController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
+
         readerchoice.setItems(Listreaderchoice);
         new JFXAutoCompleteComboBoxListener<>(readerchoice);
         bookchoice.setItems(Listbookchoices);

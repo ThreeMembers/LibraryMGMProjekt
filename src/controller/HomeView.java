@@ -1,8 +1,6 @@
 package controller;
 
-import Model.Author;
 import Model.Book;
-import Model.Category;
 import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -13,13 +11,28 @@ import javafx.scene.Node;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+import sample.others.AuthenticationClient;
+import sample.others.ModelParse;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
 public class HomeView implements Initializable {
+
+    public static String bookURL = "http://localhost:8080/LibraryRestAPI/webapi/books/";
+    public static String authorURL = "http://localhost:8080/LibraryRestAPI/webapi/authors/";
+
+
     @FXML
     VBox bookContent = new VBox();
     @FXML
@@ -41,43 +54,57 @@ public class HomeView implements Initializable {
         catechoices.setValue("Single");
         authorchoices.setItems(authorListchoices);
         authorchoices.setValue("Book");
-        Book temp = new Book(
-                1,
-                "UI Design",
-                new Author(
-                        1,
-                        "KAKAKA",
-                        20,
-                        20,
-                        true),
-                new Category(
-                        1,
-                        "Good",
-                        "nothing break"),
-                "",
-                0,
-                true
-        );
-        List<Node> bookItems = new ArrayList<>();
-        for(int i = 0; i < 50; i++){
 
-            try{
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/view/BookViewItem.fxml"));
-                Node e = loader.load();
-                BookViewItemController bookViewItemController = loader.getController();
-                bookViewItemController.setBook(temp);
-                bookItems.add(e);
-            }catch (Exception ex){
-                System.out.println(ex.getMessage());
-                ex.printStackTrace();
-            }
-        }
-        this.bookContent.getChildren().addAll(bookItems);
+        loadBooks();
+
 
         this.lbID.prefWidthProperty().bind(this.title.widthProperty().divide(11));
         this.lbName.prefWidthProperty().bind(this.title.widthProperty().divide(2.2));
         this.lbAuthor.prefWidthProperty().bind(this.title.widthProperty().divide(5));
         this.lbCategory.prefWidthProperty().bind(this.title.widthProperty().divide(5));
+    }
+
+    public void loadBooks() {
+        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new AuthenticationClient()).build();
+        Request request = new Request.Builder().url(bookURL).build();
+        try {
+            Response response = client.newCall(request).execute();
+            JSONParser parser = new JSONParser();
+            //JSONObject object = (JSONObject) parser.parse(response.body().string());
+
+            List<Book> bookList = new ArrayList<>();
+
+            JSONArray array = (JSONArray) parser.parse(response.body().string());
+            for (Object item : array) {
+                JSONObject bookObject = (JSONObject) item;
+                Book book = ModelParse.getBook(bookObject.toString());
+                bookList.add(book);
+            }
+
+            List<Node> nodeList = new ArrayList<>();
+            int i = 0;
+            for (Book book : bookList) {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/view/BookViewItem.fxml"));
+                Node node = loader.load();
+                BookViewItemController itemController = loader.getController();
+                itemController.setBook(book);
+                if(i % 2 != 0){
+                    itemController.setFill("#74b9ff");
+                }
+                nodeList.add(node);
+                i++;
+            }
+            this.bookContent.getChildren().addAll(nodeList);
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
+    }
+    public void loadStocks(){
+
+    }
+    public void loadAuthors(){
+        OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new AuthenticationClient()).build();
+        Request request = new Request.Builder().url(bookURL).build();
     }
 }

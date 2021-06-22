@@ -36,8 +36,10 @@ public class Quality extends Model{
 	@Override
 	public JSONObject toJSON() {
 		JSONObject element = super.toJSON();
-		element.put("situation", this.situation);
-		element.put("description", this.description);
+		if(this.situation != null)
+			element.put("situation", this.situation);
+		if(this.description != null)
+			element.put("description", this.description);
 		return element;
 	}
 	

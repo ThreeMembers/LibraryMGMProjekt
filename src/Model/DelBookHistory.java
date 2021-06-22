@@ -55,9 +55,48 @@ public class DelBookHistory extends Model{
 	@Override
 	public JSONObject toJSON() {
 		JSONObject element = super.toJSON();
-		element.put("employee", this.employee.toJSON(Account.id_name));
-		element.put("deldate", this.delDate.toJSON());
+		if(this.employee != null)
+			element.put("employee", this.employee.toJSON(Account.id_name));
+		if(this.delDate != null)
+			element.put("deldate", this.delDate.toJSON());
 		return element;
+	}
+
+	@Override
+	public int hashCode() {
+		final int prime = 31;
+		int result = super.hashCode();
+		result = prime * result + ((delDate == null) ? 0 : delDate.hashCode());
+		result = prime * result + ((employee == null) ? 0 : employee.hashCode());
+		result = prime * result + ((message == null) ? 0 : message.hashCode());
+		return result;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!super.equals(obj))
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		DelBookHistory other = (DelBookHistory) obj;
+		if (delDate == null) {
+			if (other.delDate != null)
+				return false;
+		} else if (!delDate.equals(other.delDate))
+			return false;
+		if (employee == null) {
+			if (other.employee != null)
+				return false;
+		} else if (!employee.equals(other.employee))
+			return false;
+		if (message == null) {
+			if (other.message != null)
+				return false;
+		} else if (!message.equals(other.message))
+			return false;
+		return true;
 	}
     
 }

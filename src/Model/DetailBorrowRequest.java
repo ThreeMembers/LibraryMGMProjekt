@@ -1,16 +1,16 @@
 package Model;
 
+import org.json.simple.JSONObject;
+
 public class DetailBorrowRequest {
     private BorrowRequest request;
     private Book book;
     private int quantity;
-    private boolean isAuthenticate;
 
-    public DetailBorrowRequest(BorrowRequest request, Book book, int quantity, boolean isAuthenticate) {
+    public DetailBorrowRequest(BorrowRequest request, Book book, int quantity) {
         this.request = request;
         this.book = book;
         this.quantity = quantity;
-        this.isAuthenticate = isAuthenticate;
     }
 
     public DetailBorrowRequest() {
@@ -40,11 +40,12 @@ public class DetailBorrowRequest {
         this.quantity = quantity;
     }
 
-    public boolean isAuthenticate() {
-        return isAuthenticate;
-    }
-
-    public void setAuthenticate(boolean authenticate) {
-        isAuthenticate = authenticate;
+	@SuppressWarnings("unchecked")
+	public JSONObject toJSON() {
+    	JSONObject element = new JSONObject();
+    	element.put("request", this.request.toJSON());
+    	element.put("book", this.book.toJSON());
+    	element.put("quantity", this.quantity);
+    	return element;
     }
 }
