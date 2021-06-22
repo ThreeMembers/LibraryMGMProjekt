@@ -2,8 +2,6 @@ package controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXDrawer;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -12,13 +10,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.stage.Modality;
-import javafx.stage.PopupWindow;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
@@ -106,7 +102,7 @@ public class MainHolderController implements Initializable {
                                     break;
                                 case "borrow":
                                     loader = new FXMLLoader();
-                                    loader.setLocation(getClass().getResource("/view/borrowTasks.fxml"));
+                                    loader.setLocation(getClass().getResource("/view/borrowTask/borrowTasks.fxml"));
                                     Node borrow = loader.load();
                                     if(this.frameHolder.getCenter() != null){
                                         if(this.frameHolder.getCenter().getAccessibleText().compareTo(borrow.getAccessibleText()) == 0 ){

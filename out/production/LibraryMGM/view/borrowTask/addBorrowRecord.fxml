@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="880.0" style="-fx-background-radius: 10;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AddBorrowRecordController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="880.0" style="-fx-background-radius: 10;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.borrowTask.AddBorrowRecordController">
    <children>
       <Label alignment="CENTER" layoutY="30.0" prefHeight="60.0" prefWidth="880.0" style="-fx-background-color: #ff9f43;" text="Add Borrow Record" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <font>
@@ -20,7 +20,7 @@
       </Label>
       <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="843.0" layoutY="1.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <image>
-            <Image url="@../sample/imageView/close-icon.png" />
+            <Image url="@../../sample/imageView/close-icon.png" />
          </image>
          <cursor>
             <Cursor fx:constant="HAND" />

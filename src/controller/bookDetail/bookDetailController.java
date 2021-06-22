@@ -1,4 +1,4 @@
-package controller;
+package controller.bookDetail;
 
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -16,7 +16,7 @@ import javafx.event.ActionEvent;
 public class bookDetailController {
     public void openEditBookDetail(ActionEvent event){
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/view/editBookDetail.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/view/bookDetail/editBookDetail.fxml"));
             Stage stage = new Stage();
             Scene scene = new Scene(root);
             scene.setFill(Color.TRANSPARENT);

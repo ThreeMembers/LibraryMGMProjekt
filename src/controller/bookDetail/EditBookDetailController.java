@@ -1,4 +1,4 @@
-package controller;
+package controller.bookDetail;
 
 import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.FXCollections;

@@ -7,19 +7,21 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="620.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.addBook.AddMultiBookController">
+<AnchorPane prefHeight="620.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.addCate.AddMultiCateController">
    <children>
       <ScrollPane layoutY="417.0" prefHeight="263.0" prefWidth="880.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <content>
             <TableView prefHeight="260.0" prefWidth="878.0">
                <columns>
-                  <TableColumn prefWidth="247.19994813203812" text="Category" />
-                  <TableColumn minWidth="0.0" prefWidth="292.80003356933594" text="C2" />
+                  <TableColumn prefWidth="233.60000306367874" text="Category" />
+                  <TableColumn minWidth="0.0" prefWidth="563.1999664306641" text="Description" />
+                  <TableColumn prefWidth="159.2000732421875" />
                </columns>
             </TableView>
          </content>
@@ -41,19 +43,30 @@
             </Label>
          </children>
       </AnchorPane>
-      <TextArea layoutX="124.0" layoutY="91.0" prefHeight="75.0" prefWidth="632.0" />
-      <Label layoutX="124.0" layoutY="71.0" text="Category">
+      <Label layoutX="124.0" layoutY="71.0" text="Category Name">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="124.0" layoutY="174.0" text="New">
+      <Label layoutX="124.0" layoutY="174.0" text="Description">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="572.0" layoutY="295.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Add" />
-      <Button layoutX="677.0" layoutY="295.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="78.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Delete" />
+      <Button layoutX="572.0" layoutY="295.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Add">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button layoutX="677.0" layoutY="295.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="78.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Delete">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
       <TextArea layoutX="124.0" layoutY="194.0" prefHeight="75.0" prefWidth="632.0" />
+      <TextField layoutX="124.0" layoutY="100.0" prefHeight="26.0" prefWidth="230.0" />
+      <Button layoutX="772.0" layoutY="295.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="78.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Delete All">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
    </children>
 </AnchorPane>

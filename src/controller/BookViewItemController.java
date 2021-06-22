@@ -50,7 +50,7 @@ public class BookViewItemController implements Initializable {
             clickCount = 0;
             try{
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/view/bookDetail.fxml"));
+                loader.setLocation(getClass().getResource("/view/bookDetail/bookDetail.fxml"));
                 Parent parent = loader.load();
                 //book = loader.getController();
                 Scene scene = new Scene(parent);

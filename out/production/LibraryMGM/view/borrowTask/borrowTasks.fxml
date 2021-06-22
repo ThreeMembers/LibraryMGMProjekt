@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane accessibleText="borrowpage" prefHeight="620.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.BorrowTaskController">
+<AnchorPane accessibleText="borrowpage" prefHeight="620.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.borrowTask.BorrowTaskController">
    <children>
       <AnchorPane prefHeight="50.0" prefWidth="880.0" style="-fx-background-color: #c44569;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -22,14 +22,14 @@
                   <Font name="Impact" size="24.0" />
                </font>
             </Label>
-            <Button id="add" fx:id="btnadd" layoutX="22.0" layoutY="5.0" mnemonicParsing="false" onAction="#openAdd" prefHeight="45.0" prefWidth="45.0" stylesheets="@../css/menuSide.css" AnchorPane.leftAnchor="22.0" AnchorPane.topAnchor="5.0">
+            <Button id="add" fx:id="btnadd" layoutX="22.0" layoutY="5.0" mnemonicParsing="false" onAction="#openAdd" prefHeight="45.0" prefWidth="45.0" stylesheets="@../../css/menuSide.css" AnchorPane.leftAnchor="22.0" AnchorPane.topAnchor="5.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
                <graphic>
                   <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../sample/imageView/add-file.png" />
+                        <Image url="@../../sample/imageView/add-file.png" />
                      </image>
                   </ImageView>
                </graphic>

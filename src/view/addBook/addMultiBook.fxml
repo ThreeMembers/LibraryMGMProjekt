@@ -16,7 +16,7 @@
    <children>
       <ScrollPane layoutY="417.0" prefHeight="263.0" prefWidth="880.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <content>
-            <VBox prefHeight="259.0" prefWidth="876.0" />
+            <VBox prefHeight="260.0" prefWidth="878.0" />
          </content>
       </ScrollPane>
       <AnchorPane prefHeight="60.0" prefWidth="880.0" style="-fx-background-color: #63cdda;">
@@ -64,7 +64,8 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="264.0" layoutY="288.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Add" />
-      <Button layoutX="371.0" layoutY="288.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="78.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Delete" />
+      <Button layoutX="578.0" layoutY="295.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Add" />
+      <Button layoutX="685.0" layoutY="295.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="78.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Delete" />
+      <Button layoutX="787.0" layoutY="295.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="78.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Delete All" />
    </children>
 </AnchorPane>

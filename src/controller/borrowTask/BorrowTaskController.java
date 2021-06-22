@@ -1,4 +1,4 @@
-package controller;
+package controller.borrowTask;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -46,7 +46,7 @@ public class BorrowTaskController implements Initializable {
 
             try {
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/view/borrowRequestItem.fxml"));
+                loader.setLocation(getClass().getResource("/view/borrowTask/borrowRequestItem.fxml"));
                 Node e = loader.load();
 //                BookViewItemController bookViewItemController = loader.getController();
 //                bookViewItemController.setBook(temp);
@@ -63,7 +63,7 @@ public class BorrowTaskController implements Initializable {
 
             try {
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/view/borrowRecordItem.fxml"));
+                loader.setLocation(getClass().getResource("/view/borrowTask/borrowRecordItem.fxml"));
                 Node e = loader.load();
 //                BookViewItemController bookViewItemController = loader.getController();
 //                bookViewItemController.setBook(temp);
@@ -84,7 +84,7 @@ public class BorrowTaskController implements Initializable {
         }
     //Tooltip btnadd
     public void tooltip(){
-        Tooltip btnaddToolTip = new Tooltip("Add");
+        Tooltip btnaddToolTip = new Tooltip("Add new borrow record");
         btnadd.setTooltip(btnaddToolTip);
         btnaddToolTip.setStyle("-fx-background-color:white; -fx-text-fill:black");
     }
@@ -92,7 +92,7 @@ public class BorrowTaskController implements Initializable {
     //Open add borrow record
     public void openAdd(ActionEvent event){
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/view/addBorrowRecordItem.fxml"));
+            Parent root = FXMLLoader.load(getClass().getResource("/view/borrowTask/addBorrowRecord.fxml"));
             Stage stage = new Stage();
             Scene scene = new Scene(root);
             stage.setTitle("Add Borrow Record");
