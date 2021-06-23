@@ -76,27 +76,27 @@
                      <children>
                         <HBox fx:id="title" alignment="CENTER_LEFT" minHeight="50.0" minWidth="880.0" prefHeight="50.0" prefWidth="880.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
                            <children>
-                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="80.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="ID">
+                              <Label fx:id="lbID1" alignment="CENTER" prefHeight="50.0" prefWidth="80.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="ID">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Reader">
+                              <Label fx:id="lbReader1" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Reader">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Employee">
+                              <Label fx:id="lbEmployee" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Employee">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #3498db; -fx-border-color: white;" text="DateCheck">
+                              <Label fx:id="lbDateCheck" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-background-color: #3498db; -fx-border-color: white;" text="DateCheck">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>
                               </Label>
-                              <Label alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="DateReturn">
+                              <Label fx:id="lbDateReturn" alignment="CENTER" prefHeight="50.0" prefWidth="200.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="DateReturn">
                                  <font>
                                     <Font name="Impact" size="14.0" />
                                  </font>

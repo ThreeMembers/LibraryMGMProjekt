@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+
+<StackPane fx:id="container" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AccountMGM.AccountApprovalItem">
+    <children>
+        <HBox prefHeight="40.0" prefWidth="880.0">
+            <children>
+                <Label fx:id="lbPermission" alignment="CENTER" prefHeight="40.0" prefWidth="220.0" text="Permission" />
+                <Label fx:id="lbUserName" alignment="CENTER" prefHeight="40.0" prefWidth="220.0" text="UserName" />
+                <Label fx:id="lbAge" alignment="CENTER" prefHeight="40.0" prefWidth="220.0" text="Age" />
+                <Label fx:id="lbGender" alignment="CENTER" prefHeight="50.0" prefWidth="110.0" text="Gender" />
+                <StackPane fx:id="checkboxContainer" prefHeight="40.0" prefWidth="110.0">
+                    <children>
+                        <CheckBox fx:id="cbAccept" mnemonicParsing="false" scaleX="1.5" scaleY="1.5" />
+                    </children>
+                </StackPane>
+            </children>
+        </HBox>
+    </children>
+</StackPane>

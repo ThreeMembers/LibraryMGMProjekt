@@ -125,6 +125,34 @@ public class MainHolderController implements Initializable {
                                     this.frameHolder.setCenter(borrow);
                                     openMenu();
                                     break;
+                                case "inputremovepage":
+                                    loader = new FXMLLoader();
+                                    loader.setLocation(getClass().getResource("/view/InputandRemove/InputRemove.fxml"));
+                                    Node inputremove = loader.load();
+                                    if(this.frameHolder.getCenter() != null){
+                                        if(this.frameHolder.getCenter().getAccessibleText().compareTo(inputremove.getAccessibleText()) == 0 ){
+                                            System.out.println("inputremove page");
+                                            break;
+                                        }
+                                    }
+                                    System.out.println("add inputremove page");
+                                    this.frameHolder.setCenter(inputremove);
+                                    openMenu();
+                                    break;
+                                case "AccountsMGMPage":
+                                    loader = new FXMLLoader();
+                                    loader.setLocation(getClass().getResource("/view/AccountMGM/AccountsMGM.fxml"));
+                                    Node AccountsMGM = loader.load();
+                                    if(this.frameHolder.getCenter() != null){
+                                        if(this.frameHolder.getCenter().getAccessibleText().compareTo(AccountsMGM.getAccessibleText()) == 0 ){
+                                            System.out.println("AccountsMGM page");
+                                            break;
+                                        }
+                                    }
+                                    System.out.println("add AccountsMGM page");
+                                    this.frameHolder.setCenter(AccountsMGM);
+                                    openMenu();
+                                    break;
                                 default:
                                     //about
                                     loader = new FXMLLoader();

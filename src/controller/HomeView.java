@@ -39,6 +39,8 @@ public class HomeView implements Initializable {
     @FXML
     VBox bookContent = new VBox();
     @FXML
+    VBox stockBookContent = new VBox();
+    @FXML
     private JFXComboBox<String> catechoices;
     ObservableList<String> cateListchoices = FXCollections.observableArrayList("Single", "Multi");
     @FXML
@@ -49,7 +51,9 @@ public class HomeView implements Initializable {
     HBox title;
 
     @FXML
-    Label lbID, lbName, lbAuthor, lbCategory;
+    Label lbID, lbName, lbAuthor, lbCategory, lbstocks;
+    @FXML
+    Label lbBook, lbQuality, lbRelease, lbIsBorrow;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -65,6 +69,31 @@ public class HomeView implements Initializable {
         this.lbName.prefWidthProperty().bind(this.title.widthProperty().divide(2.2));
         this.lbAuthor.prefWidthProperty().bind(this.title.widthProperty().divide(5));
         this.lbCategory.prefWidthProperty().bind(this.title.widthProperty().divide(5));
+        this.lbstocks.prefWidthProperty().bind(this.title.widthProperty().divide(18.3));
+
+
+
+        List<Node> stockBookItems = new ArrayList<>();
+        for(int i = 0; i < 50; i++){
+
+            try{
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/view/StockBookViewItem.fxml"));
+                Node e = loader.load();
+//                BookViewItemController bookViewItemController = loader.getController();
+//                bookViewItemController.setBook(temp);
+                stockBookItems.add(e);
+            }catch (Exception ex){
+                System.out.println(ex.getMessage());
+                ex.printStackTrace();
+            }
+        }
+        this.stockBookContent.getChildren().addAll(stockBookItems);
+
+        this.lbBook.prefWidthProperty().bind(this.title.widthProperty().divide(1.9));
+        this.lbQuality.prefWidthProperty().bind(this.title.widthProperty().divide(6.2));
+        this.lbRelease.prefWidthProperty().bind(this.title.widthProperty().divide(6.2));
+        this.lbIsBorrow.prefWidthProperty().bind(this.title.widthProperty().divide(6.2));
     }
 
     public void loadBooks() {

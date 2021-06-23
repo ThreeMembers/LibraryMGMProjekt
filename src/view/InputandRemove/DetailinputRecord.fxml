@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="620.0" prefWidth="880.0" style="-fx-background-radius: 10;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.InputandRemove.DetailinputRecordController">
+    <children>
+        <AnchorPane prefHeight="87.0" prefWidth="882.0" style="-fx-background-color: #a29bfe; -fx-background-radius: 10;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <AnchorPane layoutX="300.0" layoutY="33.0">
+                    <children>
+                        <Label layoutX="223.0" prefHeight="40.0" prefWidth="58.0" text="ID" textFill="WHITE">
+                            <font>
+                                <Font name="Impact" size="24.0" />
+                            </font>
+                        </Label>
+                        <Label prefHeight="40.0" prefWidth="223.0" text="Detail Input Record">
+                            <font>
+                                <Font name="Impact" size="24.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
+        <AnchorPane layoutX="2.0" layoutY="90.0" minHeight="0.0" minWidth="0.0" prefHeight="530.0" prefWidth="880.0">
+            <children>
+                <ScrollPane fitToHeight="true" fitToWidth="true" layoutY="49.0" prefHeight="475.0" prefWidth="880.0" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
+                    <content>
+                        <VBox fx:id="Detailinput" prefHeight="476.0" prefWidth="878.0" />
+                    </content>
+                </ScrollPane>
+                <HBox fx:id="title" alignment="CENTER_LEFT" prefHeight="50.0" prefWidth="880.0">
+                    <children>
+                        <Label fx:id="lbStock" alignment="CENTER" prefHeight="50.0" prefWidth="440.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Stock">
+                            <font>
+                                <Font name="Impact" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lbQuantity" alignment="CENTER" prefHeight="50.0" prefWidth="220.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Quantity">
+                            <font>
+                                <Font name="Impact" size="14.0" />
+                            </font>
+                        </Label>
+                        <Label fx:id="lbReleaseYear" alignment="CENTER" prefHeight="50.0" prefWidth="220.0" style="-fx-border-color: white; -fx-background-color: #3498db;" text="Release Year">
+                            <font>
+                                <Font name="Impact" size="14.0" />
+                            </font>
+                        </Label>
+                    </children>
+                </HBox>
+            </children>
+        </AnchorPane>
+    </children>
+</AnchorPane>

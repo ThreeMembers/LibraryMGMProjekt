@@ -43,12 +43,12 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button alignment="CENTER" layoutX="772.0" layoutY="86.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #ff9f43;" text="Delete">
+      <Button alignment="CENTER" layoutX="772.0" layoutY="86.0" mnemonicParsing="false" onAction="#delSelected" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #ff9f43;" text="Delete">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button alignment="CENTER" layoutX="772.0" layoutY="176.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #ff9f43;" text="Delete All">
+      <Button alignment="CENTER" layoutX="772.0" layoutY="176.0" mnemonicParsing="false" onAction="#delAll" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #ff9f43;" text="Delete All">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
