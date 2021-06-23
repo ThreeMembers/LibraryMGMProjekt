@@ -5,6 +5,7 @@ import Model.StockBook;
 import controller.BookViewItemController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -15,6 +16,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
+import javafx.scene.text.Font;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -30,6 +32,7 @@ import org.json.simple.parser.ParseException;
 import sample.others.ConnectionAPIOption;
 import sample.others.ModelParse;
 
+import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -90,6 +93,16 @@ public class bookDetailController {
         try {
             //nhan response tu server
             Response response = client.newCall(request).execute();
+
+            if(response.code() == 404){
+                Label label = new Label();
+                label.setText("NOT FOUND :<");
+                label.setAlignment(Pos.CENTER);
+                label.setPrefWidth(this.stockContainer.getPrefWidth());
+                label.setPrefHeight(this.stockContainer.getPrefHeight() - 10);
+                this.stockContainer.getChildren().add(label);
+                return;
+            }
 
             //bat dau phan tich body cua response
             JSONParser parser = new JSONParser();

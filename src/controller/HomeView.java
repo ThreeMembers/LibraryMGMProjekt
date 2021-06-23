@@ -51,7 +51,7 @@ public class HomeView implements Initializable {
     HBox title;
 
     @FXML
-    Label lbID, lbName, lbAuthor, lbCategory, lbstocks;
+    Label lbID, lbIDS, lbName, lbAuthor, lbCategory, lbstocks;
     @FXML
     Label lbBook, lbQuality, lbRelease, lbIsBorrow;
 
@@ -63,6 +63,7 @@ public class HomeView implements Initializable {
         authorchoices.setValue("Book");
 
         loadBooks();
+        loadStocks();
 
 
         this.lbID.prefWidthProperty().bind(this.title.widthProperty().divide(11));
@@ -71,29 +72,11 @@ public class HomeView implements Initializable {
         this.lbCategory.prefWidthProperty().bind(this.title.widthProperty().divide(5));
         this.lbstocks.prefWidthProperty().bind(this.title.widthProperty().divide(18.3));
 
-
-
-        List<Node> stockBookItems = new ArrayList<>();
-        for(int i = 0; i < 50; i++){
-
-            try{
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/view/StockBookViewItem.fxml"));
-                Node e = loader.load();
-//                BookViewItemController bookViewItemController = loader.getController();
-//                bookViewItemController.setBook(temp);
-                stockBookItems.add(e);
-            }catch (Exception ex){
-                System.out.println(ex.getMessage());
-                ex.printStackTrace();
-            }
-        }
-        this.stockBookContent.getChildren().addAll(stockBookItems);
-
-        this.lbBook.prefWidthProperty().bind(this.title.widthProperty().divide(1.9));
-        this.lbQuality.prefWidthProperty().bind(this.title.widthProperty().divide(6.2));
-        this.lbRelease.prefWidthProperty().bind(this.title.widthProperty().divide(6.2));
-        this.lbIsBorrow.prefWidthProperty().bind(this.title.widthProperty().divide(6.2));
+        this.lbIDS.prefWidthProperty().bind(this.title.widthProperty().divide(11));
+        this.lbBook.prefWidthProperty().bind(this.title.widthProperty().divide(2.2));
+        this.lbQuality.prefWidthProperty().bind(this.title.widthProperty().divide(5));
+        this.lbRelease.prefWidthProperty().bind(this.title.widthProperty().divide(8));
+        this.lbIsBorrow.prefWidthProperty().bind(this.title.widthProperty().divide(8));
     }
 
     public void loadBooks() {
@@ -133,7 +116,7 @@ public class HomeView implements Initializable {
         }
     }
     public void loadStocks(){
-        String url = ConnectionAPIOption.stocksFilterBookURL;
+        String url = ConnectionAPIOption.stocksURL;
         OkHttpClient client = ConnectionAPIOption.getClient();
         Request request = new Request.Builder().url(url).build();
         try {
@@ -154,20 +137,21 @@ public class HomeView implements Initializable {
             }
 
             List<Node> nodeList = new ArrayList<>();
-            int i = 0;
-            for (StockBook stockBookbook : stockBookList) {
+            for (StockBook stockBook : stockBookList) {
                 FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/view/bookDetail/bookDetailItem.fxml"));
+                loader.setLocation(getClass().getResource("/view/StockBookViewItem.fxml"));
                 Node node = loader.load();
-                BookDetailItemController itemController = loader.getController();
-                itemController.setStockBook(stockBookbook);
-                if(i % 2 != 0){
+                StockBookViewItemController itemController = loader.getController();
+                itemController.setStock(stockBook);
+                if(stockBook.getBook().getId() % 2 != 0){
                     itemController.setFill("#74b9ff");
                 }
+                if(stockBook.isBorrow()){
+                    itemController.setFill("#ff6b6b");
+                }
                 nodeList.add(node);
-                i++;
             }
-//            this.stockContainer.getChildren().addAll(nodeList);
+            this.stockBookContent.getChildren().addAll(nodeList);
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }

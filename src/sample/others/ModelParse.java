@@ -18,7 +18,7 @@ public class ModelParse {
             name =  object.get("name") == null ? "" : object.get("name").toString();
             age = object.get("age") == null ? 0 : Integer.parseInt(object.get("age").toString());
             numberbook = object.get("numberbook") == null ? 0 : Integer.parseInt(object.get("numberbook").toString());
-            gender = object.get("gender") == null ? false : true;
+            gender = object.get("gender") == null ? false : Boolean.getBoolean(object.get("gender").toString());
 
             Author author = new Author(id, name, age, numberbook, gender);
             return author;
@@ -64,7 +64,7 @@ public class ModelParse {
             author = object.get("author") == null ? null : getAuthor(object.get("author").toString());
             category = object.get("category") == null ? null : getCategory(object.get("category").toString());
             numberPage = object.get("numberpage") == null ? 0 : Integer.parseInt(object.get("id").toString());
-            available = object.get("available") == null ? false : true;
+            available = object.get("available") == null ? false : Boolean.getBoolean(object.get("available").toString());
 
             Book book = new Book(id, name, author, category, image, numberPage, available);
 
@@ -85,15 +85,15 @@ public class ModelParse {
 
             id = object.get("id") == null ? 0 : Integer.parseInt(object.get("id").toString());
             position = object.get("position") == null ? "" : object.get("position").toString();
-            addbook = object.get("editBk") == null ? false : true;
-            editBk = object.get("delBk") == null ? false : true;
-            delBk = object.get("available") == null ? false : true;
-            validAcc = object.get("validAcc") == null ? false : true;
-            refreshAcc = object.get("refreshAcc") == null ? false : true;
-            authenBr = object.get("authenBr") == null ? false : true;
-            registerEmpAcc = object.get("registerEmpAcc") == null ? false : true;
-            delEmp = object.get("delEmp") == null ? false : true;
-            borrow = object.get("borrow") == null ? false : true;
+            addbook = object.get("addNewBk") == null ? false : Boolean.getBoolean(object.get("addNewBk").toString());
+            editBk = object.get("editBk") == null ? false : Boolean.getBoolean(object.get("editBk").toString());
+            delBk = object.get("delBk") == null ? false : Boolean.getBoolean(object.get("delBk").toString());
+            validAcc = object.get("validAcc") == null ? false : Boolean.getBoolean(object.get("validAcc").toString());
+            refreshAcc = object.get("refreshAcc") == null ? false : Boolean.getBoolean(object.get("refreshAcc").toString());
+            authenBr = object.get("authenBr") == null ? false : Boolean.getBoolean(object.get("authenBr").toString());
+            registerEmpAcc = object.get("registerEmpAcc") == null ? false : Boolean.getBoolean(object.get("registerEmpAcc").toString());
+            delEmp = object.get("delEmp") == null ? false : Boolean.getBoolean(object.get("delEmp").toString());
+            borrow = object.get("borrow") == null ? false : Boolean.getBoolean(object.get("borrow").toString());
 
             Permission permission = new Permission(id, position, addbook, editBk, delBk, validAcc, refreshAcc, authenBr, registerEmpAcc, delEmp, borrow);
             return permission;
@@ -123,7 +123,7 @@ public class ModelParse {
             token = object.get("token") == null ? "" : object.get("token").toString();
             register = getDate(object.get("register").toString());
             expiration = getDate(object.get("expiration").toString());
-            gender = object.get("gender") == null ? false : true;
+            gender = object.get("gender") == null ? false : Boolean.getBoolean(object.get("gender").toString());
             age = object.get("age") == null ? 0 : Integer.parseInt(object.get("age").toString());
             dateLeft = object.get("dateleft") == null ? 0 : Integer.parseInt(object.get("dateleft").toString());
 
@@ -169,7 +169,7 @@ public class ModelParse {
             employee = getAccount(object.get("employee").toString());
             reader = getAccount(object.get("reader").toString());
 
-            inprocess = object.get("inprocess") == null ? false : true;
+            inprocess = object.get("inprocess") == null ? false : Boolean.getBoolean(object.get("inprocess").toString());
 
             Borrow borrow = new Borrow(id, reader, employee, checkDate, returnDate, inprocess);
             return borrow;
@@ -192,7 +192,7 @@ public class ModelParse {
             id = object.get("id") == null ? 0 : Integer.parseInt(object.get("id").toString());
             sendDate = getDate(object.get("senddate").toString());
             reader = getAccount(object.get("reader").toString());
-            isAuthen = object.get("authen") == null ? false : true;
+            isAuthen = object.get("authen") == null ? false : Boolean.getBoolean(object.get("authen").toString());
 
             BorrowRequest borrow = new BorrowRequest(id, reader, sendDate, isAuthen);
             return borrow;
@@ -257,7 +257,7 @@ public class ModelParse {
             collection = getBook(object.get("collection").toString());
             quality = getQuality(object.get("quality").toString());
             year = object.get("releaseyear") == null ? 0 : Integer.parseInt(object.get("releaseyear").toString());
-            isborrow = object.get("isborrow") == null ? false : true;
+            isborrow = object.get("isborrow") == null ? false : Boolean.getBoolean(object.get("isborrow").toString());
 
             StockBook stockBook = new StockBook(id, collection, quality, year, isborrow);
             return stockBook;
