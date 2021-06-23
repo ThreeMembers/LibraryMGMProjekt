@@ -13,7 +13,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="880.0" style="-fx-background-radius: 10;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.borrowTask.AddBorrowRecordController">
    <children>
-      <Label alignment="CENTER" layoutY="30.0" prefHeight="60.0" prefWidth="880.0" style="-fx-background-color: #ff9f43;" text="Add Borrow Record" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <Label alignment="CENTER" layoutY="30.0" prefHeight="60.0" prefWidth="880.0" style="-fx-background-color: #ff9f43;" text="Create Borrow Request" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <font>
             <Font name="Impact" size="24.0" />
          </font>

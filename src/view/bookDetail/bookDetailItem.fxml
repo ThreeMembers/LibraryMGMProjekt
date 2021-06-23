@@ -5,14 +5,15 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.StackPane?>
 
-<StackPane xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1">
+<StackPane fx:id="container" prefWidth="998.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.bookDetail.BookDetailItemController">
    <children>
       <HBox>
          <children>
-            <Label alignment="CENTER" prefHeight="40.0" prefWidth="600.0" text="Book Name" />
-            <Label alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Quality" />
-            <Label alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Release Year" />
-            <Label alignment="CENTER" prefHeight="40.0" prefWidth="98.0" text="Is Borrow" />
+            <Label fx:id="lbID" alignment="CENTER" prefHeight="40.0" prefWidth="40.0" text="Label" />
+            <Label fx:id="lbName" alignment="CENTER" prefHeight="40.0" prefWidth="560.0" text="Book Name" />
+            <Label fx:id="lbQuality" alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Quality" />
+            <Label fx:id="lbYear" alignment="CENTER" prefHeight="40.0" prefWidth="150.0" text="Release Year" />
+            <Label fx:id="lbBorrow" alignment="CENTER" prefHeight="40.0" prefWidth="98.0" text="Is Borrow" />
          </children>
       </HBox>
       <Button blendMode="MULTIPLY" mnemonicParsing="false" prefHeight="40.0" prefWidth="998.0" />

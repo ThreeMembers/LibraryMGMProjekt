@@ -20,5 +20,18 @@ public class SearchController implements Initializable {
         choice.setItems(choices);
         choice.setValue("Book");
         new JFXAutoCompleteComboBoxListener<>(choice);
+
+    }
+    public void getSelected(){
+//        String selected = choice.getValue();
+//        System.out.println(selected);
+//        int index = 0;
+//        for(String i : choices){
+//            if(selected.equals(i)){
+//                break;
+//            }
+//            index++;
+//        }
+//        System.out.println(index);
     }
 }

@@ -1,7 +1,9 @@
 package controller;
 
 import Model.Book;
+import Model.StockBook;
 import com.jfoenix.controls.JFXComboBox;
+import controller.bookDetail.BookDetailItemController;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
@@ -19,6 +21,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 import sample.others.AuthenticationClient;
+import sample.others.ConnectionAPIOption;
 import sample.others.ModelParse;
 
 import java.io.IOException;
@@ -101,7 +104,44 @@ public class HomeView implements Initializable {
         }
     }
     public void loadStocks(){
+        String url = ConnectionAPIOption.stocksFilterBookURL;
+        OkHttpClient client = ConnectionAPIOption.getClient();
+        Request request = new Request.Builder().url(url).build();
+        try {
+            //nhan response tu server
+            Response response = client.newCall(request).execute();
 
+            //bat dau phan tich body cua response
+            JSONParser parser = new JSONParser();
+            //JSONObject object = (JSONObject) parser.parse(response.body().string());
+
+            List<StockBook> stockBookList = new ArrayList<>();
+
+            JSONArray array = (JSONArray) parser.parse(response.body().string());
+            for (Object item : array) {
+                JSONObject stockBookObject = (JSONObject) item;
+                StockBook stockBook = ModelParse.getStockBook(stockBookObject.toString());
+                stockBookList.add(stockBook);
+            }
+
+            List<Node> nodeList = new ArrayList<>();
+            int i = 0;
+            for (StockBook stockBookbook : stockBookList) {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/view/bookDetail/bookDetailItem.fxml"));
+                Node node = loader.load();
+                BookDetailItemController itemController = loader.getController();
+                itemController.setStockBook(stockBookbook);
+                if(i % 2 != 0){
+                    itemController.setFill("#74b9ff");
+                }
+                nodeList.add(node);
+                i++;
+            }
+//            this.stockContainer.getChildren().addAll(nodeList);
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
     }
     public void loadAuthors(){
         OkHttpClient client = new OkHttpClient.Builder().addInterceptor(new AuthenticationClient()).build();

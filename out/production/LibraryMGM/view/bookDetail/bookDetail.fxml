@@ -57,7 +57,7 @@
       </Pane>
       <ScrollPane layoutY="368.0" prefHeight="332.0" prefWidth="1000.0">
          <content>
-            <VBox prefHeight="330.0" prefWidth="998.0" />
+            <VBox fx:id="stockContainer" prefHeight="330.0" prefWidth="998.0" />
          </content>
       </ScrollPane>
       <Button layoutX="820.0" layoutY="308.0" mnemonicParsing="false" onAction="#openEditBookDetail" prefHeight="40.0" prefWidth="120.0" style="-fx-background-color: transparent; -fx-background-radius: 10; -fx-background-color: #1dd1a1;" text="Edit">

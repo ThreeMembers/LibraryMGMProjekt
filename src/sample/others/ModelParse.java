@@ -61,8 +61,8 @@ public class ModelParse {
             id = object.get("id") == null ? 0 : Integer.parseInt(object.get("id").toString());
             name =  object.get("name") == null ? "" : object.get("name").toString();
             image = object.get("image") == null ? "" : object.get("image").toString();
-            author = getAuthor(object.get("author").toString());
-            category = getCategory(object.get("category").toString());
+            author = object.get("author") == null ? null : getAuthor(object.get("author").toString());
+            category = object.get("category") == null ? null : getCategory(object.get("category").toString());
             numberPage = object.get("numberpage") == null ? 0 : Integer.parseInt(object.get("id").toString());
             available = object.get("available") == null ? false : true;
 
@@ -70,6 +70,7 @@ public class ModelParse {
 
             return book;
         }catch (Exception e) {
+            e.printStackTrace();
             System.out.println("Error in parser book: " + e.getMessage() + e.getCause());
             return null;
         }
@@ -148,7 +149,120 @@ public class ModelParse {
             return datee;
 
         }catch (Exception e) {
-            System.out.println("Error in parser book: " + e.getMessage() + e.getCause());
+            System.out.println("Error in parser date: " + e.getMessage() + e.getCause());
+            return null;
+        }
+    }
+    public static Borrow getBorrowRecord(String content){
+        try {
+            JSONParser parser = new JSONParser();
+            JSONObject object = (JSONObject) parser.parse(content);
+
+            int id;
+            Date checkDate, returnDate;
+            Account employee, reader;
+            boolean inprocess;
+
+            id = object.get("id") == null ? 0 : Integer.parseInt(object.get("id").toString());
+            checkDate = getDate(object.get("checkdate").toString());
+            returnDate = getDate(object.get("returndate").toString());
+            employee = getAccount(object.get("employee").toString());
+            reader = getAccount(object.get("reader").toString());
+
+            inprocess = object.get("inprocess") == null ? false : true;
+
+            Borrow borrow = new Borrow(id, reader, employee, checkDate, returnDate, inprocess);
+            return borrow;
+        }catch (Exception e) {
+            System.out.println("Error in parser borrow: " + e.getMessage() + e.getCause());
+            return null;
+        }
+    }
+
+    public static BorrowRequest getBorrowRequest(String jsonString) {
+        try {
+            JSONParser parser = new JSONParser();
+            JSONObject object = (JSONObject) parser.parse(jsonString);
+
+            int id;
+            Date sendDate;
+            Account reader;
+            boolean isAuthen;
+
+            id = object.get("id") == null ? 0 : Integer.parseInt(object.get("id").toString());
+            sendDate = getDate(object.get("senddate").toString());
+            reader = getAccount(object.get("reader").toString());
+            isAuthen = object.get("authen") == null ? false : true;
+
+            BorrowRequest borrow = new BorrowRequest(id, reader, sendDate, isAuthen);
+            return borrow;
+        }catch (Exception e) {
+            System.out.println("Error in parser borrowrequest: " + e.getMessage() + e.getCause());
+            return null;
+        }
+    }
+
+    public static Input getInput(String jsonString) {
+        try {
+            JSONParser parser = new JSONParser();
+            JSONObject object = (JSONObject) parser.parse(jsonString);
+
+            int id;
+            Date inputDate;
+            Account employee;
+
+            id = object.get("id") == null ? 0 : Integer.parseInt(object.get("id").toString());
+            inputDate = getDate(object.get("inputdate").toString());
+            employee = getAccount(object.get("employee").toString());
+
+            Input input = new Input(id, employee, inputDate);
+            return input;
+        }catch (Exception e) {
+            System.out.println("Error in parser Input: " + e.getMessage() + e.getCause());
+            return null;
+        }
+    }
+
+    public static Quality getQuality(String jsonString) {
+        try {
+            JSONParser parser = new JSONParser();
+            JSONObject object = (JSONObject) parser.parse(jsonString);
+
+            int id;
+            String situation, description;
+
+            id = object.get("id") == null ? 0 : Integer.parseInt(object.get("id").toString());
+            situation = object.get("situation") == null ? "" : object.get("situation").toString();
+            description = object.get("description") == null ? "" : object.get("description").toString();
+
+            Quality quality = new Quality(id, situation, description);
+            return quality;
+        }catch (Exception e) {
+            System.out.println("Error in parser quality: " + e.getMessage() + e.getCause());
+            return null;
+        }
+    }
+    public static StockBook getStockBook(String jsonString) {
+        try {
+            JSONParser parser = new JSONParser();
+            JSONObject object = (JSONObject) parser.parse(jsonString);
+
+            int id;
+            Book collection;
+            Quality quality;
+            int year;
+            boolean isborrow;
+
+            id = object.get("id") == null ? 0 : Integer.parseInt(object.get("id").toString());
+            collection = getBook(object.get("collection").toString());
+            quality = getQuality(object.get("quality").toString());
+            year = object.get("releaseyear") == null ? 0 : Integer.parseInt(object.get("releaseyear").toString());
+            isborrow = object.get("isborrow") == null ? false : true;
+
+            StockBook stockBook = new StockBook(id, collection, quality, year, isborrow);
+            return stockBook;
+        }catch (Exception e) {
+            System.out.println("Error in parser stockbook: " + e.getMessage() + e.getCause());
             return null;
         }
     }
