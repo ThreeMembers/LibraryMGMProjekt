@@ -25,7 +25,6 @@ public class AccountApprovalItem implements Initializable {
     @FXML
     public CheckBox cbAccept;
 
-    public List<Node> list;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -39,23 +38,22 @@ public class AccountApprovalItem implements Initializable {
         this.checkboxContainer.prefWidthProperty().bind(this.lbGender.widthProperty());
 
     }
-//    public void setList(List<Node> list){
-//        this.list = list;
-//
-//    }
-//    public String getAccessibleText(){
-//        return this.container.getAccessibleText();
-//    }
-//    public void setAccessibleText(String text){
-//        this.container.setAccessibleText(text);
-//    }
-//    public void remove(){
-//        if(cbAccept.isSelected()){
-//            for( Node i: this.list){
-//                if(this.container.getAccessibleText().equals(i.getAccessibleText())){
-//                    this.list.remove(i);
-//                }
-//            }
-//        }
-//    }
+    public void checked(){
+        if(this.cbAccept.isSelected()){
+            this.container.setAccessibleText("checked");
+        }
+        else{
+            this.container.setAccessibleText("");
+        }
+    }
+    public void setID(int id){
+        this.lbPermission.setText(String.valueOf(id));
+
+    }
+    public String getAccessibleText(){
+        return this.container.getAccessibleText();
+    }
+    public void setAccessibleText(String text){
+        this.container.setAccessibleText(text);
+    }
 }

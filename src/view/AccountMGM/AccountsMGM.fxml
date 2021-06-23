@@ -22,14 +22,26 @@
                         <Font name="Impact" size="24.0" />
                     </font>
                 </Label>
-                <Button id="add" fx:id="btnadd" layoutX="22.0" layoutY="5.0" mnemonicParsing="false" prefHeight="35.0" prefWidth="35.0" stylesheets="@../../css/menuSide.css" AnchorPane.leftAnchor="22.0" AnchorPane.topAnchor="5.0">
+                <Button id="add" fx:id="btnCreate" layoutX="21.0" layoutY="1.0" mnemonicParsing="false" onAction="#createAccount" prefHeight="35.0" prefWidth="35.0" stylesheets="@../../css/menuSide.css" AnchorPane.leftAnchor="21.0" AnchorPane.topAnchor="3.0">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
                     <graphic>
                         <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
                             <image>
-                                <Image url="@../../sample/imageView/add-file.png" />
+                                <Image url="@../../sample/imageView/sign-up.png" />
+                            </image>
+                        </ImageView>
+                    </graphic>
+                </Button>
+                <Button id="add" fx:id="btnDel" layoutX="102.0" mnemonicParsing="false" onAction="#deleteChecked" prefHeight="35.0" prefWidth="35.0" stylesheets="@../../css/menuSide.css" textFill="WHITE" AnchorPane.leftAnchor="102.0" AnchorPane.topAnchor="3.0">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                    <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                            <image>
+                                <Image url="@../../sample/imageView/delete-account.png" />
                             </image>
                         </ImageView>
                     </graphic>

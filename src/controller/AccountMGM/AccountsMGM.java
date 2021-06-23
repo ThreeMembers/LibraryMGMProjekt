@@ -1,12 +1,21 @@
 package controller.AccountMGM;
 
+import Model.Date;
+import com.sun.glass.ui.Clipboard;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Color;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 import java.net.URL;
 import java.util.ArrayList;
@@ -24,10 +33,12 @@ public class AccountsMGM implements Initializable {
 
     @FXML
     Label lbID, lbPermission, lbUserName,lbRealName,lbAge,lbGender,lbExpirationDate,lbDateLeft,lbPermission2,lbUserName2,lbAge2,lbGender2,lbAccept ;
-
     @FXML
-    private Button btnadd;
-
+    private Stage stage;
+    @FXML
+    private Button btnCreate;
+    @FXML
+    private Button btnDel;
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -63,13 +74,13 @@ public class AccountsMGM implements Initializable {
             try {
                 FXMLLoader loader = new FXMLLoader();
                 loader.setLocation(getClass().getResource("/view/AccountMGM/AccountApprovalItem.fxml"));
-                Node e = loader.load();
-//                AccountApprovalItem itemController = loader.getController();
-//                itemController.setList(recordItems);
-//                itemController.setAccessibleText(String.valueOf(i));
+                Node item = loader.load();
+                AccountApprovalItem itemController = loader.getController();
+                itemController.setAccessibleText(String.valueOf(i));
+                itemController.setID(i);
 //                BookViewItemController bookViewItemController = loader.getController();
 //                bookViewItemController.setBook(temp);
-                recordItems.add(e);
+                AccountApproval.getChildren().add(item);
             } catch (Exception ex) {
                 System.out.println(ex.getMessage());
                 ex.printStackTrace();
@@ -82,17 +93,45 @@ public class AccountsMGM implements Initializable {
         this.lbGender2.prefWidthProperty().bind(this.title.widthProperty().divide(8));
         this.lbAccept.prefWidthProperty().bind(this.title.widthProperty().divide(8));
         //this.lbColumn.prefWidthProperty().bind(this.title.widthProperty().divide(4.4));
-
         tooltip();
+        tooltip1();
     }
-    //Tooltip btnadd
     public void tooltip(){
-        Tooltip btnaddToolTip = new Tooltip("Add");
-        btnadd.setTooltip(btnaddToolTip);
+        Tooltip btnaddToolTip = new Tooltip("Add new account");
+        btnCreate.setTooltip(btnaddToolTip);
         btnaddToolTip.setStyle("-fx-background-color:white; -fx-text-fill:black");
-
     }
-    public void removeApprovalItem(){
-
+    public void tooltip1(){
+        Tooltip btnaddToolTip = new Tooltip("Delete account selected");
+        btnDel.setTooltip(btnaddToolTip);
+        btnaddToolTip.setStyle("-fx-background-color:white; -fx-text-fill:black");
     }
+
+    public void deleteChecked(){
+        List<Node> tempList = new ArrayList<>();
+        for( Node i: this.AccountApproval.getChildren()){
+            if(i.getAccessibleText().equals("checked")){
+                System.out.println("Checked");
+                tempList.add(i);
+            }
+        }
+        this.AccountApproval.getChildren().removeAll(tempList);
+    }
+    public void createAccount(){
+        try {
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/view/AccountMGM/NewAccount.fxml"));
+            Parent root = loader.load();
+            Scene scene = new Scene(root);
+            scene.setFill(Color.TRANSPARENT);
+            Stage stage = new Stage();
+            stage.setScene(scene);
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.show();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
 }

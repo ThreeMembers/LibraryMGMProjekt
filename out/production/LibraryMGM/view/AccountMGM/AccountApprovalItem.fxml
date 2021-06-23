@@ -15,7 +15,7 @@
                 <Label fx:id="lbGender" alignment="CENTER" prefHeight="50.0" prefWidth="110.0" text="Gender" />
                 <StackPane fx:id="checkboxContainer" prefHeight="40.0" prefWidth="110.0">
                     <children>
-                        <CheckBox fx:id="cbAccept" mnemonicParsing="false" scaleX="1.5" scaleY="1.5" />
+                        <CheckBox fx:id="cbAccept" mnemonicParsing="false" onAction="#checked" scaleX="1.5" scaleY="1.5" />
                     </children>
                 </StackPane>
             </children>

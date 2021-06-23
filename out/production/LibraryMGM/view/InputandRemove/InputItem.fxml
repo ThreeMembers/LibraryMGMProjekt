@@ -14,6 +14,6 @@
                 <Label fx:id="lbDate" alignment="CENTER" prefHeight="40.0" prefWidth="400.0" text="Date" />
             </children>
         </HBox>
-        <Button fx:id="detailButton" blendMode="MULTIPLY" mnemonicParsing="false" prefHeight="40.0" prefWidth="880.0" style="-fx-background-color: #f5cd79;" />
+        <Button fx:id="detailButton" blendMode="MULTIPLY" mnemonicParsing="false" prefHeight="40.0" prefWidth="880.0" style="-fx-background-color: white;" />
     </children>
 </StackPane>
