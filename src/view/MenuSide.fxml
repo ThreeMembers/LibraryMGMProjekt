@@ -11,7 +11,7 @@
    <children>
       <ImageView fitHeight="265.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../sample/imageView/137233079_814214102492558_5001456453528017579_n.jpg" />
+            <Image url="@../sample/imageView/galaxy.jpg" />
          </image></ImageView>
       <JFXButton id="home" accessibleText="home" prefHeight="77.0" prefWidth="200.0" stylesheets="@../css/menuSide.css" text="HOME">
          <cursor>
