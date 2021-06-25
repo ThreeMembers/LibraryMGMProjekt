@@ -85,7 +85,7 @@ public class accountDetailController implements Initializable {
             e.printStackTrace();
         }
     }
-    private String getID(){
+    public static String getID(){
         try{
             String saveData = FileWorking.readFromFile();
             JSONParser parser = new JSONParser();

@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -16,7 +17,7 @@
    <children>
       <ScrollPane layoutY="417.0" prefHeight="263.0" prefWidth="880.0" AnchorPane.bottomAnchor="0.0" AnchorPane.rightAnchor="0.0">
          <content>
-            <VBox prefHeight="260.0" prefWidth="878.0" />
+            <VBox fx:id="bookItemContainer" prefHeight="260.0" prefWidth="878.0" />
          </content>
       </ScrollPane>
       <AnchorPane prefHeight="60.0" prefWidth="880.0" style="-fx-background-color: #63cdda;">
@@ -41,20 +42,20 @@
             <ImageView fx:id="imageAdd" fitHeight="248.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </VBox>
-      <TextArea layoutX="239.0" layoutY="88.0" prefHeight="75.0" prefWidth="632.0" />
+      <TextArea fx:id="taName" layoutX="239.0" layoutY="88.0" prefHeight="75.0" prefWidth="632.0" />
       <Label layoutX="239.0" layoutY="68.0" text="Book Name">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
       <JFXComboBox fx:id="catechoices" layoutX="241.0" layoutY="204.0" prefHeight="26.0" prefWidth="190.0" />
-      <JFXComboBox fx:id="authorchoices" layoutX="527.0" layoutY="204.0" prefHeight="26.0" prefWidth="190.0" />
+      <JFXComboBox fx:id="authorchoices" layoutX="465.0" layoutY="205.0" prefHeight="26.0" prefWidth="190.0" />
       <Label layoutX="239.0" layoutY="176.0" text="Category">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="532.0" layoutY="176.0" text="Author">
+      <Label layoutX="470.0" layoutY="177.0" text="Author">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -64,8 +65,15 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button layoutX="578.0" layoutY="295.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Add" />
-      <Button layoutX="685.0" layoutY="295.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="78.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Delete" />
-      <Button layoutX="787.0" layoutY="295.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="78.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Delete All" />
+      <Button layoutX="578.0" layoutY="295.0" mnemonicParsing="false" onAction="#deleteAll" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Delete All" />
+      <Button layoutX="685.0" layoutY="295.0" mnemonicParsing="false" onAction="#createNewBook" prefHeight="30.0" prefWidth="78.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Add" />
+      <Button layoutX="787.0" layoutY="295.0" mnemonicParsing="false" onAction="#createItems" prefHeight="30.0" prefWidth="78.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Create" />
+      <TextField fx:id="tfNumber" layoutX="689.0" layoutY="206.0" prefHeight="26.0" prefWidth="91.0" />
+      <Label layoutX="689.0" layoutY="178.0" text="Number Page">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <Button layoutX="470.0" layoutY="295.0" mnemonicParsing="false" onAction="#deleteChecked" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Delete" />
    </children>
 </AnchorPane>

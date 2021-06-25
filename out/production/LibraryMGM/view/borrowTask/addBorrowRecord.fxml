@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -26,34 +27,34 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </ImageView>
-      <Label layoutX="93.0" layoutY="99.0" text="Reader">
+      <Label layoutX="93.0" layoutY="175.0" text="Reader">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="93.0" layoutY="189.0" text="Book Name">
+      <Label layoutX="93.0" layoutY="115.0" text="Book Name">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <JFXComboBox fx:id="readerchoice" layoutX="190.0" layoutY="86.0" prefHeight="26.0" prefWidth="334.0" />
-      <JFXComboBox fx:id="bookchoice" layoutX="190.0" layoutY="176.0" prefHeight="26.0" prefWidth="334.0" />
-      <Button alignment="CENTER" layoutX="651.0" layoutY="86.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #ff9f43;" text="Add">
+      <JFXComboBox fx:id="readerchoice" layoutX="183.0" layoutY="162.0" prefHeight="26.0" prefWidth="300.0" />
+      <JFXComboBox fx:id="bookchoice" layoutX="183.0" layoutY="102.0" prefHeight="26.0" prefWidth="300.0" />
+      <Button alignment="CENTER" layoutX="696.0" layoutY="233.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #ff9f43;" text="Add">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button alignment="CENTER" layoutX="772.0" layoutY="86.0" mnemonicParsing="false" onAction="#delSelected" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #ff9f43;" text="Delete">
+      <Button alignment="CENTER" layoutX="511.0" layoutY="233.0" mnemonicParsing="false" onAction="#delSelected" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #ff9f43;" text="Delete">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button alignment="CENTER" layoutX="772.0" layoutY="176.0" mnemonicParsing="false" onAction="#delAll" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #ff9f43;" text="Delete All">
+      <Button alignment="CENTER" layoutX="603.0" layoutY="233.0" mnemonicParsing="false" onAction="#delAll" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #ff9f43;" text="Delete All">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <Button alignment="CENTER" layoutX="651.0" layoutY="176.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #ff9f43;" text="Create">
+      <Button alignment="CENTER" layoutX="787.0" layoutY="233.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #ff9f43;" text="Create">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -63,5 +64,12 @@
             <VBox prefHeight="324.0" prefWidth="878.0" />
          </content>
       </ScrollPane>
+      <Label layoutX="619.0" layoutY="115.0" text="Stock ID">
+         <font>
+            <Font name="System Bold" size="14.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="stockComboBox" layoutX="688.0" layoutY="102.0" prefHeight="26.0" prefWidth="115.0" />
+      <JFXButton layoutX="510.0" layoutY="102.0" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #ff9f43;" text="Filter &gt;" />
    </children>
 </AnchorPane>

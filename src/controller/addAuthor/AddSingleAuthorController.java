@@ -29,4 +29,7 @@ public class AddSingleAuthorController implements Initializable {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
     }
+
+    public void setLastID(int idAuthor) {
+    }
 }

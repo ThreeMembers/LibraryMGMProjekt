@@ -1,5 +1,6 @@
 package controller.borrowTask;
 
+import Model.Borrow;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -19,6 +20,8 @@ public class borrowRecordItemController implements Initializable {
     @FXML
     Button detailButton;
 
+    Borrow borrow;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -29,5 +32,18 @@ public class borrowRecordItemController implements Initializable {
         this.lbDateCheck.prefWidthProperty().bind(this.container.widthProperty().divide(4.4));
         this.lbDateReturn.prefWidthProperty().bind(this.container.widthProperty().divide(4.4));
         this.detailButton.prefWidthProperty().bind(this.container.widthProperty());
+    }
+
+    public void setBorrow(Borrow borrow) {
+        this.borrow = borrow;
+        this.lbID.setText(String.valueOf(borrow.getId()));
+        this.lbReader.setText(borrow.getReader().getUsername());
+        this.lbEmployee.setText(borrow.getEmployee().getUsername());
+        this.lbDateCheck.setText(borrow.getCheckDate().toString());
+        this.lbDateReturn.setText(borrow.getReturnDate().toString());
+    }
+
+    public void setFill(String s) {
+        this.container.setStyle("-fx-background-color: " + s);
     }
 }

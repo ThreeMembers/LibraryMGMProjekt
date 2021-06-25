@@ -44,7 +44,7 @@ public class BookViewItemController implements Initializable {
         this.lbID.setText(String.valueOf(this.book.getId()));
         this.lbName.setText(this.book.getName());
         this.lbAuthor.setText(this.book.getAuthor().getName());
-        this.lbCategory.setText(this.book.getCategory().getName());
+        this.lbCategory.setText(this.book.getCategory().getName().toUpperCase());
         if(this.book.isAvailable()){
             this.lbStocks.setText("On");
             this.lbStocks.setTextFill(Color.GREEN);

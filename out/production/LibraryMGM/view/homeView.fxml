@@ -17,13 +17,13 @@
    <children>
       <AnchorPane prefHeight="50.0" prefWidth="880.0" style="-fx-background-color: #ffeaa7;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <JFXButton layoutX="14.0" layoutY="10.0" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #74b9ff;" text="NEW" textFill="WHITE">
+            <JFXButton layoutX="14.0" layoutY="10.0" onAction="#createNewObject" prefHeight="30.0" prefWidth="70.0" style="-fx-background-color: #74b9ff;" text="NEW" textFill="WHITE">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
-            <JFXComboBox fx:id="catechoices" layoutX="84.0" layoutY="10.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white;" unFocusColor="#f7f7f700" />
-            <JFXComboBox fx:id="authorchoices" layoutX="234.0" layoutY="10.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white;" unFocusColor="#4d4d4d00" />
+            <JFXComboBox fx:id="createModes" layoutX="84.0" layoutY="10.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white;" unFocusColor="#f7f7f700" />
+            <JFXComboBox fx:id="createTargets" layoutX="234.0" layoutY="10.0" prefHeight="30.0" prefWidth="150.0" style="-fx-background-color: white;" unFocusColor="#4d4d4d00" />
          </children>
       </AnchorPane>
       <TabPane layoutY="176.0" prefHeight="444.0" prefWidth="880.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="50.0">
@@ -74,13 +74,13 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="authorTable" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
-                            <TableColumn text="ID" />
-                              <TableColumn prefWidth="550.0" text="Author" />
-                            <TableColumn prefWidth="75.0" text="Age" />
-                              <TableColumn prefWidth="75.0" text="Gender" />
-                              <TableColumn prefWidth="100.0" text="Number Books" />
+                            <TableColumn fx:id="colIDAuthor" text="ID" />
+                              <TableColumn fx:id="colNameAuthor" prefWidth="550.0" text="Author" />
+                            <TableColumn fx:id="colAge" prefWidth="75.0" text="Age" />
+                              <TableColumn fx:id="colGender" prefWidth="75.0" text="Gender" />
+                              <TableColumn fx:id="colNumber" prefWidth="100.0" text="Number Books" />
                           </columns>
                         </TableView>
                      </children>
@@ -91,11 +91,11 @@
               <content>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
                      <children>
-                        <TableView prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <TableView fx:id="cateTable" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                           <columns>
-                            <TableColumn text="ID" />
-                            <TableColumn prefWidth="200.0" text="Category" />
-                              <TableColumn prefWidth="600.0" text="Description" />
+                            <TableColumn fx:id="colIDCate" text="ID" />
+                            <TableColumn fx:id="colNameCate" prefWidth="200.0" text="Category" />
+                              <TableColumn fx:id="colDescriptCate" prefWidth="600.0" text="Description" />
                           </columns>
                         </TableView>
                      </children>

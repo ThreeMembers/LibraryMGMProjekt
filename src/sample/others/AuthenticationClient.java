@@ -2,6 +2,7 @@ package sample.others;
 
 import Model.Permission;
 import okhttp3.*;
+import okio.Buffer;
 import org.jetbrains.annotations.NotNull;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -92,7 +93,9 @@ public class AuthenticationClient implements Interceptor {
                 return chain.proceed(remake);
             }
 
-            bodyReRequest = (JSONObject) parser.parse(origin.body().toString());
+//            System.out.println(bodyToString(origin));
+
+            bodyReRequest = (JSONObject) parser.parse(bodyToString(origin));
 
             object = (JSONObject) parser.parse(object.get("permission").toString());
             Permission permission = new Permission(
@@ -100,16 +103,29 @@ public class AuthenticationClient implements Interceptor {
                     object.get("position").toString()
             );
 
-            bodyReRequest.put("permission", permission);
+            bodyReRequest.put("permission", object);
+            System.out.println(bodyReRequest);
             //rewrite = origin.newBuilder().header("Authorization", "Token " + token).build();
 //            RequestBody newbody = RequestBody.create(bodyReRequest.toString(), jsonType);
 //            Request remake = new Request.Builder().header("Authorization", "Token " + token).url(url).method(origin.method(), newbody).build();
 //            return chain.proceed(remake);
         }catch (Exception e){
             System.out.println("Error in write to get permission: " + e.getMessage());
+            e.printStackTrace();
         }
         RequestBody newBody = RequestBody.create(bodyReRequest.toString(), jsonType);
         Request remake = new Request.Builder().header("Authorization", "Token " + token).url(url).method(origin.method(), newBody).build();
         return chain.proceed(remake);
+    }
+    private String bodyToString(final Request request){
+
+        try {
+            final Request copy = request.newBuilder().build();
+            final Buffer buffer = new Buffer();
+            copy.body().writeTo(buffer);
+            return buffer.readUtf8();
+        } catch (final IOException e) {
+            return "did not work";
+        }
     }
 }

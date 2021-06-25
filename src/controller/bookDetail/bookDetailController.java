@@ -32,7 +32,6 @@ import org.json.simple.parser.ParseException;
 import sample.others.ConnectionAPIOption;
 import sample.others.ModelParse;
 
-import java.awt.*;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -59,7 +58,9 @@ public class bookDetailController {
     public void openEditBookDetail(ActionEvent event){
         try {
             Parent root = FXMLLoader.load(getClass().getResource("/view/bookDetail/editBookDetail.fxml"));
-            Stage stage = new Stage();
+            Stage stage = (Stage) this.lbName.getScene().getWindow();
+            stage.close();
+            stage = new Stage();
             Scene scene = new Scene(root);
             scene.setFill(Color.TRANSPARENT);
             stage.setTitle("Edit Book Detail");

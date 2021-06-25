@@ -77,8 +77,11 @@ public class SearchController implements Initializable {
     }
     public void searching() throws IOException {
         this.resultContent.getChildren().clear();
+
         String option = choice.getValue();
-        String searchContent = this.searchField.getText();
+        String searchContent = this.searchField.getText().toLowerCase();
+
+        System.out.println(searchContent);
 
         List<Book> temp = new ArrayList<>();
         boolean find = false;
@@ -86,19 +89,19 @@ public class SearchController implements Initializable {
             switch (option)
             {
                 case "Book":
-                    if(item.getName().contains(searchContent)){
+                    if(item.getName().toLowerCase().contains(searchContent)){
                         find = true;
                         temp.add(item);
                     }
                     break;
                 case "Author":
-                    if(item.getAuthor().getName().contains(searchContent)){
+                    if(item.getAuthor().getName().toLowerCase().contains(searchContent)){
                         find = true;
                         temp.add(item);
                     }
                     break;
                 default:
-                    if(item.getCategory().getName().contains(searchContent)){
+                    if(item.getCategory().getName().toLowerCase().contains(searchContent)){
                         find = true;
                         temp.add(item);
                     }
