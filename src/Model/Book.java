@@ -94,7 +94,7 @@ public class Book extends Model {
 	@Override
 	public JSONObject toJSON() {
 		JSONObject element = super.toJSON();
-		if (!this.name.equals(null))
+		if (this.name != null)
 			element.put("name", this.name);
 		if (this.author != null)
 			element.put("author", this.author.toJSON());

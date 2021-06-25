@@ -7,6 +7,9 @@
 <?import javafx.scene.effect.Bloom?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1280.0" styleClass="bodybg" stylesheets="@../css/BackgroundImg.css" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainHolderController">
@@ -15,10 +18,29 @@
       <JFXDrawer fx:id="menuSide" alignment="CENTER_LEFT" defaultDrawerSize="200.0" layoutY="116.0" prefHeight="635.0" prefWidth="50.0" AnchorPane.bottomAnchor="48.799999999999955" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="116.0" />
       <AnchorPane layoutY="7.0" prefHeight="50.0" prefWidth="1280.0" style="-fx-background-color: #0984e3;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Button fx:id="btnOpenAccount" alignment="CENTER" layoutX="1499.0" layoutY="6.0" mnemonicParsing="false" onAction="#openAccount" prefHeight="40.0" prefWidth="40.0" style="-fx-border-radius: 20; -fx-background-color: wheat; -fx-background-radius: 20;" AnchorPane.rightAnchor="60.0">
+            <Button fx:id="btnOpenAccount" alignment="CENTER" layoutX="1499.0" layoutY="6.0" mnemonicParsing="false" onAction="#openAccount" prefHeight="40.0" prefWidth="40.0" style="-fx-border-radius: 20; -fx-background-color: #fffa65; -fx-background-radius: 20;" text="A" AnchorPane.rightAnchor="60.0">
                <cursor>
                   <Cursor fx:constant="HAND" />
-               </cursor></Button>
+               </cursor>
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <textFill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop>
+                           <color>
+                              <Color red="1.0" />
+                           </color>
+                        </Stop>
+                        <Stop offset="1.0">
+                           <color>
+                              <Color red="1.0" green="1.0" blue="1.0" />
+                           </color>
+                        </Stop>
+                     </stops>
+                  </LinearGradient>
+               </textFill></Button>
             <JFXButton fx:id="btnOpenMenu" buttonType="RAISED" defaultButton="true" layoutY="1.0" onAction="#openMenu" prefHeight="50.0" prefWidth="100.0" style="-fx-background-color: #34495e;" text="MENU" textFill="WHITE" AnchorPane.leftAnchor="0.0">
                <font>
                   <Font name="System Bold" size="12.0" />

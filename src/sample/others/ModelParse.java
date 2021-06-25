@@ -114,6 +114,8 @@ public class ModelParse {
             Date register, expiration;
             boolean gender;
 
+//            System.out.println(object);
+
             id = object.get("id") == null ? 0 : Integer.parseInt(object.get("id").toString());
             username =  object.get("username") == null ? "" : object.get("username").toString();
             password = object.get("userpassword") == null ? "" : object.get("userpassword").toString();
@@ -121,8 +123,8 @@ public class ModelParse {
             realname = object.get("realname") == null ? "" : object.get("realname").toString();
             code = object.get("secretcode") == null ? "" : object.get("secretcode").toString();
             token = object.get("token") == null ? "" : object.get("token").toString();
-            register = getDate(object.get("register").toString());
-            expiration = getDate(object.get("expiration").toString());
+            register = object.get("register") == null ? null : getDate(object.get("register").toString());
+            expiration = object.get("expiration") == null ? null : getDate(object.get("expiration").toString());
             gender = object.get("gender") == null ? false : Boolean.parseBoolean(object.get("gender").toString());
             age = object.get("age") == null ? 0 : Integer.parseInt(object.get("age").toString());
             dateLeft = object.get("dateleft") == null ? 0 : Integer.parseInt(object.get("dateleft").toString());
@@ -131,7 +133,8 @@ public class ModelParse {
 
             return account;
         }catch (Exception e) {
-            System.out.println("Error in parser book: " + e.getMessage() + e.getCause());
+            e.printStackTrace();
+            System.out.println("Error in parser account: " + e.getMessage() + e.getCause());
             return null;
         }
     }

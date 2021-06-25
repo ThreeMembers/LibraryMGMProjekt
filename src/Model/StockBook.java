@@ -116,4 +116,14 @@ public class StockBook extends Model {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "StockBook{" +
+				"collection=" + collection +
+				", quality=" + quality +
+				", releaseYear=" + releaseYear +
+				", isBorrow=" + isBorrow +
+				'}';
+	}
 }

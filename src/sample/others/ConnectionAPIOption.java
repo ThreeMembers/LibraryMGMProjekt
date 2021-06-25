@@ -14,6 +14,7 @@ public class ConnectionAPIOption {
     public static String inputURL = "http://localhost:8080/LibraryRestAPI/webapi/inputs/";
     public static String detailInputURL = "http://localhost:8080/LibraryRestAPI/webapi/inputs/details/";
     public static String borrowRequestURL = "http://localhost:8080/LibraryRestAPI/webapi/borrowrequests/";
+    public static String qualityURL = "http://localhost:8080/LibraryRestAPI/webapi/quality/";
 
     public static OkHttpClient getClient(){
         return new OkHttpClient.Builder().addInterceptor(new AuthenticationClient()).build();

@@ -2,84 +2,53 @@ package Model;
 
 import org.json.simple.JSONObject;
 
+import java.util.Objects;
+
 public class DetailInput{
-    private Input input;
-    private Book book;
-    private int quantity;
+	private int idRecord;
+	private int idStock;
     public DetailInput() {
     }
 
-    public DetailInput(Input input, Book stockBook, int quantity) {
-        this.input = input;
-        this.book = stockBook;
-        this.quantity = quantity;
-    }
+	public DetailInput(int idRecord, int idStock) {
+		this.idRecord = idRecord;
+		this.idStock = idStock;
+	}
 
-    public Input getInput() {
-        return input;
-    }
+	public int getIdRecord() {
+		return idRecord;
+	}
 
-    public void setInput(Input input) {
-        this.input = input;
-    }
+	public void setIdRecord(int idRecord) {
+		this.idRecord = idRecord;
+	}
 
-    public Book getBook() {
-        return book;
-    }
+	public int getIdStock() {
+		return idStock;
+	}
 
-    public void setBook(Book stockBook) {
-        this.book = stockBook;
-    }
+	public void setIdStock(int idStock) {
+		this.idStock = idStock;
+	}
 
-    public int getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
-    
-    @SuppressWarnings("unchecked")
+	@SuppressWarnings("unchecked")
    	public JSONObject toJSON() {
        	JSONObject element = new JSONObject();
-       	element.put("record", this.input.toJSON());
-       	element.put("book", this.book.toJSON());
-       	element.put("quantity", this.quantity);
+       	element.put("record", this.idRecord);
+       	element.put("stock", this.idStock);
        	return element;
     }
 
 	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((book == null) ? 0 : book.hashCode());
-		result = prime * result + ((input == null) ? 0 : input.hashCode());
-		result = prime * result + quantity;
-		return result;
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		DetailInput that = (DetailInput) o;
+		return idRecord == that.idRecord && idStock == that.idStock;
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		DetailInput other = (DetailInput) obj;
-		if (book == null) {
-			if (other.book != null)
-				return false;
-		} else if (!book.equals(other.book))
-			return false;
-		if (input == null) {
-			if (other.input != null)
-				return false;
-		} else if (!input.equals(other.input))
-			return false;
-		if (quantity != other.quantity)
-			return false;
-		return true;
+	public int hashCode() {
+		return Objects.hash(idRecord, idStock);
 	}
-    
 }

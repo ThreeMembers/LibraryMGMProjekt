@@ -42,9 +42,7 @@ import sample.others.ModelParse;
 
 import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.ResourceBundle;
+import java.util.*;
 
 public class HomeView implements Initializable {
 
@@ -167,6 +165,13 @@ public class HomeView implements Initializable {
                 idStock = stockBook.getId();
             }
 
+            Collections.sort(stockBookList, new Comparator<StockBook>() {
+                @Override
+                public int compare(StockBook o1, StockBook o2) {
+                    return o2.getId() - o1.getId();
+                }
+            });
+
             List<Node> nodeList = new ArrayList<>();
             for (StockBook stockBook : stockBookList) {
                 FXMLLoader loader = new FXMLLoader();
@@ -275,8 +280,7 @@ public class HomeView implements Initializable {
                     openForm("/view/addCate/addMultiCate.fxml");
                     break;
                 default:
-                    AddMultiStocksController multiStocksController = openForm("/view/addStocks/addMultiStocks.fxml").getController();
-                    multiStocksController.setLastID(this.idStock);
+                    openForm("/view/addStocks/addMultiStocks.fxml").getController();
                     break;
             }
         }

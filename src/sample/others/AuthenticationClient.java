@@ -1,6 +1,7 @@
 package sample.others;
 
 import Model.Permission;
+import javafx.scene.control.Alert;
 import okhttp3.*;
 import okio.Buffer;
 import org.jetbrains.annotations.NotNull;
@@ -110,7 +111,12 @@ public class AuthenticationClient implements Interceptor {
 //            Request remake = new Request.Builder().header("Authorization", "Token " + token).url(url).method(origin.method(), newbody).build();
 //            return chain.proceed(remake);
         }catch (Exception e){
-            System.out.println("Error in write to get permission: " + e.getMessage());
+            System.out.println("Error in write to get permission: " + e.getMessage() + " --- " + e.getClass());
+            if(e.getMessage().contains("Failed to connect")){
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setHeaderText("Failed to connect to server!");
+                alert.show();
+            }
             e.printStackTrace();
         }
         RequestBody newBody = RequestBody.create(bodyReRequest.toString(), jsonType);

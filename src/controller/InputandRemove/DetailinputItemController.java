@@ -1,5 +1,7 @@
 package controller.InputandRemove;
 
+import Model.DetailInput;
+import Model.Input;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -13,19 +15,28 @@ public class DetailinputItemController implements Initializable {
     @FXML
     StackPane container;
     @FXML
-    Label lbQuantity,lbStock,lbReleaseYear;
+    Label lbStock;
 
     @FXML
     Button detailButton;
+
+    private DetailInput detailInput;
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         container.setMinHeight(40);
-        this.lbStock.prefWidthProperty().bind(this.container.widthProperty().divide(2));
-        this.lbQuantity.prefWidthProperty().bind(this.container.widthProperty().divide(4));
-        this.lbReleaseYear.prefWidthProperty().bind(this.container.widthProperty().divide(4));
+        this.lbStock.prefWidthProperty().bind(this.container.widthProperty());
         this.detailButton.prefWidthProperty().bind(this.container.widthProperty());
 
     }
 
+    public void setInput(DetailInput record) {
+        this.detailInput = record;
+        this.lbStock.setText(String.valueOf(record.getIdStock()));
+    }
+
+    public void setFill(String s) {
+        this.container.setStyle("-fx-background-color: " + s);
+    }
 }

@@ -149,44 +149,6 @@ public class AddSingleBookController implements Initializable {
         return false;
     }
 
-    public int createPostInputRequest(){
-        String url = ConnectionAPIOption.inputURL;
-        OkHttpClient client = ConnectionAPIOption.getClient();
-        try {
-            JSONObject jsonObject = new JSONObject();
-            int curUserID = Integer.parseInt(accountDetailController.getID());
-            Date inputDate = new Date(LocalDate.now().toString());
-            Input input = new Input(new Account(curUserID), inputDate);
-            jsonObject.put("input", input.toJSON());
-            RequestBody body = RequestBody.create(String.valueOf(jsonObject), MediaTypeCollection.jsonType);
-            Request request = new Request.Builder().url(url).post(body).build();
-            Response response = client.newCall(request).execute();
-            if(response.code() == 201){
-                int newID = Integer.parseInt(response.body().string());
-                return newID;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return 0;
-    }
-    public boolean createPostInputDetailRequest(int newInput){
-        String url = ConnectionAPIOption.inputURL;
-        OkHttpClient client = ConnectionAPIOption.getClient();
-        try {
-            JSONObject jsonObject = new JSONObject();
-            RequestBody body = RequestBody.create(String.valueOf(jsonObject), MediaTypeCollection.jsonType);
-            Request request = new Request.Builder().url(url).post(body).build();
-            Response response = client.newCall(request).execute();
-            if(response.code() == 201){
-                return true;
-            }
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return false;
-    }
-
     @FXML
     void close(MouseEvent event) {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

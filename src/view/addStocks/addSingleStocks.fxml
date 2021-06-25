@@ -34,7 +34,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="101.0" layoutY="186.0" text="Quality">
+      <Label layoutX="93.0" layoutY="186.0" text="Quality">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
@@ -45,8 +45,8 @@
          </font>
       </Label>
       <JFXComboBox fx:id="choice" layoutX="188.0" layoutY="183.0" prefHeight="26.0" prefWidth="150.0" />
-      <TextField layoutX="485.0" layoutY="183.0" />
-      <Button layoutX="642.0" layoutY="303.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Add">
+      <TextField fx:id="tfYear" layoutX="485.0" layoutY="183.0" prefHeight="26.0" prefWidth="130.0" />
+      <Button fx:id="btnAdd" layoutX="622.0" layoutY="303.0" mnemonicParsing="false" onAction="#createStock" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Add">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -56,6 +56,6 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </Button>
-      <JFXComboBox editable="true" layoutX="188.0" layoutY="117.0" prefHeight="26.0" prefWidth="430.0" />
+      <JFXComboBox fx:id="bookChoices" editable="true" layoutX="188.0" layoutY="117.0" prefHeight="26.0" prefWidth="430.0" />
    </children>
 </AnchorPane>

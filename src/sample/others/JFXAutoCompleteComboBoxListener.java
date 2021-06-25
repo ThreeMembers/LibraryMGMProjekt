@@ -62,7 +62,7 @@ public class JFXAutoCompleteComboBoxListener<T> implements EventHandler<KeyEvent
 
         ObservableList list = FXCollections.observableArrayList();
         for (int i=0; i<data.size(); i++) {
-            if(data.get(i).toString().toLowerCase().startsWith(
+            if(data.get(i).toString().toLowerCase().contains(
                     JFXAutoCompleteComboBoxListener.this.comboBox
                             .getEditor().getText().toLowerCase())) {
                 list.add(data.get(i));
