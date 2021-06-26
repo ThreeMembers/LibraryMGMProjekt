@@ -63,7 +63,7 @@
                                 </HBox>
                                 <ScrollPane fitToHeight="true" fitToWidth="true" layoutY="49.0" prefHeight="492.0" prefWidth="880.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="49.0">
                                     <content>
-                                        <VBox fx:id="InputContainer" prefHeight="492.0" prefWidth="880.0" />
+                                        <VBox fx:id="inputContainer" prefHeight="492.0" prefWidth="880.0" />
                                     </content>
                                 </ScrollPane>
                             </children>

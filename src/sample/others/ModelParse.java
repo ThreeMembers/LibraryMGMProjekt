@@ -269,4 +269,6 @@ public class ModelParse {
             return null;
         }
     }
+    //sudo apt update
+    //sudo apt-get install wireshark
 }
