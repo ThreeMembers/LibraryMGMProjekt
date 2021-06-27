@@ -70,6 +70,8 @@ public class SearchController implements Initializable {
                 Book book = ModelParse.getBook(bookObject.toString());
                 bookList.add(book);
             }
+            int code = response.code();
+            response.close();
             System.out.println("finish loading book");
         } catch (IOException | ParseException e) {
             e.printStackTrace();

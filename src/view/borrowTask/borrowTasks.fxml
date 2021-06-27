@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
@@ -36,6 +37,18 @@
                </graphic>
             </Button>
             <JFXComboBox fx:id="createMode" focusColor="#f6ff00" layoutX="78.0" layoutY="9.0" prefHeight="30.0" prefWidth="100.0" style="-fx-background-color: white;" unFocusColor="BLACK" visibleRowCount="2" />
+            <JFXButton layoutX="212.0" layoutY="5.0" onAction="#refresh" prefHeight="40.0" prefWidth="100.0" style="-fx-background-color: #ffaf40;" text="Refresh" textFill="WHITE">
+               <graphic>
+                  <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../../sample/imageView/refresh.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </JFXButton>
          </children>
       </AnchorPane>
       <TabPane layoutX="10.0" layoutY="51.0" prefHeight="570.0" prefWidth="880.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="51.0">

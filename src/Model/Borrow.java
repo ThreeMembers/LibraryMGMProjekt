@@ -97,9 +97,9 @@ public class Borrow extends Model{
 	public JSONObject toJSON() {
 		JSONObject element = super.toJSON();
 		if(this.reader != null)
-			element.put("reader", this.reader.toJSON(Account.with_per_dateleft));
+			element.put("reader", this.reader.toJSON(Account.id_name));
 		if(this.employee != null)
-			element.put("employee", this.employee.toJSON(Account.id_name));
+			element.put("employee", this.employee.toJSON7());
 		if(this.checkDate != null)
 			element.put("checkdate", this.checkDate.toJSON());
 		if(this.returnDate != null)

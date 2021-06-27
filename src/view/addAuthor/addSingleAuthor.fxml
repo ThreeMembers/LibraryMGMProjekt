@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
@@ -30,13 +30,13 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <TextArea layoutX="124.0" layoutY="101.0" prefHeight="75.0" prefWidth="632.0" />
+      <TextArea fx:id="taAuthor" layoutX="124.0" layoutY="101.0" prefHeight="75.0" prefWidth="632.0" />
       <Label layoutX="124.0" layoutY="81.0" text="Author Name">
          <font>
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <Button layoutX="572.0" layoutY="305.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Add">
+      <Button fx:id="btnAdd" layoutX="572.0" layoutY="305.0" mnemonicParsing="false" onAction="#addAuthor" prefHeight="30.0" prefWidth="77.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Add">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
@@ -54,7 +54,7 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextField layoutX="124.0" layoutY="232.0" />
-      <JFXComboBox fx:id="choice" layoutX="425.0" layoutY="232.0" prefHeight="26.0" prefWidth="150.0" />
+      <TextField fx:id="tfAge" layoutX="124.0" layoutY="232.0" />
+      <CheckBox fx:id="cbGender" layoutX="425.0" layoutY="236.0" mnemonicParsing="false" text="Female" />
    </children>
 </AnchorPane>

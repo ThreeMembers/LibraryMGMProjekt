@@ -70,6 +70,7 @@ public class LoginViewController implements Initializable {
             String result = response.body().string();
             System.out.println(code);
             if(code != 200){
+                response.close();
                 this.loginMess.setText(result);
                 return false;
             }
@@ -77,6 +78,7 @@ public class LoginViewController implements Initializable {
             result = Cryptography.decode(result);
             //parse json to model
             //get token and username from response
+            response.close();
             JSONParser parser = new JSONParser();
             JSONObject object = (JSONObject) parser.parse(result);
             int id = Integer.parseInt(object.get("id").toString());

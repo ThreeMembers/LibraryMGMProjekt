@@ -78,6 +78,9 @@ public class AddSingleBookController implements Initializable {
         }
     }
     public static Boolean uploadFile(File file, int id) {
+        if(file == null){
+            return false;
+        }
         Response response;
         String finalResponce;
         try {
@@ -89,7 +92,9 @@ public class AddSingleBookController implements Initializable {
                     .post(body)
                     .build();
             response = new OkHttpClient().newCall(request).execute();
-            finalResponce = response.body().string();
+//            finalResponce = response.body().string();
+            int code = response.code();
+            response.close();
 //            System.out.println(response.body().contentType());
 //            System.out.println("Status: " + response.code() + " - " + finalResponce);
 //            mainEventListing.setBackdropUrl(finalResponce);
@@ -140,6 +145,7 @@ public class AddSingleBookController implements Initializable {
         try{
             Response response = client.newCall(request).execute();
             int code = response.code();
+            response.close();
             if(code == 201){
                 return true;
             }
@@ -176,6 +182,8 @@ public class AddSingleBookController implements Initializable {
             JSONParser parser = new JSONParser();
             JSONArray jsonArray = (JSONArray) parser.parse(response.body().string());
             categoryList = new ArrayList<>();
+            int code = response.code();
+            response.close();
             for(Object sub : jsonArray.toArray()){
                 JSONObject object = (JSONObject) sub;
                 Category category = ModelParse.getCategory(object.toString());
@@ -197,6 +205,8 @@ public class AddSingleBookController implements Initializable {
             JSONParser parser = new JSONParser();
             JSONArray jsonArray = (JSONArray) parser.parse(response.body().string());
             authorList = new ArrayList<>();
+            int code = response.code();
+            response.close();
             for(Object sub : jsonArray.toArray()){
                 JSONObject object = (JSONObject) sub;
                 Author author = ModelParse.getAuthor(object.toString());

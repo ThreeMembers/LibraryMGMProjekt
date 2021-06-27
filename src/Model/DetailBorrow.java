@@ -2,70 +2,54 @@ package Model;
 
 import org.json.simple.JSONObject;
 
+import java.util.Objects;
+
 public class DetailBorrow {
-    private Borrow record;
-    private StockBook stockBook;
+    private int record;
+    private int stockBook;
 
     public DetailBorrow() {
     }
 
-    public DetailBorrow(Borrow record, StockBook stockBook) {
+    public DetailBorrow(int record, int stockBook) {
         this.record = record;
         this.stockBook = stockBook;
     }
 
-    public Borrow getRecord() {
+    public int getRecord() {
         return record;
     }
 
-    public void setRecord(Borrow record) {
+    public void setRecord(int record) {
         this.record = record;
     }
 
-    public StockBook getStockBook() {
+    public int getStockBook() {
         return stockBook;
     }
 
-    public void setStockBook(StockBook stockBook) {
+    public void setStockBook(int stockBook) {
         this.stockBook = stockBook;
     }
     
     @SuppressWarnings("unchecked")
 	public JSONObject toJSON() {
     	JSONObject element = new JSONObject();
-    	element.put("record", this.record.toJSON());
-    	element.put("stockbook", this.stockBook.toJSON());
+    	element.put("record", this.record);
+    	element.put("stockbook", this.stockBook);
     	return element;
     }
 
 	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((record == null) ? 0 : record.hashCode());
-		result = prime * result + ((stockBook == null) ? 0 : stockBook.hashCode());
-		return result;
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (o == null || getClass() != o.getClass()) return false;
+		DetailBorrow that = (DetailBorrow) o;
+		return record == that.record && stockBook == that.stockBook;
 	}
 
 	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		DetailBorrow other = (DetailBorrow) obj;
-		if (record == null) {
-			if (other.record != null)
-				return false;
-		} else if (!record.equals(other.record))
-			return false;
-		if (stockBook == null) {
-			if (other.stockBook != null)
-				return false;
-		} else if (!stockBook.equals(other.stockBook))
-			return false;
-		return true;
+	public int hashCode() {
+		return Objects.hash(record, stockBook);
 	}
 }

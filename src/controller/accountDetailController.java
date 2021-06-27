@@ -67,6 +67,8 @@ public class accountDetailController implements Initializable {
             Response response = client.newCall(request).execute();
             JSONParser parser = new JSONParser();
             JSONObject object = (JSONObject) parser.parse(response.body().string());
+            int code = response.code();
+            response.close();
             tfuser.setText(object.get("username").toString());
             tfpwd.setText(object.get("userpassword").toString());
             tfage.setText(object.get("age").toString());

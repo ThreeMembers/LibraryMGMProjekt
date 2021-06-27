@@ -119,7 +119,7 @@ public class ModelParse {
             id = object.get("id") == null ? 0 : Integer.parseInt(object.get("id").toString());
             username =  object.get("username") == null ? "" : object.get("username").toString();
             password = object.get("userpassword") == null ? "" : object.get("userpassword").toString();
-            permission = getPermissionModel(jsonString);
+            permission = object.get("idpermission") == null ? null : getPermissionModel(object.get("idpermission").toString());
             realname = object.get("realname") == null ? "" : object.get("realname").toString();
             code = object.get("secretcode") == null ? "" : object.get("secretcode").toString();
             token = object.get("token") == null ? "" : object.get("token").toString();

@@ -3,11 +3,11 @@ package Model;
 import org.json.simple.JSONObject;
 
 public class DetailBorrowRequest {
-    private BorrowRequest request;
-    private Book book;
+    private int request;
+    private int book;
     private int quantity;
 
-    public DetailBorrowRequest(BorrowRequest request, Book book, int quantity) {
+    public DetailBorrowRequest(int request, int book, int quantity) {
         this.request = request;
         this.book = book;
         this.quantity = quantity;
@@ -16,19 +16,19 @@ public class DetailBorrowRequest {
     public DetailBorrowRequest() {
     }
 
-    public BorrowRequest getRequest() {
+    public int getRequest() {
         return request;
     }
 
-    public void setRequest(BorrowRequest request) {
+    public void setRequest(int request) {
         this.request = request;
     }
 
-    public Book getBook() {
+    public int getBook() {
         return book;
     }
 
-    public void setBook(Book book) {
+    public void setBook(int book) {
         this.book = book;
     }
 
@@ -43,8 +43,8 @@ public class DetailBorrowRequest {
 	@SuppressWarnings("unchecked")
 	public JSONObject toJSON() {
     	JSONObject element = new JSONObject();
-    	element.put("request", this.request.toJSON());
-    	element.put("book", this.book.toJSON());
+    	element.put("request", this.request);
+    	element.put("book", this.book);
     	element.put("quantity", this.quantity);
     	return element;
     }

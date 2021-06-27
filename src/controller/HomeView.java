@@ -19,6 +19,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -123,6 +124,8 @@ public class HomeView implements Initializable {
                 Book book = ModelParse.getBook(bookObject.toString());
                 bookList.add(book);
             }
+            int code = response.code();
+            response.close();
 
             List<Node> nodeList = new ArrayList<>();
             int i = 0;
@@ -164,6 +167,8 @@ public class HomeView implements Initializable {
                 stockBookList.add(stockBook);
                 idStock = stockBook.getId();
             }
+            int code = response.code();
+            response.close();
 
             Collections.sort(stockBookList, new Comparator<StockBook>() {
                 @Override
@@ -207,6 +212,9 @@ public class HomeView implements Initializable {
                 authorList.add(author);
                 idAuthor = author.getId();
             }
+            int code = response.code();
+            response.close();
+
             colIDAuthor.setCellValueFactory(new PropertyValueFactory<Integer, Author>("id"));
             colNameAuthor.setCellValueFactory(new PropertyValueFactory<String, Author>("name"));
             colAge.setCellValueFactory(new PropertyValueFactory<Integer, Author>("age"));
@@ -236,6 +244,9 @@ public class HomeView implements Initializable {
                 categoryList.add(category);
                 idCate = category.getId();
             }
+            int code = response.code();
+            response.close();
+
             colIDCate.setCellValueFactory(new PropertyValueFactory<Integer, Category>("id"));
             colNameCate.setCellValueFactory(new PropertyValueFactory<String, Category>("name"));
             colDescriptCate.setCellValueFactory(new PropertyValueFactory<String, Category>("description"));
@@ -256,15 +267,13 @@ public class HomeView implements Initializable {
                     singleBookController.setTheLastID(this.bookList.size() + 1);
                     break;
                 case "author":
-                    AddSingleAuthorController singleAuthorController = openForm("/view/addAuthor/addSingleAuthor.fxml").getController();
-                    singleAuthorController.setLastID(this.idAuthor);
+                    openForm("/view/addAuthor/addSingleAuthor.fxml");
                     break;
                 case "category":
                     openForm("/view/addCate/addSingleCate.fxml");
                     break;
                 default:
-                    AddSingleStocksController singleStocksController = openForm("/view/addStocks/addSingleStocks.fxml").getController();
-                    singleStocksController.setLastID(this.idStock);
+                    openForm("/view/addStocks/addSingleStocks.fxml");
                     break;
             }
         }else {
@@ -274,13 +283,19 @@ public class HomeView implements Initializable {
                     multiBookController.setTheLastID(this.bookList.size() + 1);
                     break;
                 case "author":
-                    openForm("/view/addAuthor/addMultiAuthor.fxml");
+                    Alert alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("ERROR");
+                    alert.setHeaderText("NO SUPPORT!");
+                    alert.showAndWait();
                     break;
                 case "category":
-                    openForm("/view/addCate/addMultiCate.fxml");
+                    alert = new Alert(Alert.AlertType.ERROR);
+                    alert.setTitle("ERROR");
+                    alert.setHeaderText("NO SUPPORT!");
+                    alert.showAndWait();
                     break;
                 default:
-                    openForm("/view/addStocks/addMultiStocks.fxml").getController();
+                    openForm("/view/addStocks/addMultiStocks.fxml");
                     break;
             }
         }

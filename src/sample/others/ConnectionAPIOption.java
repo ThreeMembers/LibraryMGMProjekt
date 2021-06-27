@@ -14,7 +14,12 @@ public class ConnectionAPIOption {
     public static String inputURL = "http://localhost:8080/LibraryRestAPI/webapi/inputs/";
     public static String detailInputURL = "http://localhost:8080/LibraryRestAPI/webapi/inputs/details/";
     public static String borrowRequestURL = "http://localhost:8080/LibraryRestAPI/webapi/borrowrequests/";
+    public static String detailBorrowRequestURL = "http://localhost:8080/LibraryRestAPI/webapi/borrowrequests/details/";
     public static String qualityURL = "http://localhost:8080/LibraryRestAPI/webapi/quality/";
+    public static String accountURL = "http://localhost:8080/LibraryRestAPI/webapi/accounts/";
+    public static String permissionURL = "http://localhost:8080/LibraryRestAPI/webapi/permissions/";
+
+    public static String imageURL = "http://localhost:8080/libraryapi/webapi/images/";
 
     public static OkHttpClient getClient(){
         return new OkHttpClient.Builder().addInterceptor(new AuthenticationClient()).build();

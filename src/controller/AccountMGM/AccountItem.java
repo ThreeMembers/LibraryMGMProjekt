@@ -1,5 +1,6 @@
 package controller.AccountMGM;
 
+import Model.Account;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -33,5 +34,20 @@ public class AccountItem implements Initializable {
         this.lbDateLeft.prefWidthProperty().bind(this.container.widthProperty().divide(7.04));
         this.detailButton.prefWidthProperty().bind(this.container.widthProperty());
 
+    }
+
+    public void setUser(Account account) {
+        this.lbID.setText(String.valueOf(account.getId()));
+        this.lbPermission.setText(account.getIdPermission().getPosition());
+        this.lbUserName.setText(account.getUsername());
+        this.lbRealName.setText(account.getRealname());
+        this.lbAge.setText(String.valueOf(account.getAge()));
+        this.lbGender.setText(!account.isGender() ? "Male" : "Female");
+        this.lbExpirationDate.setText(account.getExpirationDate().toString());
+        this.lbDateLeft.setText(String.valueOf(account.getDateLeft()));
+    }
+
+    public void setFill(String s) {
+        this.container.setStyle("-fx-background-color: " + s);
     }
 }

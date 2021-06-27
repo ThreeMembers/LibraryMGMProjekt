@@ -39,7 +39,7 @@ import java.util.List;
 public class bookDetailController {
 
     public static String imageURL = "http://localhost:8080/libraryapi/webapi/images/";
-    public static String stockURL = "http://localhost:8080/libraryapi/webapi/stockbooks/";
+//    public static String stockURL = "http://localhost:8080/libraryapi/webapi/stockbooks/";
 
     private Book book;
 
@@ -57,7 +57,11 @@ public class bookDetailController {
 
     public void openEditBookDetail(ActionEvent event){
         try {
-            Parent root = FXMLLoader.load(getClass().getResource("/view/bookDetail/editBookDetail.fxml"));
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("/view/bookDetail/editBookDetail.fxml"));
+            Parent root = loader.load();
+            EditBookDetailController controller = loader.getController();
+            controller.setBook(this.book);
             Stage stage = (Stage) this.lbName.getScene().getWindow();
             stage.close();
             stage = new Stage();
@@ -95,6 +99,7 @@ public class bookDetailController {
             //nhan response tu server
             Response response = client.newCall(request).execute();
 
+
             if(response.code() == 404){
                 Label label = new Label();
                 label.setText("NOT FOUND :<");
@@ -117,6 +122,8 @@ public class bookDetailController {
                 StockBook stockBook = ModelParse.getStockBook(stockBookObject.toString());
                 stockBookList.add(stockBook);
             }
+            int code = response.code();
+            response.close();
 
             List<Node> nodeList = new ArrayList<>();
             int i = 0;

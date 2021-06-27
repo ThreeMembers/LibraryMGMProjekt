@@ -96,7 +96,7 @@ public class BorrowRequest extends Model{
 	public JSONObject toJSON() {
 		JSONObject element = super.toJSON();
 		if(this.reader != null)
-			element.put("reader", this.reader.toJSON(Account.id_name_dateleft));
+			element.put("reader", this.reader.toJSON(Account.with_per_dateleft));
 		if(this.sendRequestDate != null)
 			element.put("senddate", this.sendRequestDate.toJSON());
 		element.put("authen", this.isAuthen);

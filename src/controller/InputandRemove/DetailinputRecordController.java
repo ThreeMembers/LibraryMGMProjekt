@@ -71,6 +71,8 @@ public class DetailinputRecordController implements Initializable {
                 );
                 detailInputs.add(detailInput);
             }
+            int code = response.code();
+            response.close();
 
             List<Node> nodeList = new ArrayList<>();
             int i = 0;

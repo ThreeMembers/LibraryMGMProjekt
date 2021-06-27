@@ -225,6 +225,13 @@ public class Account extends Model {
 			element.put("username", this.username);
 		return element;
 	}
+	public JSONObject toJSON7(){
+		JSONObject element = new JSONObject();
+		element.put("id", this.id);
+		if(this.idPermission != null)
+			element.put("idpermission", this.idPermission.toJSONPositionOnly());
+		return element;
+	}
 	
 	public Account(int id, Permission idPermission, String username, String userpassword, String realname, int age,
 			boolean gender, String secretCode, Date registerDate, Date expirationDate) {
@@ -302,5 +309,26 @@ public class Account extends Model {
 		this.userpassword = userpassword;
 	}
 	public Account(){}
-	
+	public Account(
+			Permission idPermission,
+			String username,
+			String userpassword,
+			String realname,
+			int age,
+			boolean gender,
+			String secretCode,
+			Date registerDate)
+	{
+		this.idPermission = idPermission;
+		this.username = username;
+		this.userpassword = userpassword;
+		this.realname = realname == null ? "NO INFO" : realname;
+		this.age = age;
+		this.gender = gender;
+		this.secretCode = secretCode == null ? "NO INFO" : secretCode;
+		this.registerDate = registerDate;
+		setExpirationDate(registerDate.add(Account.avaible_date));
+		setToken();
+		//getDateLeft();
+	}
 }

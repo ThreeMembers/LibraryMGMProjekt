@@ -120,7 +120,8 @@ public class StockBook extends Model {
 	@Override
 	public String toString() {
 		return "StockBook{" +
-				"collection=" + collection +
+				"id=" + id +
+				", collection=" + collection +
 				", quality=" + quality +
 				", releaseYear=" + releaseYear +
 				", isBorrow=" + isBorrow +

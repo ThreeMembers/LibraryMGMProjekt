@@ -64,7 +64,7 @@
          </cursor>
       </Button>
       <JFXComboBox fx:id="bookChoices" editable="true" layoutX="197.0" layoutY="108.0" prefHeight="26.0" prefWidth="430.0" />
-      <Button layoutX="787.0" layoutY="251.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="78.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Create">
+      <Button fx:id="btnCreate" layoutX="787.0" layoutY="251.0" mnemonicParsing="false" onAction="#createRecord" prefHeight="30.0" prefWidth="78.0" style="-fx-background-color: #63cdda; -fx-background-radius: 10;" text="Create">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>

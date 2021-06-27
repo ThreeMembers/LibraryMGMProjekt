@@ -93,7 +93,7 @@ public class Date {
 		int nextMonth = this.month;
 		int nextYear = this.year;
 		if (numberDay > numberDaysInMonth && numberDaysInMonth > 0) {
-
+			numberDay  += this.day;
 			int temp = numberDaysInMonth;
 			while (numberDay > temp) {
 				numberDay -= temp;
@@ -104,7 +104,7 @@ public class Date {
 					nextMonth++;
 				temp = getNumberDaysInMonth(nextMonth, nextYear);
 			}
-			nextDate = numberDay + this.day;
+			nextDate = numberDay;
 		} else if (numberDay == numberDaysInMonth) {
 			nextDate += numberDaysInMonth - numberDay;
 			nextMonth++;
@@ -115,7 +115,7 @@ public class Date {
                 nextMonth++;
             }
 		}
-		return new Date(nextDate, nextMonth, nextYear);
+		return new Date(nextYear, nextMonth, nextDate);
 	}
 	public static Date addStatic(Date first, int numberDay) {
 		int numberDaysInMonth = getNumberDaysInMonthStatic(first.getMonth(), first.getYear());
@@ -123,7 +123,7 @@ public class Date {
 		int nextMonth = first.getMonth();
 		int nextYear = first.getYear();
 		if (numberDay > numberDaysInMonth && numberDaysInMonth > 0) {
-
+			numberDay += first.getDay();
 			int temp = numberDaysInMonth;
 			while (numberDay > temp) {
 				numberDay -= temp;
@@ -134,7 +134,7 @@ public class Date {
 					nextMonth++;
 				temp = getNumberDaysInMonthStatic(nextMonth, nextYear);
 			}
-			nextDate = numberDay + first.getDay();
+			nextDate = numberDay;
 		} else if (numberDay == numberDaysInMonth) {
 			nextDate += numberDaysInMonth - numberDay;
 			nextMonth++;
@@ -145,7 +145,7 @@ public class Date {
                 nextMonth++;
             }
 		}
-		return new Date(nextDate, nextMonth, nextYear);
+		return new Date(nextYear, nextMonth, nextDate);
 	}
 
 	public int getNumberDaysInMonth(int month, int year) {

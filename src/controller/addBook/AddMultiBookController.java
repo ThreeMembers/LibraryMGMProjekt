@@ -114,6 +114,8 @@ public class AddMultiBookController implements Initializable {
             Response response = client.newCall(request).execute();
             JSONParser parser = new JSONParser();
             JSONArray jsonArray = (JSONArray) parser.parse(response.body().string());
+            int code = response.code();
+            response.close();
             categoryList = new ArrayList<>();
             for(Object sub : jsonArray.toArray()){
                 JSONObject object = (JSONObject) sub;
@@ -136,6 +138,8 @@ public class AddMultiBookController implements Initializable {
             JSONParser parser = new JSONParser();
             JSONArray jsonArray = (JSONArray) parser.parse(response.body().string());
             authorList = new ArrayList<>();
+            int code = response.code();
+            response.close();
             for(Object sub : jsonArray.toArray()){
                 JSONObject object = (JSONObject) sub;
                 Author author = ModelParse.getAuthor(object.toString());

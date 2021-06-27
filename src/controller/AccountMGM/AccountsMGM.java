@@ -1,8 +1,8 @@
 package controller.AccountMGM;
 
-import Model.Date;
-import com.sun.glass.ui.Clipboard;
-import javafx.event.ActionEvent;
+import Model.Account;
+import Model.Book;
+import controller.BookViewItemController;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -16,7 +16,17 @@ import javafx.scene.paint.Color;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
+import sample.others.ConnectionAPIOption;
+import sample.others.ModelParse;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -43,22 +53,8 @@ public class AccountsMGM implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         //Add borrow request items
-        List<Node> requestItems = new ArrayList<>();
-        for (int i = 0; i < 50; i++) {
+        loadAccounts();
 
-            try {
-                FXMLLoader loader = new FXMLLoader();
-                loader.setLocation(getClass().getResource("/view/AccountMGM/AccountItem.fxml"));
-                Node e = loader.load();
-//                BookViewItemController bookViewItemController = loader.getController();
-//                bookViewItemController.setBook(temp);
-                requestItems.add(e);
-            } catch (Exception ex) {
-                System.out.println(ex.getMessage());
-                ex.printStackTrace();
-            }
-        }
-        this.Account.getChildren().addAll(requestItems);
         this.lbID.prefWidthProperty().bind(this.title.widthProperty().divide(11));
         this.lbPermission.prefWidthProperty().bind(this.title.widthProperty().divide(8.8));
         this.lbUserName.prefWidthProperty().bind(this.title.widthProperty().divide(7.04));
@@ -133,5 +129,44 @@ public class AccountsMGM implements Initializable {
             e.printStackTrace();
         }
     }
+    public void loadAccounts(){
+        String url = ConnectionAPIOption.accountURL;
+        OkHttpClient client = ConnectionAPIOption.getClient();
+        Request request = new Request.Builder().url(url).build();
+        try {
+            Response response = client.newCall(request).execute();
+            JSONParser parser = new JSONParser();
+            //JSONObject object = (JSONObject) parser.parse(response.body().string());
 
+            List<Account> accountList = new ArrayList<>();
+
+            JSONArray array = (JSONArray) parser.parse(response.body().string());
+            for (Object item : array) {
+                JSONObject object = (JSONObject) item;
+                Account account = ModelParse.getAccount(object.toString());
+                accountList.add(account);
+            }
+
+            List<Node> nodeList = new ArrayList<>();
+            int i = 0;
+            for (Account account : accountList) {
+                FXMLLoader loader = new FXMLLoader();
+                loader.setLocation(getClass().getResource("/view/AccountMGM/AccountItem.fxml"));
+                Node node = loader.load();
+                AccountItem itemController = loader.getController();
+                itemController.setUser(account);
+                if(i % 2 != 0){
+                    itemController.setFill("#74b9ff");
+                }
+                if(account.getDateLeft() <= 0){
+                    itemController.setFill("#ff4d4d");
+                }
+                nodeList.add(node);
+                i++;
+            }
+            this.Account.getChildren().addAll(nodeList);
+        } catch (IOException | ParseException e) {
+            e.printStackTrace();
+        }
+    }
 }

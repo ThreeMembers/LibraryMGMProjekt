@@ -43,7 +43,6 @@ public class AddSingleStocksController implements Initializable {
     @FXML
     Button btnAdd;
 
-    private int lastID;
     private List<Book> bookList;
     private List<Quality> qualityList;
 
@@ -60,10 +59,6 @@ public class AddSingleStocksController implements Initializable {
     void close(MouseEvent event) {
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.close();
-    }
-
-    public void setLastID(int idStock) {
-        this.lastID = idStock;
     }
 
     public static List<String> loadBook(List<Book> bookList){
@@ -83,6 +78,8 @@ public class AddSingleStocksController implements Initializable {
                 bookList.add(book);
                 list.add(book.getName());
             }
+            int code = response.code();
+            response.close();
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
@@ -105,6 +102,8 @@ public class AddSingleStocksController implements Initializable {
                 qualityList.add(quality);
                 list.add(quality.getSituation().toUpperCase());
             }
+            int code = response.code();
+            response.close();
         } catch (IOException | ParseException e) {
             e.printStackTrace();
         }
@@ -138,6 +137,8 @@ public class AddSingleStocksController implements Initializable {
             Response response = client.newCall(request).execute();
             if(response.code() == 201){
                 int newIDStock = Integer.parseInt(response.body().string());
+                int code = response.code();
+                response.close();
                 int newIDInput = createPostInputRequest();
                 if(newIDInput > 0){
                     if(createPostInputDetailRequest(newIDInput, newIDStock)){
@@ -174,7 +175,9 @@ public class AddSingleStocksController implements Initializable {
             RequestBody body = RequestBody.create(String.valueOf(jsonObject), MediaTypeCollection.jsonType);
             Request request = new Request.Builder().url(url).post(body).build();
             Response response = client.newCall(request).execute();
-            if(response.code() == 201){
+            int code = response.code();
+            response.close();
+            if(code == 201){
                 int newID = Integer.parseInt(response.body().string());
                 return newID;
             }
@@ -195,7 +198,9 @@ public class AddSingleStocksController implements Initializable {
             RequestBody body = RequestBody.create(String.valueOf(jsonObject), MediaTypeCollection.jsonType);
             Request request = new Request.Builder().url(url).post(body).build();
             Response response = client.newCall(request).execute();
-            if(response.code() == 201){
+            int code = response.code();
+            response.close();
+            if(code == 201){
                 return true;
             }
         } catch (Exception e) {

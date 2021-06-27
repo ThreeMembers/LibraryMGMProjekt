@@ -116,6 +116,8 @@ public class InputRemoveController implements Initializable {
                 Input record = ModelParse.getInput(bookObject.toString());
                 inputList.add(record);
             }
+            int code = response.code();
+            response.close();
 
             List<Node> nodeList = new ArrayList<>();
             int i = 0;

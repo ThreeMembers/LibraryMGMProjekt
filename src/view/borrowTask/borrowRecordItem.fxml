@@ -16,6 +16,6 @@
             <Label fx:id="lbDateReturn" alignment="CENTER" prefHeight="40.0" prefWidth="200.0" text="DateReturn" />
          </children>
       </HBox>
-      <Button fx:id="detailButton" blendMode="MULTIPLY" mnemonicParsing="false" prefHeight="40.0" prefWidth="880.0" style="-fx-background-color: white;" />
+      <Button fx:id="detailButton" blendMode="MULTIPLY" mnemonicParsing="false" onAction="#openDetail" onMouseExited="#resetCount" prefHeight="40.0" prefWidth="880.0" style="-fx-background-color: white;" />
    </children>
 </StackPane>

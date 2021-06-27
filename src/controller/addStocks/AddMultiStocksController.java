@@ -73,7 +73,7 @@ public class AddMultiStocksController implements Initializable {
         Quality quality = new Quality();
         Book book = new Book();
         for (Quality item : qualityList) {
-            if (item.getSituation().toUpperCase().equals(this.choice.getValue())) {
+            if (item.getSituation().toUpperCase().equals(this.choice.getEditor().getText())) {
                 quality.setId(item.getId());
                 quality.setSituation(item.getSituation());
             }
@@ -102,6 +102,9 @@ public class AddMultiStocksController implements Initializable {
     }
 
     public void deleteChecked() {
+        if (container.getChildren().isEmpty()) {
+            return;
+        }
         List<Node> temp = new ArrayList<>();
         List<StockBook> tempStocks = new ArrayList<>();
         int c = 0;
@@ -125,6 +128,7 @@ public class AddMultiStocksController implements Initializable {
     public void createRecord() {
         String url = ConnectionAPIOption.stocksURL;
         String detailurl = ConnectionAPIOption.detailInputURL;
+        detailInputList = new ArrayList<>();
         int newIDInput = AddSingleStocksController.createPostInputRequest();
         OkHttpClient client = ConnectionAPIOption.getClient();
         try {
@@ -136,9 +140,15 @@ public class AddMultiStocksController implements Initializable {
                 Response response = client.newCall(request).execute();
                 if(response.code() == 201){
                     int newIDStock = Integer.parseInt(response.body().string());
-                    DetailInput detailInput = new DetailInput(newIDInput, newIDStock);
+
+                    response.close();
+                    DetailInput detailInput = new DetailInput();
+                    detailInput.setIdStock(newIDStock);
                     detailInputList.add(detailInput);
                 }
+            }
+            for (DetailInput item : detailInputList){
+                item.setIdRecord(newIDInput);
             }
             JSONObject detailObject = new JSONObject();
             JSONArray array = new JSONArray();
@@ -149,7 +159,9 @@ public class AddMultiStocksController implements Initializable {
             RequestBody body = RequestBody.create(String.valueOf(detailObject), MediaTypeCollection.jsonType);
             Request request = new Request.Builder().url(detailurl).post(body).build();
             Response response = client.newCall(request).execute();
-            if(response.code() == 201){
+            int code = response.code();
+            response.close();
+            if(code == 201){
                 this.btnCreate.setText("DONE");
                 Thread.sleep(1500);
                 Stage stage = (Stage) this.btnCreate.getScene().getWindow();

@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -11,7 +14,7 @@
 
 <AnchorPane prefHeight="340.0" prefWidth="650.0" style="-fx-background-radius: 10;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.AccountMGM.NewAccount">
     <children>
-        <Label alignment="CENTER" layoutY="29.0" prefHeight="60.0" prefWidth="700.0" style="-fx-background-color: #D6A2E8;" text="Create New Account" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+        <Label alignment="CENTER" layoutY="29.0" prefHeight="60.0" prefWidth="700.0" style="-fx-background-color: #fffa65;" text="Create New Account" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <font>
                 <Font name="Impact" size="24.0" />
             </font>
@@ -26,7 +29,7 @@
                 <Font name="System Bold" size="12.0" />
             </font>
         </Label>
-        <Label layoutX="46.0" layoutY="161.0" text="Password">
+        <Label layoutX="41.0" layoutY="161.0" text="Password">
             <font>
                 <Font name="System Bold" size="12.0" />
             </font>
@@ -46,12 +49,10 @@
                 <Font name="System Bold" size="12.0" />
             </font>
         </Label>
-        <TextField layoutX="134.0" layoutY="101.0" prefHeight="26.0" prefWidth="209.0" />
-        <TextField layoutX="134.0" layoutY="156.0" prefHeight="26.0" prefWidth="210.0" />
-        <TextField layoutX="134.0" layoutY="208.0" prefHeight="26.0" prefWidth="210.0" />
-        <TextField layoutX="458.0" layoutY="101.0" prefHeight="26.0" prefWidth="60.0" />
-        <TextField layoutX="458.0" layoutY="156.0" prefHeight="26.0" prefWidth="60.0" />
-        <TextField layoutX="458.0" layoutY="208.0" />
+        <TextField fx:id="tfUser" layoutX="134.0" layoutY="101.0" prefHeight="26.0" prefWidth="209.0" />
+        <TextField fx:id="tfRealname" layoutX="134.0" layoutY="208.0" prefHeight="26.0" prefWidth="210.0" />
+        <TextField fx:id="tfAge" layoutX="458.0" layoutY="101.0" prefHeight="26.0" prefWidth="100.0" />
+        <TextField fx:id="tfcode" layoutX="458.0" layoutY="208.0" />
         <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="671.0" layoutY="-1.0" onMouseClicked="#close" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="-1.0">
             <image>
                 <Image url="@../../sample/imageView/close-icon.png" />
@@ -60,7 +61,15 @@
                 <Cursor fx:constant="HAND" />
             </cursor>
         </ImageView>
-        <Button fx:id="btnCreateAccount" layoutX="316.0" layoutY="265.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="67.0" text="Create" />
-        <Label layoutX="448.0" layoutY="265.0" prefHeight="30.0" prefWidth="88.0" text="Create Success" />
+        <Button fx:id="btnCreateAccount" layoutX="568.0" layoutY="295.0" mnemonicParsing="false" onAction="#create" prefHeight="30.0" prefWidth="67.0" text="Create" />
+        <Label fx:id="lbSuccess" disable="true" layoutX="474.0" layoutY="295.0" prefHeight="30.0" prefWidth="88.0" text="Create Success" />
+      <JFXComboBox fx:id="cbPer" layoutX="134.0" layoutY="253.0" prefHeight="26.0" prefWidth="210.0" />
+      <Label layoutX="41.0" layoutY="257.0" prefHeight="18.0" prefWidth="62.0" text="Permission">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <PasswordField fx:id="tfPwd" layoutX="134.0" layoutY="155.0" prefHeight="26.0" prefWidth="210.0" />
+      <CheckBox fx:id="cbGender" layoutX="458.0" layoutY="160.0" mnemonicParsing="false" text="Female" />
     </children>
 </AnchorPane>
