@@ -16,6 +16,6 @@
             <Label fx:id="lbBorrow" alignment="CENTER" prefHeight="40.0" prefWidth="98.0" text="Is Borrow" />
          </children>
       </HBox>
-      <Button blendMode="MULTIPLY" mnemonicParsing="false" prefHeight="40.0" prefWidth="998.0" />
+      <Button blendMode="MULTIPLY" mnemonicParsing="false" onAction="#openDetail" onMouseExited="#resetClick" prefHeight="40.0" prefWidth="998.0" />
    </children>
 </StackPane>
