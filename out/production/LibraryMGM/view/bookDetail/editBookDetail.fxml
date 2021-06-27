@@ -42,14 +42,14 @@
             <Font name="System Bold" size="14.0" />
          </font>
       </Label>
-      <TextArea layoutX="277.0" layoutY="99.0" prefHeight="100.0" prefWidth="482.0" />
+      <TextArea fx:id="taName" layoutX="277.0" layoutY="99.0" prefHeight="100.0" prefWidth="482.0" />
       <Button layoutX="724.0" layoutY="406.0" mnemonicParsing="false" onAction="#OK" prefHeight="30.0" prefWidth="62.0" style="-fx-background-radius: 10; -fx-background-color: #55efc4;" text="OK" />
       <Button layoutX="647.0" layoutY="406.0" mnemonicParsing="false" onMouseClicked="#cancel" prefHeight="30.0" prefWidth="61.0" style="-fx-background-radius: 10; -fx-background-color: #55efc4;" text="Cancel" />
       <Label layoutX="277.0" layoutY="314.0" text="Available">
          <font>
             <Font name="System Bold" size="14.0" />
          </font></Label>
-      <CheckBox alignment="TOP_RIGHT" contentDisplay="RIGHT" ellipsisString="" layoutX="355.0" layoutY="314.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="15.0" scaleX="1.5" scaleY="1.5" selected="true" />
+      <CheckBox fx:id="cbAvailable" alignment="TOP_RIGHT" contentDisplay="RIGHT" ellipsisString="" layoutX="355.0" layoutY="314.0" mnemonicParsing="false" prefHeight="15.0" prefWidth="15.0" scaleX="1.5" scaleY="1.5" selected="true" />
       <AnchorPane prefHeight="60.0" prefWidth="800.0" style="-fx-background-color: #55efc4;" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <Label layoutX="323.0" layoutY="16.0" text="Edit Book Detail" AnchorPane.topAnchor="16.0">
